@@ -1,0 +1,4564 @@
+[
+ {
+  "n": 1,
+  "section": "Gravitation",
+  "text": "At what altitude above the Earth's surface would the gravitational acceleration be 6.2 m/s^2? The radius of Earth is 6.371 × 10^6 m. The gravitational acceleration on Earth is g = 9.8 m/s^2. (1638.858 km)",
+  "answer": "1638.858 km",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p001-gravity-altitude",
+   "comment": "P1/P3 — gravitational acceleration at altitude h above the Earth: g(h) = g (R_E / (R_E + h))².\nP1 inverts it for the altitude where g(h) = a: h = R_E (sqrt(g / a) − 1); P3 evaluates g(h).\nR_E and g are the constants the source states; only a (P1) and h (P3) are randomized.",
+   "derived": [
+    {
+     "name": "g",
+     "expr": "9.8",
+     "unit": "m/s^2"
+    },
+    {
+     "name": "RE",
+     "expr": "6.371e6",
+     "unit": "m"
+    }
+   ],
+   "parts": [
+    {
+     "id": "altitude",
+     "prompt": "At what altitude above the Earth's surface would the gravitational acceleration be {a:unit}? {_0}{_u}",
+     "answer": "RE * (sqrt(g / a) - 1) / 1000",
+     "unit": "km"
+    },
+    {
+     "id": "gravity-at-altitude",
+     "prompt": "What is the value of gravitational acceleration g {h:unit} above Earth's surface? {_0}{_u}",
+     "answer": "g * (RE / (RE + h * 1000))^2",
+     "unit": "m/s^2"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 2,
+  "section": "Gravitation",
+  "text": "At what altitude above the Earth's surface would the gravitational acceleration be 0.6 of its value at the surface? The radius of the Earth is 6.33×10^6 m. (1.84199e+06 m)",
+  "answer": "1.84199e+06 m",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p002-gravity-fraction-altitude",
+   "comment": "P2 — gravitational acceleration at altitude h above the Earth: g(h) = g (R_E / (R_E + h))².\nFor g(h) = x g the altitude is h = R_E (1 / sqrt(x) − 1); g itself cancels. R_E is the\nconstant the source states (6.33 × 10⁶ m, not P1's 6.371 × 10⁶ m); only x is randomized.",
+   "derived": [
+    {
+     "name": "RE",
+     "expr": "6.33e6",
+     "unit": "m"
+    }
+   ],
+   "parts": [
+    {
+     "id": "altitude",
+     "prompt": "At what altitude above the Earth's surface would the gravitational acceleration be {x} of its value at the surface? {_0}{_u}",
+     "answer": "RE * (1 / sqrt(x) - 1)",
+     "unit": "m"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 3,
+  "section": "Gravitation",
+  "text": "What is the value of gravitational acceleration g 720 km above Earth’s surface? The radius of Earth is 6.371 × 10^6 m. The gravitational acceleration on Earth is g = 9.8 m/s^2. (7.911 m/s^2)",
+  "answer": "7.911 m/s^2",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p001-gravity-altitude",
+   "comment": "P1/P3 — gravitational acceleration at altitude h above the Earth: g(h) = g (R_E / (R_E + h))².\nP1 inverts it for the altitude where g(h) = a: h = R_E (sqrt(g / a) − 1); P3 evaluates g(h).\nR_E and g are the constants the source states; only a (P1) and h (P3) are randomized.",
+   "derived": [
+    {
+     "name": "g",
+     "expr": "9.8",
+     "unit": "m/s^2"
+    },
+    {
+     "name": "RE",
+     "expr": "6.371e6",
+     "unit": "m"
+    }
+   ],
+   "parts": [
+    {
+     "id": "altitude",
+     "prompt": "At what altitude above the Earth's surface would the gravitational acceleration be {a:unit}? {_0}{_u}",
+     "answer": "RE * (sqrt(g / a) - 1) / 1000",
+     "unit": "km"
+    },
+    {
+     "id": "gravity-at-altitude",
+     "prompt": "What is the value of gravitational acceleration g {h:unit} above Earth's surface? {_0}{_u}",
+     "answer": "g * (RE / (RE + h * 1000))^2",
+     "unit": "m/s^2"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 4,
+  "section": "Gravitation",
+  "text": "In a Star Wars movie the rebel space station is built as a circular ring of 45 m in diameter. At what angular speed should it be rotated so the occupants feel that they have the 75% of the weight they feel on Earth? The gravitational acceleration on Earth is g = 9.8 m/s^2. (0.572 rad/s)",
+  "answer": "0.572 rad/s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p004-space-station-spin",
+   "comment": "P4/P5 — artificial gravity in a rotating ring station: the floor pushes the occupants toward the\ncentre with the centripetal force m ω² r, which they feel as their weight. For a fraction f of\nthe Earth weight, ω² (d/2) = f g, so ω = sqrt(2 f g / d) (P4), and the rim moves at\nv = ω d/2 = sqrt(f g d / 2) (P5). The base canonical values are P4's; P5 overrides them.",
+   "derived": [
+    {
+     "name": "g",
+     "expr": "9.8",
+     "unit": "m/s^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "angular-speed",
+     "prompt": "At what angular speed should it be rotated so the occupants feel that they have the {pct}% of the weight they feel on Earth? {_0}{_u}",
+     "answer": "sqrt((pct / 100) * g / (d / 2))",
+     "unit": "rad/s"
+    },
+    {
+     "id": "rim-speed",
+     "prompt": "At what linear speed should its rim move so that the occupants feel {pct}% of the weight they feel on Earth? {_0}{_u}",
+     "answer": "sqrt((pct / 100) * g * (d / 2))",
+     "unit": "m/s"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 5,
+  "section": "Gravitation",
+  "text": "In a Star Wars movie the rebel space station is built as a circular ring of 39 m in diameter. At what linear speed should its rim move so that the occupants feel 85% of the weight they feel on Earth? The gravitational acceleration on Earth is g = 9.8 m/s^2. (12.745 m/s)",
+  "answer": "12.745 m/s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p004-space-station-spin",
+   "comment": "P4/P5 — artificial gravity in a rotating ring station: the floor pushes the occupants toward the\ncentre with the centripetal force m ω² r, which they feel as their weight. For a fraction f of\nthe Earth weight, ω² (d/2) = f g, so ω = sqrt(2 f g / d) (P4), and the rim moves at\nv = ω d/2 = sqrt(f g d / 2) (P5). The base canonical values are P4's; P5 overrides them.",
+   "derived": [
+    {
+     "name": "g",
+     "expr": "9.8",
+     "unit": "m/s^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "angular-speed",
+     "prompt": "At what angular speed should it be rotated so the occupants feel that they have the {pct}% of the weight they feel on Earth? {_0}{_u}",
+     "answer": "sqrt((pct / 100) * g / (d / 2))",
+     "unit": "rad/s"
+    },
+    {
+     "id": "rim-speed",
+     "prompt": "At what linear speed should its rim move so that the occupants feel {pct}% of the weight they feel on Earth? {_0}{_u}",
+     "answer": "sqrt((pct / 100) * g * (d / 2))",
+     "unit": "m/s"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 6,
+  "section": "Gravitation",
+  "text": "Escape velocity of a bullet fired up from the surface of planet X is 1481 m/s. Find the escape velocity from the surface of another planet Y, if the mass of planet Y is 1.41 times that of X, and its radius is 0.718 times the radius of planet X. (2075.4 m/s)",
+  "answer": "2075.4 m/s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p006-escape-velocity-ratio",
+   "comment": "P6 — escape speed v = sqrt(2 G M / R). Planet Y has kM times the mass and kR times the radius\nof planet X, so v_Y = v_X sqrt(kM / kR).",
+   "derived": null,
+   "parts": [
+    {
+     "id": "escape-velocity-y",
+     "prompt": "Find the escape velocity from the surface of another planet Y, if the mass of planet Y is {kM} times that of X, and its radius is {kR} times the radius of planet X. {_0}{_u}",
+     "answer": "v * sqrt(kM / kR)",
+     "unit": "m/s"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 7,
+  "section": "Gravitation",
+  "text": "Planet Y has a mass 1.78 times that of planet X, and its radius is 0.93 times the radius of planet X. By what factor is the gravitational acceleration at the surface of planet Y larger than that at the surface of planet X? (2.05804)",
+  "answer": "2.05804",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p007-planet-gravity-ratio",
+   "comment": "P7 — surface gravity g = G M / R². Planet Y has kM times the mass and kR times the radius of\nplanet X, so g_Y / g_X = kM / kR². The constraint keeps the ratio above 1, as the question\n(\"by what factor … larger\") assumes.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "gravity-ratio",
+     "prompt": "Planet Y has a mass {kM} times that of planet X, and its radius is {kR} times the radius of planet X. By what factor is the gravitational acceleration at the surface of planet Y larger than that at the surface of planet X? {_0}",
+     "answer": "kM / kR^2",
+     "unit": null
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 8,
+  "section": "Gravitation",
+  "text": "Figure shows five equal masses M = 3 kg equally spaced on the arc of a semicircle of radius 3.9 m. A mass m = 1 kg is placed at the center of curvature of the arc. What is the magnitude of the force on mass m due to the other five masses? Gravitational constant G=6.67×10^-11 N m^2/kg^2. (3.1761E-11 N)",
+  "answer": "3.1761E-11 N",
+  "figures": [
+   "figures/unnamed_009_OTxQ.png"
+  ],
+  "scenario": {
+   "id": "phys161-e3-p008-semicircle-five-masses",
+   "comment": "P8 — five equal masses M at 0°, 45°, 90°, 135° and 180° on a semicircle of radius r, a mass m\nat its centre. The horizontal pulls cancel in pairs; the vertical ones add up:\nF = G M m / r² · (1 + 2 sin 45°) = (1 + √2) G M m / r².\nThe figure prints only symbols (M, m, x, y), so every parameter is randomized.",
+   "derived": [
+    {
+     "name": "G",
+     "expr": "6.67e-11",
+     "unit": "N m^2/kg^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "net-force",
+     "prompt": "What is the magnitude of the force on mass m due to the other five masses? {_0}{_u}",
+     "answer": "(1 + sqrt(2)) * G * M * m / r^2",
+     "unit": "N"
+    }
+   ],
+   "fig": "figures/unnamed_009_OTxQ.png"
+  }
+ },
+ {
+  "n": 9,
+  "section": "Gravitation",
+  "text": "Spherical hollow is made in a lead sphere of radius R = 12.4 cm such that its surface touches the outside surface of a lead sphere and passes through its center as shown in the figure below. The mass of the sphere before hollowing was M = 24.8 kg. Find the magnitude of the gravitational force between the hollowed-out lead sphere and a small sphere of mass m = 2.4 kg, located at distance d = 0.75 m from the center of the lead sphere. Gravitational constant is 6.67 × 10^-11N⋅ m^2 /kg^2. (6.305E-9 N)",
+  "answer": "6.305E-9 N",
+  "figures": [
+   "figures/unnamed_OTxQ.png"
+  ],
+  "scenario": {
+   "id": "phys161-e3-p009-hollowed-lead-sphere",
+   "comment": "P9 — superposition: the hollowed sphere = full sphere (M, centre O) minus the removed sphere of\nradius R/2 and mass M/8, centred R/2 from O. In the figure the hollow is on the far side of O\nfrom m, so the removed sphere is d + R/2 away from m:\nF = G m (M / d² − (M/8) / (d + R/2)²). R is given in cm and converted inside the formula.\nThe figure prints only symbols (d, R, m), so every parameter is randomized; d ≥ 0.5 m always\nexceeds R, so the small sphere stays outside the lead sphere.",
+   "derived": [
+    {
+     "name": "G",
+     "expr": "6.67e-11",
+     "unit": "N m^2/kg^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "force",
+     "prompt": "Find the magnitude of the gravitational force between the hollowed-out lead sphere and a small sphere of mass $m = {m:unit}$, located at distance $d = {d:unit}$ from the center of the lead sphere. {_0}{_u}",
+     "answer": "G * m * (M / d^2 - (M / 8) / (d + R / 200)^2)",
+     "unit": "N"
+    }
+   ],
+   "fig": "figures/unnamed_OTxQ.png"
+  }
+ },
+ {
+  "n": 10,
+  "section": "Gravitation",
+  "text": "Two spherical masses are located on the x-axis, the first at the origin with M_1=11.2 kg, and the second M_2=42 kg at position x=48.1 m. The third sphere with M_3=19.8 kg is placed on x-axis such that M_3 experiences no net gravitational force due to M_1 and M_2. Calculate the position of M_3. (16.38 m)",
+  "answer": "16.38 m",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p010-zero-force-point",
+   "comment": "P10 — M3 feels no net force where the two pulls balance, between M1 and M2:\nM1 / x3² = M2 / (L − x3)², so x3 = L sqrt(M1) / (sqrt(M1) + sqrt(M2)). M3 itself drops out.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "position",
+     "prompt": "Calculate the position of $M_3$. {_0}{_u}",
+     "answer": "L * sqrt(M1) / (sqrt(M1) + sqrt(M2))",
+     "unit": "m"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 11,
+  "section": "Gravitation",
+  "text": "The period of the circular orbit of a satellite very close to the surface of a spherical planet is 2.65 hours. Find the density of the planet assuming it is uniform. Gravitational constant is 6.67 × 10^-11N⋅ m^2 /kg^2. (1552.56 kg/m^3)",
+  "answer": "1552.56 kg/m^3",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p011-surface-orbit-density",
+   "comment": "P11 — a grazing circular orbit (r = R) around a uniform planet: G M / R² = (2π / T)² R with\nM = (4/3) π R³ ρ gives ρ = 3π / (G T²). The period is given in hours and converted inside\nthe formula.",
+   "derived": [
+    {
+     "name": "G",
+     "expr": "6.67e-11",
+     "unit": "N m^2/kg^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "density",
+     "prompt": "Find the density of the planet assuming it is uniform. {_0}{_u}",
+     "answer": "3 * pi / (G * (T * 3600)^2)",
+     "unit": "kg/m^3"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 12,
+  "section": "Gravitation",
+  "text": "A satellite orbits very close to the surface of a spherical planet of uniform density 4400 kg/m^3. Find the period of its circular orbit. Gravitational constant is G = 6.67×10^-11 N m^2/kg^2. (5666.91 s)",
+  "answer": "5666.91 s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p012-surface-orbit-period",
+   "comment": "P12 — a grazing circular orbit (r = R) around a uniform planet: G M / R² = (2π / T)² R with\nM = (4/3) π R³ ρ gives T = sqrt(3π / (G ρ)), independent of the planet's size.",
+   "derived": [
+    {
+     "name": "G",
+     "expr": "6.67e-11",
+     "unit": "N m^2/kg^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "period",
+     "prompt": "A satellite orbits very close to the surface of a spherical planet of uniform density {rho:unit}. Find the period of its circular orbit. {_0}{_u}",
+     "answer": "sqrt(3 * pi / (G * rho))",
+     "unit": "s"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 13,
+  "section": "Gravitation",
+  "text": "How much energy is required to lift the 8000 kg space vehicle from Earth’s surface to the height of the 380 km above the surface? Neglect the rotation of the Earth. The radius of Earth is 6.371 × 10^6 m. The mass of the Earth is 5.972 × 10^24 kg. Gravitational constant is 6.6743 × 10^-11N⋅ m^2 /kg^2. (28172370630.036 J)",
+  "answer": "28172370630.036 J",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p013-lift-space-vehicle",
+   "comment": "P13 — energy to raise a mass m from the Earth's surface to altitude h (no rotation, no orbital\nspeed asked for): ΔU = G M_E m (1/R_E − 1/(R_E + h)). G, M_E and R_E are the constants the\nsource states; h is given in km and converted inside the formula.",
+   "derived": [
+    {
+     "name": "RE",
+     "expr": "6.371e6",
+     "unit": "m"
+    },
+    {
+     "name": "ME",
+     "expr": "5.972e24",
+     "unit": "kg"
+    },
+    {
+     "name": "G",
+     "expr": "6.6743e-11",
+     "unit": "N m^2/kg^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "energy",
+     "prompt": "How much energy is required to lift the {m:unit} space vehicle from Earth's surface to the height of the {h:unit} above the surface? {_0}{_u}",
+     "answer": "G * ME * m * (1 / RE - 1 / (RE + h * 1000))",
+     "unit": "J"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 14,
+  "section": "Gravitation",
+  "text": "With what speed must an object be launched from the Earth's surface so that it just reaches an altitude of 400 km? Neglect air resistance and the rotation of the Earth. The radius of the Earth is 6.371×10^6 m and its mass is 5.972×10^24 kg. Gravitational constant is G = 6.67×10^-11 N m^2/kg^2. (2717.93 m/s)",
+  "answer": "2717.93 m/s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p014-launch-speed-altitude",
+   "comment": "P14 — energy conservation for an object launched straight up that just reaches altitude h (no\ndrag, no rotation): ½ v0² − G M_E / R_E = −G M_E / (R_E + h), so\nv0 = sqrt(2 G M_E (1/R_E − 1/(R_E + h))). G, M_E and R_E are the constants the source states;\nh is given in km and converted inside the formula.",
+   "derived": [
+    {
+     "name": "RE",
+     "expr": "6.371e6",
+     "unit": "m"
+    },
+    {
+     "name": "ME",
+     "expr": "5.972e24",
+     "unit": "kg"
+    },
+    {
+     "name": "G",
+     "expr": "6.67e-11",
+     "unit": "N m^2/kg^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "launch-speed",
+     "prompt": "With what speed must an object be launched from the Earth's surface so that it just reaches an altitude of {h:unit}? {_0}{_u}",
+     "answer": "sqrt(2 * G * ME * (1 / RE - 1 / (RE + h * 1000)))",
+     "unit": "m/s"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 15,
+  "section": "Gravitation",
+  "text": "Calculate the initial speed of the object of mass 3 kg launched from the Earth’s surface and reaching the speed of 13800 m/s at a very far distance from the Earth. Neglect atmospheric friction and the rotation of the Earth. The Earth’s radius and mass are 6371 km and 5.97× 10^24 kg, respectively. Gravitational constant is 6.67 × 10^-11N⋅ m^2 /kg^2. (17760.73 m/s)",
+  "answer": "17760.73 m/s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p015-launch-speed-far-away",
+   "comment": "P15/P18 — energy conservation for an object launched from the Earth's surface (no drag, no\nrotation): ½ v0² − G M_E / R_E = ½ v∞². P15 gives the speed far away and asks for the launch\nspeed, v0 = sqrt(v∞² + 2 G M_E / R_E); P18 inverts it, v∞ = sqrt(v0² − 2 G M_E / R_E).\nG, M_E and R_E are the constants the source states (R_E in km, converted inside the formulas);\nthe object's mass (P15) does not enter the answer. The two parts use separate variables.",
+   "derived": [
+    {
+     "name": "RE",
+     "expr": "6371",
+     "unit": "km"
+    },
+    {
+     "name": "ME",
+     "expr": "5.97e24",
+     "unit": "kg"
+    },
+    {
+     "name": "G",
+     "expr": "6.67e-11",
+     "unit": "N m^2/kg^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "initial-speed",
+     "prompt": "Calculate the initial speed of the object of mass {m:unit} launched from the Earth's surface and reaching the speed of {vf:unit} at a very far distance from the Earth. {_0}{_u}",
+     "answer": "sqrt(vf^2 + 2 * G * ME / (RE * 1000))",
+     "unit": "m/s"
+    },
+    {
+     "id": "final-speed",
+     "prompt": "Initial speed of an object projected away from the surface of Earth is {v0:unit}. Find the object's speed when it is very far from the Earth. {_0}{_u}",
+     "answer": "sqrt(v0^2 - 2 * G * ME / (RE * 1000))",
+     "unit": "m/s"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 16,
+  "section": "Gravitation",
+  "text": "An object is projected straight up from the surface of the Earth with an initial speed of 8500 m/s. Neglecting air resistance and the rotation of the Earth, find the maximum height above the surface that it reaches. The radius of the Earth is 6.371×10^6 m and its mass is 5.97×10^24 kg. Gravitational constant is G = 6.67×10^-11 N m^2/kg^2. (8.72556e+06 m)",
+  "answer": "8.72556e+06 m",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p016-projectile-max-height",
+   "comment": "P16 — energy conservation for an object projected straight up (no drag, no rotation):\n½ v0² − G M_E / R_E = −G M_E / (R_E + h), so R_E + h = 1 / (1/R_E − v0² / (2 G M_E)).\nG, M_E and R_E are the constants the source states. The constraint keeps v0 below the escape\nspeed, so the object turns back at a finite height.",
+   "derived": [
+    {
+     "name": "RE",
+     "expr": "6.371e6",
+     "unit": "m"
+    },
+    {
+     "name": "ME",
+     "expr": "5.97e24",
+     "unit": "kg"
+    },
+    {
+     "name": "G",
+     "expr": "6.67e-11",
+     "unit": "N m^2/kg^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "max-height",
+     "prompt": "An object is projected straight up from the surface of the Earth with an initial speed of {v0:unit}. Find the maximum height above the surface that it reaches. {_0}{_u}",
+     "answer": "1 / (1 / RE - v0^2 / (2 * G * ME)) - RE",
+     "unit": "m"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 17,
+  "section": "Gravitation",
+  "text": "Three identical stars of mass 5.27×10^24 kg are located at the vertices of an equilateral triangle with side 6930 km. At what speed must they move if they all revolve under the influence of one another's gravitational force in a circular orbit circumscribing the triangle while still preserving the equilateral triangle? Gravitational constant is 6.67 × 10^-11N⋅ m^2 /kg^2. (7121.99 m/s)",
+  "answer": "7121.99 m/s",
+  "figures": [
+   "figures/unnamed_002_OTxQ.png"
+  ],
+  "scenario": {
+   "id": "phys161-e3-p017-three-star-orbit",
+   "comment": "P17 — three equal stars m at the vertices of an equilateral triangle of side a, circling the\ncircumscribed circle of radius r = a / √3. Each feels two pulls G m² / a² at ±30° to the centre:\nF = √3 G m² / a² = m v² / r, so v = sqrt(G m / a). The side is given in km and converted inside\nthe formula. The figure prints only the 120° angles of the geometry, no parameter values.",
+   "derived": [
+    {
+     "name": "G",
+     "expr": "6.67e-11",
+     "unit": "N m^2/kg^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "orbital-speed",
+     "prompt": "At what speed must they move if they all revolve under the influence of one another's gravitational force in a circular orbit circumscribing the triangle while still preserving the equilateral triangle? {_0}{_u}",
+     "answer": "sqrt(G * m / (a * 1000))",
+     "unit": "m/s"
+    }
+   ],
+   "fig": "figures/unnamed_002_OTxQ.png"
+  }
+ },
+ {
+  "n": 18,
+  "section": "Gravitation",
+  "text": "Initial speed of an object projected away from the surface of Earth is 1.9×10^4 m/s. Find the object's speed when it is very far from the Earth. Neglect atmospheric friction and the rotation of the Earth. The Earth’s radius and mass are 6371 km and 5.97× 10^24 kg, respectively. Gravitational constant is 6.67 × 10^-11N⋅ m^2 /kg^2. (15366.47 m/s)",
+  "answer": "15366.47 m/s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p015-launch-speed-far-away",
+   "comment": "P15/P18 — energy conservation for an object launched from the Earth's surface (no drag, no\nrotation): ½ v0² − G M_E / R_E = ½ v∞². P15 gives the speed far away and asks for the launch\nspeed, v0 = sqrt(v∞² + 2 G M_E / R_E); P18 inverts it, v∞ = sqrt(v0² − 2 G M_E / R_E).\nG, M_E and R_E are the constants the source states (R_E in km, converted inside the formulas);\nthe object's mass (P15) does not enter the answer. The two parts use separate variables.",
+   "derived": [
+    {
+     "name": "RE",
+     "expr": "6371",
+     "unit": "km"
+    },
+    {
+     "name": "ME",
+     "expr": "5.97e24",
+     "unit": "kg"
+    },
+    {
+     "name": "G",
+     "expr": "6.67e-11",
+     "unit": "N m^2/kg^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "initial-speed",
+     "prompt": "Calculate the initial speed of the object of mass {m:unit} launched from the Earth's surface and reaching the speed of {vf:unit} at a very far distance from the Earth. {_0}{_u}",
+     "answer": "sqrt(vf^2 + 2 * G * ME / (RE * 1000))",
+     "unit": "m/s"
+    },
+    {
+     "id": "final-speed",
+     "prompt": "Initial speed of an object projected away from the surface of Earth is {v0:unit}. Find the object's speed when it is very far from the Earth. {_0}{_u}",
+     "answer": "sqrt(v0^2 - 2 * G * ME / (RE * 1000))",
+     "unit": "m/s"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 19,
+  "section": "Gravitation",
+  "text": "Calculate the weight of a 50.3-kg person on the Moon where the gravitational acceleration is one-sixth that of the Earth. The gravitational acceleration on Earth is g = 9.8 m/s^2. (82.157 N)",
+  "answer": "82.157 N",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p019-moon-weight",
+   "comment": "P19/P20 — weight on the Moon, where the gravitational acceleration is g / 6: W = m g / 6 (P19),\nand back from the Moon weight to the mass, m = 6 W / g (P20). The one-sixth ratio is a fixed\nfact of the problem; only the person's mass (P19) and Moon weight (P20) are randomized.",
+   "derived": [
+    {
+     "name": "g",
+     "expr": "9.8",
+     "unit": "m/s^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "moon-weight",
+     "prompt": "Calculate the weight of a {m}-kg person on the Moon where the gravitational acceleration is one-sixth that of the Earth. {_0}{_u}",
+     "answer": "m * g / 6",
+     "unit": "N"
+    },
+    {
+     "id": "mass-from-moon-weight",
+     "prompt": "A person weighs {W:unit} on the Moon, where the gravitational acceleration is one-sixth that of the Earth. What is the mass of this person? {_0}{_u}",
+     "answer": "6 * W / g",
+     "unit": "kg"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 20,
+  "section": "Gravitation",
+  "text": "A person weighs 115 N on the Moon, where the gravitational acceleration is one-sixth that of the Earth. What is the mass of this person? The gravitational acceleration on Earth is g = 9.8 m/s^2. (70.4082 kg)",
+  "answer": "70.4082 kg",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p019-moon-weight",
+   "comment": "P19/P20 — weight on the Moon, where the gravitational acceleration is g / 6: W = m g / 6 (P19),\nand back from the Moon weight to the mass, m = 6 W / g (P20). The one-sixth ratio is a fixed\nfact of the problem; only the person's mass (P19) and Moon weight (P20) are randomized.",
+   "derived": [
+    {
+     "name": "g",
+     "expr": "9.8",
+     "unit": "m/s^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "moon-weight",
+     "prompt": "Calculate the weight of a {m}-kg person on the Moon where the gravitational acceleration is one-sixth that of the Earth. {_0}{_u}",
+     "answer": "m * g / 6",
+     "unit": "N"
+    },
+    {
+     "id": "mass-from-moon-weight",
+     "prompt": "A person weighs {W:unit} on the Moon, where the gravitational acceleration is one-sixth that of the Earth. What is the mass of this person? {_0}{_u}",
+     "answer": "6 * W / g",
+     "unit": "kg"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 21,
+  "section": "Gravitation",
+  "text": "Calculate the force of gravity of a 16 kg block resting on the earth. Mass of Earth is ME = 5.97 × 10^24 kg. The radius of the Earth is RE = 6.38 × 10^6 m. Gravitational constant is 6.67 × 10^-11N⋅ m^2 /kg^2. (156.5 N)",
+  "answer": "156.5 N",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p021-block-weight-earth",
+   "comment": "P21 — Newton's law of gravitation at the Earth's surface: F = G M_E m / R_E². G, M_E and R_E\nare the constants the source states; only the block's mass is randomized.",
+   "derived": [
+    {
+     "name": "ME",
+     "expr": "5.97e24",
+     "unit": "kg"
+    },
+    {
+     "name": "RE",
+     "expr": "6.38e6",
+     "unit": "m"
+    },
+    {
+     "name": "G",
+     "expr": "6.67e-11",
+     "unit": "N m^2/kg^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "gravity-force",
+     "prompt": "Calculate the force of gravity of a {m:unit} block resting on the earth. {_0}{_u}",
+     "answer": "G * ME * m / RE^2",
+     "unit": "N"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 22,
+  "section": "Gravitation",
+  "text": "Assume that the satellite orbits a planet in a circular orbit. From the observed orbital period of 28.4 days, calculate the distance of the satellite from the center of the planet. Assume that the satellite's motion is determined solely by the gravitational force exerted on it by the planet, and the mass of the planet is m = 4 × 10^24 kg. Gravitational constant is 6.67 × 10^-11N⋅ m^2 /kg^2. (343951138.39 m)",
+  "answer": "343951138.39 m",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p022-satellite-orbit-radius",
+   "comment": "P22 — circular orbit: G m / r² = (2π / T)² r, so r = (G m T² / (4π²))^(1/3). The period is\ngiven in days and converted inside the formula.",
+   "derived": [
+    {
+     "name": "G",
+     "expr": "6.67e-11",
+     "unit": "N m^2/kg^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "orbit-radius",
+     "prompt": "From the observed orbital period of {T:unit}, calculate the distance of the satellite from the center of the planet. {_0}{_u}",
+     "answer": "(G * m * (T * 86400)^2 / (4 * pi^2))^(1 / 3)",
+     "unit": "m"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 23,
+  "section": "Gravitation",
+  "text": "A satellite orbits a planet of mass 3×10^24 kg in a circular orbit of radius 3.7×10^8 m. Calculate the orbital period of the satellite. Gravitational constant is G = 6.67×10^-11 N m^2/kg^2. (3.16125e+06 s)",
+  "answer": "3.16125e+06 s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p023-satellite-orbit-period",
+   "comment": "P23 — circular orbit: G M / r² = (2π / T)² r, so T = 2π sqrt(r³ / (G M)) (Kepler's third law).",
+   "derived": [
+    {
+     "name": "G",
+     "expr": "6.67e-11",
+     "unit": "N m^2/kg^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "period",
+     "prompt": "A satellite orbits a planet of mass {M:unit} in a circular orbit of radius {r:unit}. Calculate the orbital period of the satellite. {_0}{_u}",
+     "answer": "2 * pi * sqrt(r^3 / (G * M))",
+     "unit": "s"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 24,
+  "section": "Gravitation",
+  "text": "What is the escape speed from a 260-km-diameter asteroid with a density of 2700 kg/m3? Gravitational constant is 6.67 × 10^-11N⋅ m^2 /kg^2. (159.68 m/s)",
+  "answer": "159.68 m/s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p024-asteroid-escape-speed",
+   "comment": "P24/P25 — a uniform spherical asteroid of diameter D and density ρ, so M = (4/3) π R³ ρ with\nR = D / 2. P24: escape speed v = sqrt(2 G M / R) = R sqrt(8π G ρ / 3). P25: surface gravity\ng = G M / R² = (4/3) π G ρ R. The diameter is given in km and converted inside the formulas.\nThe base canonical values are P24's; P25 overrides them.",
+   "derived": [
+    {
+     "name": "G",
+     "expr": "6.67e-11",
+     "unit": "N m^2/kg^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "escape-speed",
+     "prompt": "What is the escape speed from a {D}-km-diameter asteroid with a density of {rho:unit}? {_0}{_u}",
+     "answer": "(D * 1000 / 2) * sqrt(8 * pi * G * rho / 3)",
+     "unit": "m/s"
+    },
+    {
+     "id": "surface-gravity",
+     "prompt": "What is the gravitational acceleration at the surface of a {D}-km-diameter asteroid with a density of {rho:unit}? {_0}{_u}",
+     "answer": "4 / 3 * pi * G * rho * (D * 1000 / 2)",
+     "unit": "m/s^2"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 25,
+  "section": "Gravitation",
+  "text": "What is the gravitational acceleration at the surface of a 155-km-diameter asteroid with a density of 2650 kg/m^3? Gravitational constant is G = 6.67×10^-11 N m^2/kg^2. (0.0573802 m/s^2)",
+  "answer": "0.0573802 m/s^2",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p024-asteroid-escape-speed",
+   "comment": "P24/P25 — a uniform spherical asteroid of diameter D and density ρ, so M = (4/3) π R³ ρ with\nR = D / 2. P24: escape speed v = sqrt(2 G M / R) = R sqrt(8π G ρ / 3). P25: surface gravity\ng = G M / R² = (4/3) π G ρ R. The diameter is given in km and converted inside the formulas.\nThe base canonical values are P24's; P25 overrides them.",
+   "derived": [
+    {
+     "name": "G",
+     "expr": "6.67e-11",
+     "unit": "N m^2/kg^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "escape-speed",
+     "prompt": "What is the escape speed from a {D}-km-diameter asteroid with a density of {rho:unit}? {_0}{_u}",
+     "answer": "(D * 1000 / 2) * sqrt(8 * pi * G * rho / 3)",
+     "unit": "m/s"
+    },
+    {
+     "id": "surface-gravity",
+     "prompt": "What is the gravitational acceleration at the surface of a {D}-km-diameter asteroid with a density of {rho:unit}? {_0}{_u}",
+     "answer": "4 / 3 * pi * G * rho * (D * 1000 / 2)",
+     "unit": "m/s^2"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 26,
+  "section": "Gravitation",
+  "text": "Comets travel around the sun in its elliptical orbits with large eccentricities. If a comet has speed 2.4 × 10^4 m/s when at a distance of 2.7 × 10^11 m from the center of the sun, what is its speed when at a distance of 5.1 × 10^10 m? Gravitational constant is 6.67 × 10^-11N⋅ m^2 / kg^2. Mass of the sun is 1.989 × 10^30 kg. (69252.98 m/s)",
+  "answer": "69252.98 m/s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p026-comet-speed",
+   "comment": "P26 — energy conservation on the comet's orbit around the sun:\n½ v1² − G M_S / r1 = ½ v2² − G M_S / r2, so v2 = sqrt(v1² + 2 G M_S (1/r2 − 1/r1)).\nG and M_S are the constants the source states. r2 < r1 in every draw (the comet falls inward),\nand the constraint keeps the total energy negative so the orbit stays a (bound) ellipse.",
+   "derived": [
+    {
+     "name": "G",
+     "expr": "6.67e-11",
+     "unit": "N m^2/kg^2"
+    },
+    {
+     "name": "MS",
+     "expr": "1.989e30",
+     "unit": "kg"
+    }
+   ],
+   "parts": [
+    {
+     "id": "speed",
+     "prompt": "If a comet has speed {v1:unit} when at a distance of {r1:unit} from the center of the sun, what is its speed when at a distance of {r2:unit}? {_0}{_u}",
+     "answer": "sqrt(v1^2 + 2 * G * MS * (1 / r2 - 1 / r1))",
+     "unit": "m/s"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 27,
+  "section": "Gravitation",
+  "text": "A comet travels around the Sun in a highly eccentric elliptical orbit. It has a speed of 2.2×10^4 m/s when it is at a distance of 2.35×10^11 m from the center of the Sun. At what distance from the center of the Sun is its speed 6.1×10^4 m/s? Gravitational constant is G = 6.67×10^-11 N m^2/kg^2. The mass of the Sun is 1.989×10^30 kg. (6.07714e+10 m)",
+  "answer": "6.07714e+10 m",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p027-comet-distance",
+   "comment": "P27 — energy conservation on the comet's orbit around the Sun:\n½ v1² − G M_S / r1 = ½ v2² − G M_S / r2, so 1/r2 = 1/r1 + (v2² − v1²) / (2 G M_S).\nG and M_S are the constants the source states. v2 > v1 in every draw (the comet is closer to\nthe Sun), and the constraint keeps the total energy negative so the orbit stays a bound ellipse.",
+   "derived": [
+    {
+     "name": "G",
+     "expr": "6.67e-11",
+     "unit": "N m^2/kg^2"
+    },
+    {
+     "name": "MS",
+     "expr": "1.989e30",
+     "unit": "kg"
+    }
+   ],
+   "parts": [
+    {
+     "id": "distance",
+     "prompt": "It has a speed of {v1:unit} when it is at a distance of {r1:unit} from the center of the Sun. At what distance from the center of the Sun is its speed {v2:unit}? {_0}{_u}",
+     "answer": "1 / (1 / r1 + (v2^2 - v1^2) / (2 * G * MS))",
+     "unit": "m"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 28,
+  "section": "Gravitation",
+  "text": "Two identical stars with mass 1 × 10^30 kg orbit around their center of mass. Each orbit is circular and has a radius of 8 × 10^7 km, so that the two stars are always on opposite sides of the circle. Find the gravitational force of one star on the other. Gravitational constant is 6.67 × 10^-11N⋅ m^2 /kg^2. (2.6055E+27 N)",
+  "answer": "2.6055E+27 N",
+  "figures": [
+   "figures/unnamed_007_OTxQ.png"
+  ],
+  "scenario": {
+   "id": "phys161-e3-p028-binary-star-force",
+   "comment": "P28 — two equal stars on opposite sides of a circular orbit of radius R about their centre of\nmass are 2R apart: F = G m² / (2R)². R is given in km and converted inside the formula.\nThe figure prints only symbols (M, R, cm), so every parameter is randomized.",
+   "derived": [
+    {
+     "name": "G",
+     "expr": "6.67e-11",
+     "unit": "N m^2/kg^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "force",
+     "prompt": "Find the gravitational force of one star on the other. {_0}{_u}",
+     "answer": "G * m^2 / (2 * R * 1000)^2",
+     "unit": "N"
+    }
+   ],
+   "fig": "figures/unnamed_007_OTxQ.png"
+  }
+ },
+ {
+  "n": 29,
+  "section": "Gravitation",
+  "text": "Two identical stars with mass 1x10^30 kg orbit around their center of mass. Each orbit is circular and has a radius of 5 × 10^7 km, so that the two stars are always on opposite sides of the circle. Find the orbital speed of each star. Gravitational constant is 6.67 × 10^-11N⋅ m^2 /kg^2. (18261.98 m/s)",
+  "answer": "18261.98 m/s",
+  "figures": [
+   "figures/unnamed_007_OTxQ.png"
+  ],
+  "scenario": {
+   "id": "phys161-e3-p029-binary-star-orbit",
+   "comment": "P29/P30/P31 — two equal stars on opposite sides of a circular orbit of radius R about their\ncentre of mass are 2R apart, so G m² / (2R)² = m v² / R gives v = sqrt(G m / (4R)) (P29), the\nperiod is T = 2πR / v = 4π sqrt(R³ / (G m)) (P30), and the total energy\nE = 2·½ m v² − G m² / (2R) = −G m² / (4R) must be supplied to separate them to infinity (P31).\nSame situation and figure as P28 (phys161-e3-p018-binary-star-force), with the same variables;\nthe mass range is wider because P30/P31 use 2 × 10^30 kg. R is given in km and converted inside\nthe formulas. The base canonical values are P29's; P30 and P31 override them with their own.",
+   "derived": [
+    {
+     "name": "G",
+     "expr": "6.67e-11",
+     "unit": "N m^2/kg^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "orbital-speed",
+     "prompt": "Find the orbital speed of each star. {_0}{_u}",
+     "answer": "sqrt(G * m / (4 * R * 1000))",
+     "unit": "m/s"
+    },
+    {
+     "id": "period",
+     "prompt": "Find the period of the orbit. {_0}{_u}",
+     "answer": "4 * pi * sqrt((R * 1000)^3 / (G * m))",
+     "unit": "s"
+    },
+    {
+     "id": "separation-energy",
+     "prompt": "How much energy would be required to separate the two stars to infinity? {_0}{_u}",
+     "answer": "G * m^2 / (4 * R * 1000)",
+     "unit": "J"
+    }
+   ],
+   "fig": "figures/unnamed_007_OTxQ.png"
+  }
+ },
+ {
+  "n": 30,
+  "section": "Gravitation",
+  "text": "Two identical stars with mass 2 × 10^30 kg orbit around their center of mass. Each orbit is circular and has a radius of 8 × 10^7 km, so that the two stars are always on opposite sides of the circle. Find the period of the orbit. Gravitational constant is 6.67 × 10^-11N⋅ m^2 /kg^2. (24618802.81 s)",
+  "answer": "24618802.81 s",
+  "figures": [
+   "figures/unnamed_007_OTxQ.png"
+  ],
+  "scenario": {
+   "id": "phys161-e3-p029-binary-star-orbit",
+   "comment": "P29/P30/P31 — two equal stars on opposite sides of a circular orbit of radius R about their\ncentre of mass are 2R apart, so G m² / (2R)² = m v² / R gives v = sqrt(G m / (4R)) (P29), the\nperiod is T = 2πR / v = 4π sqrt(R³ / (G m)) (P30), and the total energy\nE = 2·½ m v² − G m² / (2R) = −G m² / (4R) must be supplied to separate them to infinity (P31).\nSame situation and figure as P28 (phys161-e3-p018-binary-star-force), with the same variables;\nthe mass range is wider because P30/P31 use 2 × 10^30 kg. R is given in km and converted inside\nthe formulas. The base canonical values are P29's; P30 and P31 override them with their own.",
+   "derived": [
+    {
+     "name": "G",
+     "expr": "6.67e-11",
+     "unit": "N m^2/kg^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "orbital-speed",
+     "prompt": "Find the orbital speed of each star. {_0}{_u}",
+     "answer": "sqrt(G * m / (4 * R * 1000))",
+     "unit": "m/s"
+    },
+    {
+     "id": "period",
+     "prompt": "Find the period of the orbit. {_0}{_u}",
+     "answer": "4 * pi * sqrt((R * 1000)^3 / (G * m))",
+     "unit": "s"
+    },
+    {
+     "id": "separation-energy",
+     "prompt": "How much energy would be required to separate the two stars to infinity? {_0}{_u}",
+     "answer": "G * m^2 / (4 * R * 1000)",
+     "unit": "J"
+    }
+   ],
+   "fig": "figures/unnamed_007_OTxQ.png"
+  }
+ },
+ {
+  "n": 31,
+  "section": "Gravitation",
+  "text": "Two identical stars with mass 2 × 10^30 kg orbit around their center of mass. Each orbit is circular and has a radius of 5 × 10^7 km, so that the two stars are always on opposite sides of the circle. How much energy would be required to separate the two stars to infinity? Gravitational constant is 6.67 × 10^-11N⋅ m^2 /kg^2. (1.334E+39 J)",
+  "answer": "1.334E+39 J",
+  "figures": [
+   "figures/unnamed_007_OTxQ.png"
+  ],
+  "scenario": {
+   "id": "phys161-e3-p029-binary-star-orbit",
+   "comment": "P29/P30/P31 — two equal stars on opposite sides of a circular orbit of radius R about their\ncentre of mass are 2R apart, so G m² / (2R)² = m v² / R gives v = sqrt(G m / (4R)) (P29), the\nperiod is T = 2πR / v = 4π sqrt(R³ / (G m)) (P30), and the total energy\nE = 2·½ m v² − G m² / (2R) = −G m² / (4R) must be supplied to separate them to infinity (P31).\nSame situation and figure as P28 (phys161-e3-p018-binary-star-force), with the same variables;\nthe mass range is wider because P30/P31 use 2 × 10^30 kg. R is given in km and converted inside\nthe formulas. The base canonical values are P29's; P30 and P31 override them with their own.",
+   "derived": [
+    {
+     "name": "G",
+     "expr": "6.67e-11",
+     "unit": "N m^2/kg^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "orbital-speed",
+     "prompt": "Find the orbital speed of each star. {_0}{_u}",
+     "answer": "sqrt(G * m / (4 * R * 1000))",
+     "unit": "m/s"
+    },
+    {
+     "id": "period",
+     "prompt": "Find the period of the orbit. {_0}{_u}",
+     "answer": "4 * pi * sqrt((R * 1000)^3 / (G * m))",
+     "unit": "s"
+    },
+    {
+     "id": "separation-energy",
+     "prompt": "How much energy would be required to separate the two stars to infinity? {_0}{_u}",
+     "answer": "G * m^2 / (4 * R * 1000)",
+     "unit": "J"
+    }
+   ],
+   "fig": "figures/unnamed_007_OTxQ.png"
+  }
+ },
+ {
+  "n": 32,
+  "section": "Gravitation",
+  "text": "In deep space, two uniform spheres, one of mass 24 kg and the other with mass 107 kg, are released from rest with their centers 40 m apart. They accelerate toward each other because of their mutual gravitational attraction. Find the speed of the sphere with mass 24 kg, when their centers are 25 m apart. Gravitational constant is 6.67 × 10^-11N⋅ m^2 /kg^2. (1.32285E-5 m/s)",
+  "answer": "1.32285E-5 m/s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p032-spheres-deep-space",
+   "comment": "P32–P35 — two spheres released from rest in deep space. Momentum stays zero,\nm1 v1 = m2 v2, and energy conservation gives ½ m1 v1² + ½ m2 v2² = G m1 m2 (1/d2 − 1/d), so the\nrelative speed is v_rel = sqrt(2 G (m1 + m2) (1/d2 − 1/d)) (P33, P34) and the lighter sphere moves at\nv1 = m2 v_rel / (m1 + m2) (P32). The centre of mass stays at m2 d / (m1 + m2) from the initial\ncentre of m1; the spheres touch when their centres are 2r apart, at m2 (d − 2r) / (m1 + m2) + r\n(P35, which does not need G). P35's radius clause is moved from the narrative into its prompt.\nThe base canonical values are P32's; P33, P34 and P35 override them with their own numbers.",
+   "derived": [
+    {
+     "name": "G",
+     "expr": "6.67e-11",
+     "unit": "N m^2/kg^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "speed-lighter",
+     "prompt": "Find the speed of the sphere with mass {m1:unit}, when their centers are {d2:unit} apart. {_0}{_u}",
+     "answer": "m2 * sqrt(2 * G * (1 / d2 - 1 / d) / (m1 + m2))",
+     "unit": "m/s"
+    },
+    {
+     "id": "relative-speed",
+     "prompt": "Find the magnitude of the relative velocity with which one sphere is approaching the other, when their centers are {d2:unit} apart. {_0}{_u}",
+     "answer": "sqrt(2 * G * (m1 + m2) * (1 / d2 - 1 / d))",
+     "unit": "m/s"
+    },
+    {
+     "id": "collision-point",
+     "prompt": "The two spheres have equal radii $r = {r:unit}$. How far from the initial position of the center of the {m1:unit} sphere do the surfaces of the two spheres collide? {_0}{_u}",
+     "answer": "m2 * (d - 2 * r) / (m1 + m2) + r",
+     "unit": "m"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 33,
+  "section": "Gravitation",
+  "text": "In deep space, two uniform spheres, one of mass 29 kg and the other of mass 112 kg, are released from rest with their centers 43 m apart. They accelerate toward each other because of their mutual gravitational attraction. Find the speed at which they approach each other when their centers are 26.5 m apart. Gravitational constant is G = 6.67×10^-11 N m^2/kg^2. (1.65034e-05 m/s)",
+  "answer": "1.65034e-05 m/s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p032-spheres-deep-space",
+   "comment": "P32–P35 — two spheres released from rest in deep space. Momentum stays zero,\nm1 v1 = m2 v2, and energy conservation gives ½ m1 v1² + ½ m2 v2² = G m1 m2 (1/d2 − 1/d), so the\nrelative speed is v_rel = sqrt(2 G (m1 + m2) (1/d2 − 1/d)) (P33, P34) and the lighter sphere moves at\nv1 = m2 v_rel / (m1 + m2) (P32). The centre of mass stays at m2 d / (m1 + m2) from the initial\ncentre of m1; the spheres touch when their centres are 2r apart, at m2 (d − 2r) / (m1 + m2) + r\n(P35, which does not need G). P35's radius clause is moved from the narrative into its prompt.\nThe base canonical values are P32's; P33, P34 and P35 override them with their own numbers.",
+   "derived": [
+    {
+     "name": "G",
+     "expr": "6.67e-11",
+     "unit": "N m^2/kg^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "speed-lighter",
+     "prompt": "Find the speed of the sphere with mass {m1:unit}, when their centers are {d2:unit} apart. {_0}{_u}",
+     "answer": "m2 * sqrt(2 * G * (1 / d2 - 1 / d) / (m1 + m2))",
+     "unit": "m/s"
+    },
+    {
+     "id": "relative-speed",
+     "prompt": "Find the magnitude of the relative velocity with which one sphere is approaching the other, when their centers are {d2:unit} apart. {_0}{_u}",
+     "answer": "sqrt(2 * G * (m1 + m2) * (1 / d2 - 1 / d))",
+     "unit": "m/s"
+    },
+    {
+     "id": "collision-point",
+     "prompt": "The two spheres have equal radii $r = {r:unit}$. How far from the initial position of the center of the {m1:unit} sphere do the surfaces of the two spheres collide? {_0}{_u}",
+     "answer": "m2 * (d - 2 * r) / (m1 + m2) + r",
+     "unit": "m"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 34,
+  "section": "Gravitation",
+  "text": "In deep space, two uniform spheres, one of mass 25 kg and the other with mass 110 kg, are released from rest with their centers 38 m apart. They accelerate toward each other because of their mutual gravitational attraction. Find the magnitude of the relative velocity with which one sphere is approaching the other, when their centers are 20 m apart. Gravitational constant is 6.67 × 10^-11N⋅ m^2 /kg^2. (2.065E-5 m/s)",
+  "answer": "2.065E-5 m/s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p032-spheres-deep-space",
+   "comment": "P32–P35 — two spheres released from rest in deep space. Momentum stays zero,\nm1 v1 = m2 v2, and energy conservation gives ½ m1 v1² + ½ m2 v2² = G m1 m2 (1/d2 − 1/d), so the\nrelative speed is v_rel = sqrt(2 G (m1 + m2) (1/d2 − 1/d)) (P33, P34) and the lighter sphere moves at\nv1 = m2 v_rel / (m1 + m2) (P32). The centre of mass stays at m2 d / (m1 + m2) from the initial\ncentre of m1; the spheres touch when their centres are 2r apart, at m2 (d − 2r) / (m1 + m2) + r\n(P35, which does not need G). P35's radius clause is moved from the narrative into its prompt.\nThe base canonical values are P32's; P33, P34 and P35 override them with their own numbers.",
+   "derived": [
+    {
+     "name": "G",
+     "expr": "6.67e-11",
+     "unit": "N m^2/kg^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "speed-lighter",
+     "prompt": "Find the speed of the sphere with mass {m1:unit}, when their centers are {d2:unit} apart. {_0}{_u}",
+     "answer": "m2 * sqrt(2 * G * (1 / d2 - 1 / d) / (m1 + m2))",
+     "unit": "m/s"
+    },
+    {
+     "id": "relative-speed",
+     "prompt": "Find the magnitude of the relative velocity with which one sphere is approaching the other, when their centers are {d2:unit} apart. {_0}{_u}",
+     "answer": "sqrt(2 * G * (m1 + m2) * (1 / d2 - 1 / d))",
+     "unit": "m/s"
+    },
+    {
+     "id": "collision-point",
+     "prompt": "The two spheres have equal radii $r = {r:unit}$. How far from the initial position of the center of the {m1:unit} sphere do the surfaces of the two spheres collide? {_0}{_u}",
+     "answer": "m2 * (d - 2 * r) / (m1 + m2) + r",
+     "unit": "m"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 35,
+  "section": "Gravitation",
+  "text": "In deep space, two uniform spheres, one of mass 20 kg and the other with mass 105 kg, of equal radii r = 0.15 m, are released from rest with their centers 45 m apart. They accelerate toward each other because of their mutual gravitational attraction. How far from the initial position of the center of the 20 kg sphere do the surfaces of the two spheres collide? (37.698 m)",
+  "answer": "37.698 m",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p032-spheres-deep-space",
+   "comment": "P32–P35 — two spheres released from rest in deep space. Momentum stays zero,\nm1 v1 = m2 v2, and energy conservation gives ½ m1 v1² + ½ m2 v2² = G m1 m2 (1/d2 − 1/d), so the\nrelative speed is v_rel = sqrt(2 G (m1 + m2) (1/d2 − 1/d)) (P33, P34) and the lighter sphere moves at\nv1 = m2 v_rel / (m1 + m2) (P32). The centre of mass stays at m2 d / (m1 + m2) from the initial\ncentre of m1; the spheres touch when their centres are 2r apart, at m2 (d − 2r) / (m1 + m2) + r\n(P35, which does not need G). P35's radius clause is moved from the narrative into its prompt.\nThe base canonical values are P32's; P33, P34 and P35 override them with their own numbers.",
+   "derived": [
+    {
+     "name": "G",
+     "expr": "6.67e-11",
+     "unit": "N m^2/kg^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "speed-lighter",
+     "prompt": "Find the speed of the sphere with mass {m1:unit}, when their centers are {d2:unit} apart. {_0}{_u}",
+     "answer": "m2 * sqrt(2 * G * (1 / d2 - 1 / d) / (m1 + m2))",
+     "unit": "m/s"
+    },
+    {
+     "id": "relative-speed",
+     "prompt": "Find the magnitude of the relative velocity with which one sphere is approaching the other, when their centers are {d2:unit} apart. {_0}{_u}",
+     "answer": "sqrt(2 * G * (m1 + m2) * (1 / d2 - 1 / d))",
+     "unit": "m/s"
+    },
+    {
+     "id": "collision-point",
+     "prompt": "The two spheres have equal radii $r = {r:unit}$. How far from the initial position of the center of the {m1:unit} sphere do the surfaces of the two spheres collide? {_0}{_u}",
+     "answer": "m2 * (d - 2 * r) / (m1 + m2) + r",
+     "unit": "m"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 36,
+  "section": "Gravitation",
+  "text": "The space station makes 15.45 revolutions per day in its orbit around the earth. Assuming a circular orbit, how high is this satellite above the surface of the earth? The radius of Earth is 6.371×10^6 m. Mass of Earth is 5.972×10^24 kg. The gravitational constant is 6.6743 × 10^-11N⋅ m^2 /kg^2. (438451.032 m)",
+  "answer": "438451.032 m",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p036-space-station-altitude",
+   "comment": "P36 — circular orbit: G M_E / r² = (2π / T)² r with T = 1 day / n, so\nr = (G M_E T² / (4π²))^(1/3) and the altitude is h = r − R_E. G, M_E and R_E are the constants\nthe source states. The upper end of the range (16 rev/day) keeps the orbit about 280 km above\nthe surface; above ~17 rev/day the orbit would lie inside the Earth.",
+   "derived": [
+    {
+     "name": "RE",
+     "expr": "6.371e6",
+     "unit": "m"
+    },
+    {
+     "name": "ME",
+     "expr": "5.972e24",
+     "unit": "kg"
+    },
+    {
+     "name": "G",
+     "expr": "6.6743e-11",
+     "unit": "N m^2/kg^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "altitude",
+     "prompt": "Assuming a circular orbit, how high is this satellite above the surface of the earth? {_0}{_u}",
+     "answer": "(G * ME * (86400 / n)^2 / (4 * pi^2))^(1 / 3) - RE",
+     "unit": "m"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 37,
+  "section": "Oscillations",
+  "text": "A 54 cm simple pendulum makes 30 complete swings in 54 seconds on an unknown planet. What is the gravitational acceleration of the planet? (6.5797 m/s^2)",
+  "answer": "6.5797 m/s^2",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p037-pendulum-unknown-planet",
+   "comment": "P37 — a simple pendulum of length L makes N complete swings in time t, so its period is\nT = t / N, and T = 2π sqrt(L / g) gives g = 4π² L / T² = 4π² L N² / t². L is in cm.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "gravity",
+     "prompt": "What is the gravitational acceleration of the planet? {_0}{_u}",
+     "answer": "4 * pi^2 * (L / 100) * N^2 / t^2",
+     "unit": "m/s^2"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 38,
+  "section": "Oscillations",
+  "text": "A simple pendulum makes 28 complete swings in 58.5 seconds at a place where the gravitational acceleration is 11.3 m/s^2. What is the length of the pendulum? (1.24944 m)",
+  "answer": "1.24944 m",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p038-pendulum-length-swings",
+   "comment": "P38 — a simple pendulum makes N complete swings in time t, so its period is T = t / N, and\nT = 2π sqrt(L / g) gives L = g T² / (4π²) = g t² / (4π² N²). The local g is part of the data.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "length",
+     "prompt": "A simple pendulum makes {N} complete swings in {t} seconds at a place where the gravitational acceleration is {g:unit}. What is the length of the pendulum? {_0}{_u}",
+     "answer": "g * (t / N)^2 / (4 * pi^2)",
+     "unit": "m"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 39,
+  "section": "Oscillations",
+  "text": "A spring is mounted horizontally, with its left end fixed. A spring balance attached to the free end and pulled toward the right indicates that the stretching force is proportional to the displacement, and a force of 6 N causes a displacement of 0.05 m. We replace the spring balance with a 0.6 kg block, pull it 0.01 m to the right along a frictionless surface, and release it from rest. Find the period of the resulting oscillation. (0.444 s)",
+  "answer": "0.444 s",
+  "figures": [
+   "figures/unnamed_010_OTxQ.png"
+  ],
+  "scenario": {
+   "id": "phys161-e3-p039-spring-balance-period",
+   "comment": "P39 — the spring balance gives the force constant k = F / d; the block of mass m then\noscillates with period T = 2π sqrt(m / k) = 2π sqrt(m d / F). The release distance (the\namplitude) does not affect the period, but it is part of the problem's data.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "period",
+     "prompt": "Find the period of the resulting oscillation. {_0}{_u}",
+     "answer": "2 * pi * sqrt(m * d / F)",
+     "unit": "s"
+    }
+   ],
+   "fig": "figures/unnamed_010_OTxQ.png"
+  }
+ },
+ {
+  "n": 40,
+  "section": "Oscillations",
+  "text": "A spring is mounted horizontally, with its left end fixed. A block of mass m = 0.3 kg is attached to the free end, pulled toward the right and released from rest at x = 0.02 m. Force constant of the spring is k = 152 N/m. Find the maximum velocity attained by the oscillating block. (0.4502 m/s)",
+  "answer": "0.4502 m/s",
+  "figures": [
+   "figures/unnamed_010_OTxQ.png"
+  ],
+  "scenario": {
+   "id": "phys161-e3-p040-spring-block-max-speed",
+   "comment": "P40 — a block released from rest at x0 oscillates with amplitude A = x0, so its maximum speed\n(at the equilibrium position) is v_max = ω A = A sqrt(k / m).",
+   "derived": null,
+   "parts": [
+    {
+     "id": "max-speed",
+     "prompt": "Find the maximum velocity attained by the oscillating block. {_0}{_u}",
+     "answer": "x0 * sqrt(k / m)",
+     "unit": "m/s"
+    }
+   ],
+   "fig": "figures/unnamed_010_OTxQ.png"
+  }
+ },
+ {
+  "n": 41,
+  "section": "Oscillations",
+  "text": "A mass M is suspended from a spring and oscillates with a period of 0.753 s. Each complete oscillation results in an amplitude reduction of a factor of 0.961 due to a small velocity dependent frictional effect. Calculate the time it takes for the total energy of the oscillator to decrease to 46% of its initial value. (7.349 s)",
+  "answer": "7.349 s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p041-damped-energy-decay",
+   "comment": "P41 — each cycle multiplies the amplitude by r, so the energy (∝ A²) by r². The energy\nfalls to the fraction p after n = ln p / (2 ln r) cycles, i.e. after t = n T = T ln p / (2 ln r).",
+   "derived": null,
+   "parts": [
+    {
+     "id": "decay-time",
+     "prompt": "Calculate the time it takes for the total energy of the oscillator to decrease to {pct}% of its initial value. {_0}{_u}",
+     "answer": "T * ln(pct / 100) / (2 * ln(r))",
+     "unit": "s"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 42,
+  "section": "Oscillations",
+  "text": "A mass is suspended from a spring and oscillates with a period of 0.7 s. Each complete oscillation reduces the amplitude by a factor of 0.94 because of a small velocity-dependent frictional effect. How many complete oscillations does it take for the total energy of the oscillator to decrease to 0.39 of its initial value? (7.60891)",
+  "answer": "7.60891",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p042-damped-oscillation-count",
+   "comment": "P42 — each cycle multiplies the amplitude by r, so the energy (∝ A²) by r². The energy falls to\nthe fraction p after n = ln p / (2 ln r) cycles; the source prints this n unrounded. The period\ndoes not enter the answer.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "oscillations",
+     "prompt": "How many complete oscillations does it take for the total energy of the oscillator to decrease to {p} of its initial value? {_0}",
+     "answer": "ln(p) / (2 * ln(r))",
+     "unit": null
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 43,
+  "section": "Oscillations",
+  "text": "Four passengers with combined mass 260 kg compress the springs of a car by 5 cm when they enter it. If the loaded car has a period of vibration of 1 s, what is the mass of the car? Ignore damping. The gravitational acceleration is g = 9.8 m/s^2. (1030.83 kg)",
+  "answer": "1030.83 kg",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p043-car-mass-passengers",
+   "comment": "P43 — the passengers' weight fixes the spring constant, k = m g / d (d in cm). The loaded car\n(car + passengers) has period T = 2π sqrt((M + m) / k), so M = k T² / (4π²) − m.\nThe period is printed as a whole \"1 s\"; other whole-second periods would give absurd car\nmasses (T = 2 s quadruples the loaded mass), so it is kept fixed (a single-option choice).",
+   "derived": [
+    {
+     "name": "g",
+     "expr": "9.8",
+     "unit": "m/s^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "car-mass",
+     "prompt": "If the loaded car has a period of vibration of {T:unit}, what is the mass of the car? Ignore damping. {_0}{_u}",
+     "answer": "m * g / (d / 100) * T^2 / (4 * pi^2) - m",
+     "unit": "kg"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 44,
+  "section": "Oscillations",
+  "text": "A body oscillates in a simple harmonic motion with its position described by the following formula: x=Acos(ωt+φ), where A=8.2, ω=1.127, and φ=0.288. Assume all quantities are given in SI units. Calculate the period of oscillations. (5.575 s)",
+  "answer": "5.575 s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p044-shm-cosine-period-energy",
+   "comment": "P44/P45 — simple harmonic motion x = A cos(ωt + φ), all quantities in SI units (printed as\nbare numbers). Period T = 2π / ω (P44); with Hooke's law k = m ω², the total energy is\nE = ½ k A² = ½ m ω² A² (P45, m given in g). The phase φ affects neither answer.\nThe base canonical values are P44's; P45 overrides them with its own.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "period",
+     "prompt": "Calculate the period of oscillations. {_0}{_u}",
+     "answer": "2 * pi / omega",
+     "unit": "s"
+    },
+    {
+     "id": "total-energy",
+     "prompt": "Assuming the oscillations are governed by Hooke's law and the body's mass is {m:unit}, calculate the total energy of the oscillator. {_0}{_u}",
+     "answer": "0.5 * (m / 1000) * omega^2 * A^2",
+     "unit": "J"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 45,
+  "section": "Oscillations",
+  "text": "A body oscillates in a simple harmonic motion with its position described by the following formula: x=Acos(ωt+φ), where A=8.1, ω=1.379, and φ=0.337. Assume all quantities are given in SI units. Assuming the oscillations are governed by Hooke's law and the body's mass is 790 g, calculate the total energy of the oscillator. (49.28 J)",
+  "answer": "49.28 J",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p044-shm-cosine-period-energy",
+   "comment": "P44/P45 — simple harmonic motion x = A cos(ωt + φ), all quantities in SI units (printed as\nbare numbers). Period T = 2π / ω (P44); with Hooke's law k = m ω², the total energy is\nE = ½ k A² = ½ m ω² A² (P45, m given in g). The phase φ affects neither answer.\nThe base canonical values are P44's; P45 overrides them with its own.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "period",
+     "prompt": "Calculate the period of oscillations. {_0}{_u}",
+     "answer": "2 * pi / omega",
+     "unit": "s"
+    },
+    {
+     "id": "total-energy",
+     "prompt": "Assuming the oscillations are governed by Hooke's law and the body's mass is {m:unit}, calculate the total energy of the oscillator. {_0}{_u}",
+     "answer": "0.5 * (m / 1000) * omega^2 * A^2",
+     "unit": "J"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 46,
+  "section": "Oscillations",
+  "text": "A light vertically mounted helical spring is stretched by 6.9 cm by a mass of 171 g hang at spring's end. This mass is then replaced with a new 476 g bob that is set into simple harmonic motion. Calculate its period. The gravitational acceleration is g = 9.8 m/s^2. (0.8796 s)",
+  "answer": "0.8796 s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p046-helical-spring-bob-period",
+   "comment": "P46 — the first mass m1 stretches the spring by d, so k = m1 g / d (d in cm, masses in g). The\nnew bob m2 then oscillates with period T = 2π sqrt(m2 / k) = 2π sqrt(m2 d / (m1 g)).",
+   "derived": [
+    {
+     "name": "g",
+     "expr": "9.8",
+     "unit": "m/s^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "period",
+     "prompt": "Calculate its period. {_0}{_u}",
+     "answer": "2 * pi * sqrt((m2 / 1000) * (d / 100) / ((m1 / 1000) * g))",
+     "unit": "s"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 47,
+  "section": "Oscillations",
+  "text": "A light vertically mounted helical spring is stretched by 4.9 cm when a mass of 165 g hangs at the spring's end. What is the force constant of the spring? The gravitational acceleration on Earth is g = 9.8 m/s^2. (33 N/m)",
+  "answer": "33 N/m",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p047-helical-spring-constant",
+   "comment": "P47 — at equilibrium the spring holds the hanging mass: k d = m g, so k = m g / d (d in cm,\nm in g, both converted inside the formula).",
+   "derived": [
+    {
+     "name": "g",
+     "expr": "9.8",
+     "unit": "m/s^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "force-constant",
+     "prompt": "What is the force constant of the spring? {_0}{_u}",
+     "answer": "(m / 1000) * g / (d / 100)",
+     "unit": "N/m"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 48,
+  "section": "Oscillations",
+  "text": "Circus performer of mass 77 kg oscillates up and down at the end of a long elastic rope at a rate of once every 5.5 s. The elastic rope obeys Hooke's Law. By how much is the rope extended beyond its unloaded length when the performer hangs at rest? The gravitational acceleration is g = 9.8 m/s^2. (7.5091662226928 m)",
+  "answer": "7.5091662226928 m",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p048-circus-rope-extension",
+   "comment": "P48/P49 — the rope acts as a spring with k = m ω² = 4π² m / T² (P49), so the static extension\nis x = m g / k = g T² / (4π²) (P48: the performer's mass cancels, but it is part of the data).\nThe base canonical values are P48's; P49 overrides them.",
+   "derived": [
+    {
+     "name": "g",
+     "expr": "9.8",
+     "unit": "m/s^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "extension",
+     "prompt": "By how much is the rope extended beyond its unloaded length when the performer hangs at rest? {_0}{_u}",
+     "answer": "g * T^2 / (4 * pi^2)",
+     "unit": "m"
+    },
+    {
+     "id": "force-constant",
+     "prompt": "What is the force constant of the rope? {_0}{_u}",
+     "answer": "4 * pi^2 * m / T^2",
+     "unit": "N/m"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 49,
+  "section": "Oscillations",
+  "text": "A circus performer of mass 88.5 kg oscillates up and down at the end of a long elastic rope at a rate of once every 6.85 s. The elastic rope obeys Hooke's law. What is the force constant of the rope? The gravitational acceleration on Earth is g = 9.8 m/s^2. (74.4598 N/m)",
+  "answer": "74.4598 N/m",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p048-circus-rope-extension",
+   "comment": "P48/P49 — the rope acts as a spring with k = m ω² = 4π² m / T² (P49), so the static extension\nis x = m g / k = g T² / (4π²) (P48: the performer's mass cancels, but it is part of the data).\nThe base canonical values are P48's; P49 overrides them.",
+   "derived": [
+    {
+     "name": "g",
+     "expr": "9.8",
+     "unit": "m/s^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "extension",
+     "prompt": "By how much is the rope extended beyond its unloaded length when the performer hangs at rest? {_0}{_u}",
+     "answer": "g * T^2 / (4 * pi^2)",
+     "unit": "m"
+    },
+    {
+     "id": "force-constant",
+     "prompt": "What is the force constant of the rope? {_0}{_u}",
+     "answer": "4 * pi^2 * m / T^2",
+     "unit": "N/m"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 50,
+  "section": "Oscillations",
+  "text": "When a person with a mass of 62 kg steps into a car of mass 1600 kg, the car sinks by 7 cm. Assuming no damping, what is the frequency of vibration of the car and passenger on the car springs? The gravitational acceleration is g = 9.8 m/s^2. (0.3637 Hz)",
+  "answer": "0.3637 Hz",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p050-car-passenger-frequency",
+   "comment": "P50 — the person's weight fixes the spring constant, k = m g / d (d in cm); the car and\npassenger together vibrate at f = (1 / 2π) sqrt(k / (M + m)).",
+   "derived": [
+    {
+     "name": "g",
+     "expr": "9.8",
+     "unit": "m/s^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "frequency",
+     "prompt": "Assuming no damping, what is the frequency of vibration of the car and passenger on the car springs? {_0}{_u}",
+     "answer": "sqrt(m * g / (d / 100) / (M + m)) / (2 * pi)",
+     "unit": "Hz"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 51,
+  "section": "Oscillations",
+  "text": "When a person steps into a car of mass 1770 kg, the car sinks by 5.4 cm on its springs. Assuming no damping, the car and passenger then vibrate at 0.41 Hz. What is the mass of the person? The gravitational acceleration on Earth is g = 9.8 m/s^2. (67.1811 kg)",
+  "answer": "67.1811 kg",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p051-car-passenger-mass",
+   "comment": "P51 — the person's weight fixes the spring constant, k = m g / d, and the car and passenger\nvibrate at ω = 2π f = sqrt(k / (M + m)). Eliminating k: m (g / d − ω²) = ω² M, so\nm = ω² M / (g / d − ω²) (d in cm, converted inside the formula). The constraint keeps the\nperson's mass that the numbers imply between 45 and 110 kg.",
+   "derived": [
+    {
+     "name": "g",
+     "expr": "9.8",
+     "unit": "m/s^2"
+    },
+    {
+     "name": "w2",
+     "expr": "(2 * pi * f)^2",
+     "unit": "s^-2"
+    },
+    {
+     "name": "mp",
+     "expr": "w2 * M / (g / (d / 100) - w2)",
+     "unit": "kg"
+    }
+   ],
+   "parts": [
+    {
+     "id": "person-mass",
+     "prompt": "What is the mass of the person? {_0}{_u}",
+     "answer": "mp",
+     "unit": "kg"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 52,
+  "section": "Oscillations",
+  "text": "The tip of one half of a tuning fork vibrates approximately as if it were in a simple harmonic motion with amplitude of 0.57 mm. If the tip passes its equilibrium position with a speed of 1.538 m/s, what is the frequency of vibration? (429.439 Hz)",
+  "answer": "429.439 Hz",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p052-tuning-fork-frequency",
+   "comment": "P52/P53 — in simple harmonic motion the tip passes equilibrium at its maximum speed v = ω A, so\nthe frequency is f = ω / 2π = v / (2π A) (P52) and the maximum acceleration is\na = ω² A = v² / A (P53). The amplitude is given in mm. The base canonical values are P52's;\nP53 overrides them.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "frequency",
+     "prompt": "If the tip passes its equilibrium position with a speed of {v:unit}, what is the frequency of vibration? {_0}{_u}",
+     "answer": "v / (2 * pi * A / 1000)",
+     "unit": "Hz"
+    },
+    {
+     "id": "max-acceleration",
+     "prompt": "If the tip passes its equilibrium position with a speed of {v:unit}, what is the magnitude of its maximum acceleration? {_0}{_u}",
+     "answer": "v^2 / (A / 1000)",
+     "unit": "m/s^2"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 53,
+  "section": "Oscillations",
+  "text": "The tip of one half of a tuning fork vibrates approximately in simple harmonic motion with an amplitude of 0.71 mm. The tip passes its equilibrium position with a speed of 1.45 m/s. What is the magnitude of its maximum acceleration? (2961.27 m/s^2)",
+  "answer": "2961.27 m/s^2",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p052-tuning-fork-frequency",
+   "comment": "P52/P53 — in simple harmonic motion the tip passes equilibrium at its maximum speed v = ω A, so\nthe frequency is f = ω / 2π = v / (2π A) (P52) and the maximum acceleration is\na = ω² A = v² / A (P53). The amplitude is given in mm. The base canonical values are P52's;\nP53 overrides them.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "frequency",
+     "prompt": "If the tip passes its equilibrium position with a speed of {v:unit}, what is the frequency of vibration? {_0}{_u}",
+     "answer": "v / (2 * pi * A / 1000)",
+     "unit": "Hz"
+    },
+    {
+     "id": "max-acceleration",
+     "prompt": "If the tip passes its equilibrium position with a speed of {v:unit}, what is the magnitude of its maximum acceleration? {_0}{_u}",
+     "answer": "v^2 / (A / 1000)",
+     "unit": "m/s^2"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 54,
+  "section": "Oscillations",
+  "text": "A spring with spring constant k=140 N/m is connected to a pair of blocks with masses M_1=0.7 kg and M_2=7.9 kg on a horizontal, frictionless surface, as shown in the Figure. The coefficient of static friction between the two blocks is 0.9. What is the maximum possible amplitude of the simple harmonic motion if no slippage is to occur between the blocks? The gravitational acceleration is g = 9.8 m/s^2. (0.5418 m)",
+  "answer": "0.5418 m",
+  "figures": [
+   "figures/unnamed_004_OTxQ.png"
+  ],
+  "scenario": {
+   "id": "phys161-e3-p054-stacked-blocks-max-amplitude",
+   "comment": "P54 — the spring drives both blocks together, with maximum acceleration a = k A / (M1 + M2) at\nthe turning points. Static friction alone accelerates the top block M1, so no slipping requires\na ≤ μs g, giving the largest amplitude A = μs g (M1 + M2) / k.",
+   "derived": [
+    {
+     "name": "g",
+     "expr": "9.8",
+     "unit": "m/s^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "max-amplitude",
+     "prompt": "What is the maximum possible amplitude of the simple harmonic motion if no slippage is to occur between the blocks? The gravitational acceleration is $g = {g:unit}$. {_0}{_u}",
+     "answer": "mu * g * (M1 + M2) / k",
+     "unit": "m"
+    }
+   ],
+   "fig": "figures/unnamed_004_OTxQ.png"
+  }
+ },
+ {
+  "n": 55,
+  "section": "Oscillations",
+  "text": "Vibrational platform oscillates up and down at a controlled variable frequency with amplitude 11.4 cm. Suppose a small rock of unknown mass is placed on the platform. At what frequency will the rock just begin to leave the surface so that it starts to clatter? The gravitational acceleration is g = 9.8 m/s^2 (1.4756 Hz)",
+  "answer": "1.4756 Hz",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p055-vibrating-platform-rock",
+   "comment": "P55 — the platform's largest downward acceleration, ω² A at the top of its motion, must not\nexceed g for the rock to stay in contact; it just leaves when ω² A = g, i.e. at\nf = (1 / 2π) sqrt(g / A). The amplitude is given in cm.",
+   "derived": [
+    {
+     "name": "g",
+     "expr": "9.8",
+     "unit": "m/s^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "frequency",
+     "prompt": "At what frequency will the rock just begin to leave the surface so that it starts to clatter? The gravitational acceleration is $g = {g:unit}$. {_0}{_u}",
+     "answer": "sqrt(g / (A / 100)) / (2 * pi)",
+     "unit": "Hz"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 56,
+  "section": "Oscillations",
+  "text": "Find the frequency of a simple pendulum 53 cm long at a location where g = 9.47 m/s^2. (0.673 Hz)",
+  "answer": "0.673 Hz",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p056-pendulum-frequency",
+   "comment": "P56 — a simple pendulum of length L oscillates at f = (1 / 2π) sqrt(g / L), with L given in cm.\nThe local g is part of the problem's data (not the standard 9.8 m/s²), so it is randomized too.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "frequency",
+     "prompt": "Find the frequency of a simple pendulum {L:unit} long at a location where $g = {g:unit}$. {_0}{_u}",
+     "answer": "sqrt(g / (L / 100)) / (2 * pi)",
+     "unit": "Hz"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 57,
+  "section": "Oscillations",
+  "text": "A body is sliding back and forth in a simple harmonic motion with an amplitude of 0.1 m on a horizontal surface. At a point 0.03 m away from equilibrium, the speed of the body is 0.4 m/s. What is the period? (1.498 s)",
+  "answer": "1.498 s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p057-sliding-body-shm",
+   "comment": "P57/P58/P59 — in simple harmonic motion the speed at displacement x is v = ω sqrt(A² − x²), so\none (x, v) pair fixes ω = v / sqrt(A² − x²). P57: the period is T = 2π / ω = 2π sqrt(A² − x²) / v.\nP58: the maximum speed is ω A. P59: at speed v₂ the displacement is x₂ = sqrt(A² − (v₂ / ω)²).\nThe base canonical values are P57's; P58 and P59 override them with their own.",
+   "derived": [
+    {
+     "name": "omega",
+     "expr": "v / sqrt(A^2 - x^2)",
+     "unit": "rad/s"
+    }
+   ],
+   "parts": [
+    {
+     "id": "period",
+     "prompt": "What is the period? {_0}{_u}",
+     "answer": "2 * pi / omega",
+     "unit": "s"
+    },
+    {
+     "id": "max-speed",
+     "prompt": "What is the maximum speed of the body? {_0}{_u}",
+     "answer": "omega * A",
+     "unit": "m/s"
+    },
+    {
+     "id": "displacement",
+     "prompt": "What is the displacement when the speed is {v2:unit}? {_0}{_u}",
+     "answer": "sqrt(A^2 - (v2 / omega)^2)",
+     "unit": "m"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 58,
+  "section": "Oscillations",
+  "text": "A body slides back and forth in simple harmonic motion with an amplitude of 0.12 m on a horizontal surface. At a point 0.04 m away from equilibrium, the speed of the body is 0.29 m/s. What is the maximum speed of the body? (0.307591 m/s)",
+  "answer": "0.307591 m/s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p057-sliding-body-shm",
+   "comment": "P57/P58/P59 — in simple harmonic motion the speed at displacement x is v = ω sqrt(A² − x²), so\none (x, v) pair fixes ω = v / sqrt(A² − x²). P57: the period is T = 2π / ω = 2π sqrt(A² − x²) / v.\nP58: the maximum speed is ω A. P59: at speed v₂ the displacement is x₂ = sqrt(A² − (v₂ / ω)²).\nThe base canonical values are P57's; P58 and P59 override them with their own.",
+   "derived": [
+    {
+     "name": "omega",
+     "expr": "v / sqrt(A^2 - x^2)",
+     "unit": "rad/s"
+    }
+   ],
+   "parts": [
+    {
+     "id": "period",
+     "prompt": "What is the period? {_0}{_u}",
+     "answer": "2 * pi / omega",
+     "unit": "s"
+    },
+    {
+     "id": "max-speed",
+     "prompt": "What is the maximum speed of the body? {_0}{_u}",
+     "answer": "omega * A",
+     "unit": "m/s"
+    },
+    {
+     "id": "displacement",
+     "prompt": "What is the displacement when the speed is {v2:unit}? {_0}{_u}",
+     "answer": "sqrt(A^2 - (v2 / omega)^2)",
+     "unit": "m"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 59,
+  "section": "Oscillations",
+  "text": "A body is sliding back and forth in a simple harmonic motion with an amplitude of 0.2 m on a horizontal surface. At a point 0.02 m away from equilibrium, the speed of the body is 0.4 m/s. What is the displacement when the speed is 0.12 m/s? (0.191 m)",
+  "answer": "0.191 m",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p057-sliding-body-shm",
+   "comment": "P57/P58/P59 — in simple harmonic motion the speed at displacement x is v = ω sqrt(A² − x²), so\none (x, v) pair fixes ω = v / sqrt(A² − x²). P57: the period is T = 2π / ω = 2π sqrt(A² − x²) / v.\nP58: the maximum speed is ω A. P59: at speed v₂ the displacement is x₂ = sqrt(A² − (v₂ / ω)²).\nThe base canonical values are P57's; P58 and P59 override them with their own.",
+   "derived": [
+    {
+     "name": "omega",
+     "expr": "v / sqrt(A^2 - x^2)",
+     "unit": "rad/s"
+    }
+   ],
+   "parts": [
+    {
+     "id": "period",
+     "prompt": "What is the period? {_0}{_u}",
+     "answer": "2 * pi / omega",
+     "unit": "s"
+    },
+    {
+     "id": "max-speed",
+     "prompt": "What is the maximum speed of the body? {_0}{_u}",
+     "answer": "omega * A",
+     "unit": "m/s"
+    },
+    {
+     "id": "displacement",
+     "prompt": "What is the displacement when the speed is {v2:unit}? {_0}{_u}",
+     "answer": "sqrt(A^2 - (v2 / omega)^2)",
+     "unit": "m"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 60,
+  "section": "Oscillations",
+  "text": "A plate is sliding back and forth in a simple harmonic motion with an amplitude of 0.1 m on a horizontal surface. At a point 0.06 m away from equilibrium, the speed of the plate is 0.3 m/s. In the center of the plate is a carrot slice. If the carrot slice is just on the verge of slipping at the endpoint of the path, what is the coefficient of static friction between the carrot slice and the plate? The gravitational acceleration is g = 9.8 m/s^2. (0.1435)",
+  "answer": "0.1435",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p060-plate-carrot-friction",
+   "comment": "P60 — one (x, v) pair fixes ω² = v² / (A² − x²). At the endpoint the plate's acceleration is\nlargest, ω² A, and static friction alone must supply it to the carrot slice: μs g = ω² A, so\nμs = v² A / ((A² − x²) g).",
+   "derived": [
+    {
+     "name": "g",
+     "expr": "9.8",
+     "unit": "m/s^2"
+    },
+    {
+     "name": "mu",
+     "expr": "v^2 * A / ((A^2 - x^2) * g)"
+    }
+   ],
+   "parts": [
+    {
+     "id": "static-friction",
+     "prompt": "If the carrot slice is just on the verge of slipping at the endpoint of the path, what is the coefficient of static friction between the carrot slice and the plate? The gravitational acceleration is $g = {g:unit}$. {_0}",
+     "answer": "mu",
+     "unit": null
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 61,
+  "section": "Oscillations",
+  "text": "On an unknown planet, a simple pendulum having a bob with mass 1.05 kg and a length of 145 cm takes 1.55 s, when released from rest, to swing through an angle of 12.5^(￮), where it again has zero speed. The radius of the planet is measured to be 8600 km. What is the mass of the planet? Gravitational constant is G=6.67×10^-11m^3/(kg⋅s^2). (6.605E+24 kg)",
+  "answer": "6.605E+24 kg",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p061-pendulum-planet-mass",
+   "comment": "P61 — released from rest, the bob swings from one turning point to the other (zero speed again)\nin half a period, so T = 2t. The small-angle period T = 2π sqrt(L / g) gives\ng = 4π² L / T² = π² L / t², and g = G M / R² gives M = g R² / G = π² L R² / (G t²).\nL is in cm and R in km; the bob's mass and the (small) swing angle do not affect the answer.",
+   "derived": [
+    {
+     "name": "G",
+     "expr": "6.67e-11",
+     "unit": "m^3/(kg s^2)"
+    }
+   ],
+   "parts": [
+    {
+     "id": "planet-mass",
+     "prompt": "What is the mass of the planet? Gravitational constant is $G = {G:unit}$. {_0}{_u}",
+     "answer": "pi^2 * (L / 100) * (R * 1000)^2 / (G * t^2)",
+     "unit": "kg"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 62,
+  "section": "Oscillations",
+  "text": "A rocket is accelerating upward at 4.6 m/s^2 from the launchpad on the earth. Inside a small 1.8 kg ball hangs from the ceiling by a light 1.2 m wire. If the ball is displaced from the vertical and released, find the period of the resulting swings of this pendulum. The gravitational acceleration is g = 9.8 m/s^2. (1.8138 s)",
+  "answer": "1.8138 s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p062-rocket-pendulum-period",
+   "comment": "P62 — in a frame accelerating upward at a, the effective gravity is g + a, so the pendulum's\nperiod is T = 2π sqrt(L / (g + a)). The ball's mass does not affect the answer.",
+   "derived": [
+    {
+     "name": "g",
+     "expr": "9.8",
+     "unit": "m/s^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "period",
+     "prompt": "If the ball is displaced from the vertical and released, find the period of the resulting swings of this pendulum. The gravitational acceleration is $g = {g:unit}$. {_0}{_u}",
+     "answer": "2 * pi * sqrt(L / (g + a))",
+     "unit": "s"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 63,
+  "section": "Oscillations",
+  "text": "A 12-kg mass is traveling to the right with a speed of 1.6 m/s on a smooth horizontal surface when it collides with and sticks to a second 12-kg mass that is initially at rest but is attached to a light spring with force constant 88 N/m. Find the amplitude of the subsequent oscillations. (0.41779 m)",
+  "answer": "0.41779 m",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p063-collision-spring-amplitude",
+   "comment": "P63/P64 — the completely inelastic collision gives the pair v' = m v / (2m) = v / 2 (the source\nfamily always uses two equal masses, so one variable prints both). Right after the collision\nthe spring is unstretched, so the oscillation energy is E = ½ (2m) v'² = m v² / 4 (P64), and\nE = ½ k A² gives A = v' sqrt(2m / k) = v sqrt(m / (2k)) (P63). The base canonical values are\nP63's; P64 overrides them.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "amplitude",
+     "prompt": "Find the amplitude of the subsequent oscillations. {_0}{_u}",
+     "answer": "(m * v / (2 * m)) * sqrt(2 * m / k)",
+     "unit": "m"
+    },
+    {
+     "id": "energy",
+     "prompt": "Find the total energy of the subsequent oscillations. {_0}{_u}",
+     "answer": "(2 * m) * (m * v / (2 * m))^2 / 2",
+     "unit": "J"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 64,
+  "section": "Oscillations",
+  "text": "A 13-kg mass travels to the right at 2.1 m/s on a smooth horizontal surface when it collides with and sticks to a second 13-kg mass that is initially at rest but attached to a light spring of force constant 93 N/m. Find the total energy of the subsequent oscillations. (14.3325 J)",
+  "answer": "14.3325 J",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p063-collision-spring-amplitude",
+   "comment": "P63/P64 — the completely inelastic collision gives the pair v' = m v / (2m) = v / 2 (the source\nfamily always uses two equal masses, so one variable prints both). Right after the collision\nthe spring is unstretched, so the oscillation energy is E = ½ (2m) v'² = m v² / 4 (P64), and\nE = ½ k A² gives A = v' sqrt(2m / k) = v sqrt(m / (2k)) (P63). The base canonical values are\nP63's; P64 overrides them.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "amplitude",
+     "prompt": "Find the amplitude of the subsequent oscillations. {_0}{_u}",
+     "answer": "(m * v / (2 * m)) * sqrt(2 * m / k)",
+     "unit": "m"
+    },
+    {
+     "id": "energy",
+     "prompt": "Find the total energy of the subsequent oscillations. {_0}{_u}",
+     "answer": "(2 * m) * (m * v / (2 * m))^2 / 2",
+     "unit": "J"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 65,
+  "section": "Oscillations",
+  "text": "A 16-kg mass is traveling to the right with a speed of 2.7 m/s on a smooth horizontal surface when it collides with and sticks to a second 16-kg mass that is initially at rest but is attached to a light spring with force constant 87 N/m. Find the period of the subsequent oscillations. (3.8106 s)",
+  "answer": "3.8106 s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p065-collision-spring-period",
+   "comment": "P65/P66 — the two equal masses stick together, so the spring oscillates a total mass 2m:\nT = 2π sqrt(2m / k) and f = 1 / T. The incoming speed sets only the amplitude (see P63).\nSame variables and ranges as P63; the source family always uses two equal masses, so one\nvariable prints both. The base canonical values are P65's; P66 overrides them with its own.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "period",
+     "prompt": "Find the period of the subsequent oscillations. {_0}{_u}",
+     "answer": "2 * pi * sqrt(2 * m / k)",
+     "unit": "s"
+    },
+    {
+     "id": "frequency",
+     "prompt": "Find frequency of the subsequent oscillations. {_0}{_u}",
+     "answer": "sqrt(k / (2 * m)) / (2 * pi)",
+     "unit": "Hz"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 66,
+  "section": "Oscillations",
+  "text": "A 10-kg mass is traveling to the right with a speed of 1.6 m/s on a smooth horizontal surface when it collides with and sticks to a second 10-kg mass that is initially at rest but is attached to a light spring with force constant 85 N/m. Find frequency of the subsequent oscillations. (0.3281 Hz)",
+  "answer": "0.3281 Hz",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p065-collision-spring-period",
+   "comment": "P65/P66 — the two equal masses stick together, so the spring oscillates a total mass 2m:\nT = 2π sqrt(2m / k) and f = 1 / T. The incoming speed sets only the amplitude (see P63).\nSame variables and ranges as P63; the source family always uses two equal masses, so one\nvariable prints both. The base canonical values are P65's; P66 overrides them with its own.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "period",
+     "prompt": "Find the period of the subsequent oscillations. {_0}{_u}",
+     "answer": "2 * pi * sqrt(2 * m / k)",
+     "unit": "s"
+    },
+    {
+     "id": "frequency",
+     "prompt": "Find frequency of the subsequent oscillations. {_0}{_u}",
+     "answer": "sqrt(k / (2 * m)) / (2 * pi)",
+     "unit": "Hz"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 67,
+  "section": "Oscillations",
+  "text": "A 2-kg bucket containing 9.5 kg of water is hanging from a vertical ideal spring of force constant 120 N/m and oscillating up and down with an amplitude of 3.5 cm. Suddenly the bucket springs a leak in the bottom such that water drops out at a steady rate of 1.8 g/s. When the bucket is half full, find the period of oscillation. (1.4902 s)",
+  "answer": "1.4902 s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p067-leaking-bucket-period",
+   "comment": "P67/P68/P69 — a bucket of mass mb holding mw of water on a spring k. When the bucket is half full\nthe oscillating mass is M = mb + mw / 2, so T = 2π sqrt(M / k). The water leaks at a steady\nrate R (g/s), so dT/dt = (dT/dM)(dM/dt) = π R / sqrt(M k) (R converted to kg/s; the result is\ndimensionless, s per s, and taken in magnitude). Half the water leaks out after\nt = (mw / 2) / R (P68). The amplitude plays no role.\nThe base canonical values are P67's; P68 and P69 override them with their own.",
+   "derived": [
+    {
+     "name": "M",
+     "expr": "mb + mw / 2",
+     "unit": "kg"
+    }
+   ],
+   "parts": [
+    {
+     "id": "period",
+     "prompt": "When the bucket is half full, find the period of oscillation. {_0}{_u}",
+     "answer": "2 * pi * sqrt(M / k)",
+     "unit": "s"
+    },
+    {
+     "id": "half-full-time",
+     "prompt": "How long does it take until the bucket is half full? {_0}{_u}",
+     "answer": "(mw / 2) / (R / 1000)",
+     "unit": "s"
+    },
+    {
+     "id": "period-rate",
+     "prompt": "When the bucket is half full, find the magnitude of rate at which the period is changing with respect to time. {_0}",
+     "answer": "pi * (R / 1000) / sqrt(M * k)",
+     "unit": null
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 68,
+  "section": "Oscillations",
+  "text": "A 2.3-kg bucket containing 10.4 kg of water hangs from a vertical ideal spring of force constant 125 N/m and oscillates up and down. The bucket springs a leak in the bottom and water drops out at a steady rate of 2.25 g/s. How long does it take until the bucket is half full? (2311.11 s)",
+  "answer": "2311.11 s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p067-leaking-bucket-period",
+   "comment": "P67/P68/P69 — a bucket of mass mb holding mw of water on a spring k. When the bucket is half full\nthe oscillating mass is M = mb + mw / 2, so T = 2π sqrt(M / k). The water leaks at a steady\nrate R (g/s), so dT/dt = (dT/dM)(dM/dt) = π R / sqrt(M k) (R converted to kg/s; the result is\ndimensionless, s per s, and taken in magnitude). Half the water leaks out after\nt = (mw / 2) / R (P68). The amplitude plays no role.\nThe base canonical values are P67's; P68 and P69 override them with their own.",
+   "derived": [
+    {
+     "name": "M",
+     "expr": "mb + mw / 2",
+     "unit": "kg"
+    }
+   ],
+   "parts": [
+    {
+     "id": "period",
+     "prompt": "When the bucket is half full, find the period of oscillation. {_0}{_u}",
+     "answer": "2 * pi * sqrt(M / k)",
+     "unit": "s"
+    },
+    {
+     "id": "half-full-time",
+     "prompt": "How long does it take until the bucket is half full? {_0}{_u}",
+     "answer": "(mw / 2) / (R / 1000)",
+     "unit": "s"
+    },
+    {
+     "id": "period-rate",
+     "prompt": "When the bucket is half full, find the magnitude of rate at which the period is changing with respect to time. {_0}",
+     "answer": "pi * (R / 1000) / sqrt(M * k)",
+     "unit": null
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 69,
+  "section": "Oscillations",
+  "text": "A 2.2-kg bucket containing 10.8 kg of water is hanging from a vertical ideal spring of force constant 128 N/m and oscillating up and down with an amplitude of 2.5 cm. Suddenly the bucket springs a leak in the bottom such that water drops out at a steady rate of 2.2 g/s. When the bucket is half full, find the magnitude of rate at which the period is changing with respect to time. (0.0002216)",
+  "answer": "0.0002216",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p067-leaking-bucket-period",
+   "comment": "P67/P68/P69 — a bucket of mass mb holding mw of water on a spring k. When the bucket is half full\nthe oscillating mass is M = mb + mw / 2, so T = 2π sqrt(M / k). The water leaks at a steady\nrate R (g/s), so dT/dt = (dT/dM)(dM/dt) = π R / sqrt(M k) (R converted to kg/s; the result is\ndimensionless, s per s, and taken in magnitude). Half the water leaks out after\nt = (mw / 2) / R (P68). The amplitude plays no role.\nThe base canonical values are P67's; P68 and P69 override them with their own.",
+   "derived": [
+    {
+     "name": "M",
+     "expr": "mb + mw / 2",
+     "unit": "kg"
+    }
+   ],
+   "parts": [
+    {
+     "id": "period",
+     "prompt": "When the bucket is half full, find the period of oscillation. {_0}{_u}",
+     "answer": "2 * pi * sqrt(M / k)",
+     "unit": "s"
+    },
+    {
+     "id": "half-full-time",
+     "prompt": "How long does it take until the bucket is half full? {_0}{_u}",
+     "answer": "(mw / 2) / (R / 1000)",
+     "unit": "s"
+    },
+    {
+     "id": "period-rate",
+     "prompt": "When the bucket is half full, find the magnitude of rate at which the period is changing with respect to time. {_0}",
+     "answer": "pi * (R / 1000) / sqrt(M * k)",
+     "unit": null
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 70,
+  "section": "Oscillations",
+  "text": "A hanging wire is 1.8 m long. When a 64-kg steel ball is suspended from the wire, the wire stretches by 2.2 mm. If the ball is pulled down a small additional distance and released, at what frequency will it vibrate? The gravitational acceleration is g = 9.8 m/s^2. (10.622 Hz)",
+  "answer": "10.622 Hz",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p070-wire-steel-ball-frequency",
+   "comment": "P70 — the wire acts as a spring: at equilibrium k Δx = m g, so ω = sqrt(k / m) = sqrt(g / Δx)\nand f = sqrt(g / Δx) / (2π). The stretch is given in mm; the wire length and the ball's mass\ndo not affect the answer. The mass stays below 80 kg so \"a {m}-kg\" never needs \"an\".",
+   "derived": [
+    {
+     "name": "g",
+     "expr": "9.8",
+     "unit": "m/s^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "frequency",
+     "prompt": "If the ball is pulled down a small additional distance and released, at what frequency will it vibrate? The gravitational acceleration is $g = {g:unit}$. {_0}{_u}",
+     "answer": "sqrt(g / (dx / 1000)) / (2 * pi)",
+     "unit": "Hz"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 71,
+  "section": "Oscillations",
+  "text": "A hanging wire stretches by 2.45 mm when a 52-kg steel ball is suspended from it. The ball is removed and a 24-kg ball is hung from the same wire instead. If this ball is pulled down a small additional distance and released, at what frequency will it vibrate? The gravitational acceleration on Earth is g = 9.8 m/s^2. (14.8165 Hz)",
+  "answer": "14.8165 Hz",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p071-wire-ball-swap-frequency",
+   "comment": "P71 — the wire acts as a spring: the first ball fixes k = m1 g / Δx (Δx in mm). The second ball\nthen vibrates at f = sqrt(k / m2) / (2π) = sqrt(m1 g / (Δx m2)) / (2π). Both masses stay below\n80 kg and m2 ≠ 18 so \"a {m}-kg\" never needs \"an\".",
+   "derived": [
+    {
+     "name": "g",
+     "expr": "9.8",
+     "unit": "m/s^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "frequency",
+     "prompt": "If this ball is pulled down a small additional distance and released, at what frequency will it vibrate? {_0}{_u}",
+     "answer": "sqrt(m1 * g / ((dx / 1000) * m2)) / (2 * pi)",
+     "unit": "Hz"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 72,
+  "section": "Oscillations",
+  "text": "A pendulum with a length of 1 m released from an initial angle of 13°. After 970 s, its amplitude has been reduced by friction to 3.4°. What is the value of the [image]? (0.00138 s^-1)",
+  "answer": "0.00138 s^-1",
+  "figures": [
+   "figures/PHYS161_Exam3-img1.png"
+  ],
+  "scenario": {
+   "id": "phys161-e3-p072-pendulum-damping-constant",
+   "comment": "P72 — for weak damping the angular amplitude decays as θ(t) = θ₀ e^{−(b/2m) t}, so\nb/2m = ln(θ₀ / θ) / t. The pendulum length does not enter the answer. The source pasted the\nsymbol b/2m as a picture; it is written here as math.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "damping-constant",
+     "prompt": "What is the value of $\\frac{b}{2m}$? {_0}{_u}",
+     "answer": "ln(theta0 / theta) / t",
+     "unit": "s^-1"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 73,
+  "section": "Oscillations",
+  "text": "A 10.6-kg object oscillates at the end of a vertical spring that has a spring constant of 2.05 × 10^4 N/m. The effect of air resistance is represented by the damping coefficient b = 3 N ⋅ s/m. Calculate the frequency of the damped oscillation. (6.998 Hz)",
+  "answer": "6.998 Hz",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p073-damped-spring-object",
+   "comment": "P73/P74/P78 — weakly damped (underdamped) spring: ω' = sqrt(k/m − (b/2m)²), f' = ω' / 2π.\nThe amplitude decays as e^{−(b/2m) t}: it falls to 1/e after t = 2m / b (P74), and over one\nperiod T' = 2π / ω' it falls by the fraction 1 − e^{−(b/2m) T'}, printed as a percentage (P78).\nThe base canonical values are P73's; P74 and P78 override them with their own. The constraint\nkeeps the motion underdamped (never binding here).",
+   "derived": [
+    {
+     "name": "gamma",
+     "expr": "b / (2 * m)",
+     "unit": "s^-1"
+    },
+    {
+     "name": "wd",
+     "expr": "sqrt(k / m - gamma^2)",
+     "unit": "rad/s"
+    }
+   ],
+   "parts": [
+    {
+     "id": "damped-frequency",
+     "prompt": "Calculate the frequency of the damped oscillation. {_0}{_u}",
+     "answer": "wd / (2 * pi)",
+     "unit": "Hz"
+    },
+    {
+     "id": "decay-time",
+     "prompt": "After what time does the amplitude of the oscillation fall to $1/e$ of its initial value? {_0}{_u}",
+     "answer": "1 / gamma",
+     "unit": "s"
+    },
+    {
+     "id": "amplitude-decrease",
+     "prompt": "By what percentage does the amplitude of the oscillation decrease in each cycle? {_0}{_u}",
+     "answer": "100 * (1 - exp(-gamma * 2 * pi / wd))",
+     "unit": "%"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 74,
+  "section": "Oscillations",
+  "text": "A 9.7-kg object oscillates at the end of a vertical spring that has a spring constant of 3.05×10^4 N/m. The effect of air resistance is represented by the damping coefficient b = 3.7 N·s/m. After what time does the amplitude of the oscillation fall to 1/e of its initial value? (5.24324 s)",
+  "answer": "5.24324 s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p073-damped-spring-object",
+   "comment": "P73/P74/P78 — weakly damped (underdamped) spring: ω' = sqrt(k/m − (b/2m)²), f' = ω' / 2π.\nThe amplitude decays as e^{−(b/2m) t}: it falls to 1/e after t = 2m / b (P74), and over one\nperiod T' = 2π / ω' it falls by the fraction 1 − e^{−(b/2m) T'}, printed as a percentage (P78).\nThe base canonical values are P73's; P74 and P78 override them with their own. The constraint\nkeeps the motion underdamped (never binding here).",
+   "derived": [
+    {
+     "name": "gamma",
+     "expr": "b / (2 * m)",
+     "unit": "s^-1"
+    },
+    {
+     "name": "wd",
+     "expr": "sqrt(k / m - gamma^2)",
+     "unit": "rad/s"
+    }
+   ],
+   "parts": [
+    {
+     "id": "damped-frequency",
+     "prompt": "Calculate the frequency of the damped oscillation. {_0}{_u}",
+     "answer": "wd / (2 * pi)",
+     "unit": "Hz"
+    },
+    {
+     "id": "decay-time",
+     "prompt": "After what time does the amplitude of the oscillation fall to $1/e$ of its initial value? {_0}{_u}",
+     "answer": "1 / gamma",
+     "unit": "s"
+    },
+    {
+     "id": "amplitude-decrease",
+     "prompt": "By what percentage does the amplitude of the oscillation decrease in each cycle? {_0}{_u}",
+     "answer": "100 * (1 - exp(-gamma * 2 * pi / wd))",
+     "unit": "%"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 75,
+  "section": "Oscillations",
+  "text": "A block weighing 42 N is suspended from a spring that has a force constant of 200 N/m. The system is undamped (b = 0) and is subjected to a harmonic driving force of frequency 9 Hz, resulting in a forced-motion amplitude of 1.8 cm. Determine the maximum value of the driving force. The gravitational acceleration is g = 9.8 m/s^2. (243.08 N)",
+  "answer": "243.08 N",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p075-driven-spring-force",
+   "comment": "P75/P76 — undamped driven oscillator: the steady-state amplitude is A = F_max / (m |ω0² − ω²|),\nso F_max = |k − m ω²| A with m = W / g and ω = 2π f (P75). The block is given by its weight and\nthe amplitude in cm. Above resonance (here always) the driving force is out of phase with x.\nP76 asks only for the natural frequency f0 = sqrt(k / m) / (2π); the driving frequency and the\namplitude do not enter it. The base canonical values are P75's; P76 overrides them.",
+   "derived": [
+    {
+     "name": "g",
+     "expr": "9.8",
+     "unit": "m/s^2"
+    },
+    {
+     "name": "m",
+     "expr": "W / g",
+     "unit": "kg"
+    },
+    {
+     "name": "w",
+     "expr": "2 * pi * f",
+     "unit": "rad/s"
+    }
+   ],
+   "parts": [
+    {
+     "id": "max-driving-force",
+     "prompt": "Determine the maximum value of the driving force. The gravitational acceleration is $g = {g:unit}$. {_0}{_u}",
+     "answer": "abs(k - m * w^2) * A / 100",
+     "unit": "N"
+    },
+    {
+     "id": "natural-frequency",
+     "prompt": "What is the natural frequency of this spring-block system? The gravitational acceleration is $g = {g:unit}$. {_0}{_u}",
+     "answer": "sqrt(k / m) / (2 * pi)",
+     "unit": "Hz"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 76,
+  "section": "Oscillations",
+  "text": "A block weighing 47 N is suspended from a spring that has a force constant of 225 N/m. The system is undamped and is subjected to a harmonic driving force of frequency 9.5 Hz, resulting in oscillations of amplitude 1.75 cm. What is the natural frequency of this spring-block system? The gravitational acceleration on Earth is g = 9.8 m/s^2. (1.09012 Hz)",
+  "answer": "1.09012 Hz",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p075-driven-spring-force",
+   "comment": "P75/P76 — undamped driven oscillator: the steady-state amplitude is A = F_max / (m |ω0² − ω²|),\nso F_max = |k − m ω²| A with m = W / g and ω = 2π f (P75). The block is given by its weight and\nthe amplitude in cm. Above resonance (here always) the driving force is out of phase with x.\nP76 asks only for the natural frequency f0 = sqrt(k / m) / (2π); the driving frequency and the\namplitude do not enter it. The base canonical values are P75's; P76 overrides them.",
+   "derived": [
+    {
+     "name": "g",
+     "expr": "9.8",
+     "unit": "m/s^2"
+    },
+    {
+     "name": "m",
+     "expr": "W / g",
+     "unit": "kg"
+    },
+    {
+     "name": "w",
+     "expr": "2 * pi * f",
+     "unit": "rad/s"
+    }
+   ],
+   "parts": [
+    {
+     "id": "max-driving-force",
+     "prompt": "Determine the maximum value of the driving force. The gravitational acceleration is $g = {g:unit}$. {_0}{_u}",
+     "answer": "abs(k - m * w^2) * A / 100",
+     "unit": "N"
+    },
+    {
+     "id": "natural-frequency",
+     "prompt": "What is the natural frequency of this spring-block system? The gravitational acceleration is $g = {g:unit}$. {_0}{_u}",
+     "answer": "sqrt(k / m) / (2 * pi)",
+     "unit": "Hz"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 77,
+  "section": "Oscillations",
+  "text": "Damping is negligible for a 0.15-kg object hanging from a light, 5.8-N/m spring. A sinusoidal force with an amplitude of 1.7 N drives the system. At what frequency will the force make the object vibrate with an amplitude of 0.25 m? Assume (w^2 - w_0^2) > 0 (1.459 Hz)",
+  "answer": "1.459 Hz",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p077-driven-spring-frequency",
+   "comment": "P77 — undamped driven oscillator: A = (F0 / m) / |ω² − ω0²| with ω0² = k / m. Driving above\nresonance (ω² − ω0² > 0, as the source assumes) gives ω² = k / m + F0 / (m A), f = ω / 2π.\nThe spring constant stays below 8 N/m so \"a {k}-N/m spring\" never needs \"an\".",
+   "derived": null,
+   "parts": [
+    {
+     "id": "driving-frequency",
+     "prompt": "At what frequency will the force make the object vibrate with an amplitude of {A:unit}? Assume $(\\omega^2 - \\omega_0^2) > 0$. {_0}{_u}",
+     "answer": "sqrt(k / m + F0 / (m * A)) / (2 * pi)",
+     "unit": "Hz"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 78,
+  "section": "Oscillations",
+  "text": "A 11.8-kg object oscillates at the end of a vertical spring that has a spring constant of 3.2 × 10^4 N/m. The effect of air resistance is represented by the damping coefficient b = 3.6 N ⋅ s/m. By what percentage does the amplitude of the oscillation decrease in each cycle? (1.8237 %)",
+  "answer": "1.8237 %",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p073-damped-spring-object",
+   "comment": "P73/P74/P78 — weakly damped (underdamped) spring: ω' = sqrt(k/m − (b/2m)²), f' = ω' / 2π.\nThe amplitude decays as e^{−(b/2m) t}: it falls to 1/e after t = 2m / b (P74), and over one\nperiod T' = 2π / ω' it falls by the fraction 1 − e^{−(b/2m) T'}, printed as a percentage (P78).\nThe base canonical values are P73's; P74 and P78 override them with their own. The constraint\nkeeps the motion underdamped (never binding here).",
+   "derived": [
+    {
+     "name": "gamma",
+     "expr": "b / (2 * m)",
+     "unit": "s^-1"
+    },
+    {
+     "name": "wd",
+     "expr": "sqrt(k / m - gamma^2)",
+     "unit": "rad/s"
+    }
+   ],
+   "parts": [
+    {
+     "id": "damped-frequency",
+     "prompt": "Calculate the frequency of the damped oscillation. {_0}{_u}",
+     "answer": "wd / (2 * pi)",
+     "unit": "Hz"
+    },
+    {
+     "id": "decay-time",
+     "prompt": "After what time does the amplitude of the oscillation fall to $1/e$ of its initial value? {_0}{_u}",
+     "answer": "1 / gamma",
+     "unit": "s"
+    },
+    {
+     "id": "amplitude-decrease",
+     "prompt": "By what percentage does the amplitude of the oscillation decrease in each cycle? {_0}{_u}",
+     "answer": "100 * (1 - exp(-gamma * 2 * pi / wd))",
+     "unit": "%"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 79,
+  "section": "Waves",
+  "text": "Two megaphones at distance x = 4.99 m to each other are driven in phase by the same amplifier. A listener is located directly in front of one of the megaphones at point A at distance L = 3.55 m. The speed of sound can be taken as 348.7 m/s. What is the lowest frequency at which constructive interference occurs? (135.47 Hz)",
+  "answer": "135.47 Hz",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p079-megaphones-interference",
+   "comment": "P79–P83 — two in-phase sources a distance x apart; the listener at A is a distance L in front of\none of them, so the path difference is Δ = sqrt(x² + L²) − L (P80). Constructive interference:\nΔ = n λ, f = n v / Δ (n = 1, 2); destructive interference: Δ = (n − 1/2) λ,\nf = (2n − 1) v / (2Δ) (n = 1, 2). The base canonical values are P79's; the other parts override\nthem with their own (P80 states no speed of sound and keeps P79's). The figure comes from P80\nand P81 and fits all five.",
+   "derived": [
+    {
+     "name": "dpath",
+     "expr": "sqrt(x^2 + L^2) - L",
+     "unit": "m"
+    }
+   ],
+   "parts": [
+    {
+     "id": "path-difference",
+     "prompt": "By how much do the path lengths from the two megaphones to the listener differ? {_0}{_u}",
+     "answer": "dpath",
+     "unit": "m"
+    },
+    {
+     "id": "constructive-lowest",
+     "prompt": "What is the lowest frequency at which constructive interference occurs? {_0}{_u}",
+     "answer": "v / dpath",
+     "unit": "Hz"
+    },
+    {
+     "id": "constructive-second",
+     "prompt": "What is the second-lowest frequency at which constructive interference occurs? {_0}{_u}",
+     "answer": "2 * v / dpath",
+     "unit": "Hz"
+    },
+    {
+     "id": "destructive-lowest",
+     "prompt": "What is the lowest frequency for which there is a minimum signal due to destructive interference? {_0}{_u}",
+     "answer": "v / (2 * dpath)",
+     "unit": "Hz"
+    },
+    {
+     "id": "destructive-second",
+     "prompt": "What is the second-lowest frequency for which there is a minimum signal? {_0}{_u}",
+     "answer": "3 * v / (2 * dpath)",
+     "unit": "Hz"
+    }
+   ],
+   "fig": "figures/unnamed_005_OTxQ.png"
+  }
+ },
+ {
+  "n": 80,
+  "section": "Waves",
+  "text": "Two megaphones a distance x = 5.66 m apart are driven in phase by the same amplifier. A listener stands directly in front of one of the megaphones at point A, a distance L = 3.61 m from it. By how much do the path lengths from the two megaphones to the listener differ? (3.10325 m)",
+  "answer": "3.10325 m",
+  "figures": [
+   "figures/unnamed_005_OTxQ.png"
+  ],
+  "scenario": {
+   "id": "phys161-e3-p079-megaphones-interference",
+   "comment": "P79–P83 — two in-phase sources a distance x apart; the listener at A is a distance L in front of\none of them, so the path difference is Δ = sqrt(x² + L²) − L (P80). Constructive interference:\nΔ = n λ, f = n v / Δ (n = 1, 2); destructive interference: Δ = (n − 1/2) λ,\nf = (2n − 1) v / (2Δ) (n = 1, 2). The base canonical values are P79's; the other parts override\nthem with their own (P80 states no speed of sound and keeps P79's). The figure comes from P80\nand P81 and fits all five.",
+   "derived": [
+    {
+     "name": "dpath",
+     "expr": "sqrt(x^2 + L^2) - L",
+     "unit": "m"
+    }
+   ],
+   "parts": [
+    {
+     "id": "path-difference",
+     "prompt": "By how much do the path lengths from the two megaphones to the listener differ? {_0}{_u}",
+     "answer": "dpath",
+     "unit": "m"
+    },
+    {
+     "id": "constructive-lowest",
+     "prompt": "What is the lowest frequency at which constructive interference occurs? {_0}{_u}",
+     "answer": "v / dpath",
+     "unit": "Hz"
+    },
+    {
+     "id": "constructive-second",
+     "prompt": "What is the second-lowest frequency at which constructive interference occurs? {_0}{_u}",
+     "answer": "2 * v / dpath",
+     "unit": "Hz"
+    },
+    {
+     "id": "destructive-lowest",
+     "prompt": "What is the lowest frequency for which there is a minimum signal due to destructive interference? {_0}{_u}",
+     "answer": "v / (2 * dpath)",
+     "unit": "Hz"
+    },
+    {
+     "id": "destructive-second",
+     "prompt": "What is the second-lowest frequency for which there is a minimum signal? {_0}{_u}",
+     "answer": "3 * v / (2 * dpath)",
+     "unit": "Hz"
+    }
+   ],
+   "fig": "figures/unnamed_005_OTxQ.png"
+  }
+ },
+ {
+  "n": 81,
+  "section": "Waves",
+  "text": "Two megaphones at distance x = 4.74 m to each other are driven in phase by the same amplifier. A listener is located directly in front of one of the megaphones at point A at distance L = 3.41 m. The speed of sound can be taken as 347.9 m/s. What is the second-lowest frequency at which constructive interference occurs? (286.437 Hz)",
+  "answer": "286.437 Hz",
+  "figures": [
+   "figures/unnamed_005_OTxQ.png"
+  ],
+  "scenario": {
+   "id": "phys161-e3-p079-megaphones-interference",
+   "comment": "P79–P83 — two in-phase sources a distance x apart; the listener at A is a distance L in front of\none of them, so the path difference is Δ = sqrt(x² + L²) − L (P80). Constructive interference:\nΔ = n λ, f = n v / Δ (n = 1, 2); destructive interference: Δ = (n − 1/2) λ,\nf = (2n − 1) v / (2Δ) (n = 1, 2). The base canonical values are P79's; the other parts override\nthem with their own (P80 states no speed of sound and keeps P79's). The figure comes from P80\nand P81 and fits all five.",
+   "derived": [
+    {
+     "name": "dpath",
+     "expr": "sqrt(x^2 + L^2) - L",
+     "unit": "m"
+    }
+   ],
+   "parts": [
+    {
+     "id": "path-difference",
+     "prompt": "By how much do the path lengths from the two megaphones to the listener differ? {_0}{_u}",
+     "answer": "dpath",
+     "unit": "m"
+    },
+    {
+     "id": "constructive-lowest",
+     "prompt": "What is the lowest frequency at which constructive interference occurs? {_0}{_u}",
+     "answer": "v / dpath",
+     "unit": "Hz"
+    },
+    {
+     "id": "constructive-second",
+     "prompt": "What is the second-lowest frequency at which constructive interference occurs? {_0}{_u}",
+     "answer": "2 * v / dpath",
+     "unit": "Hz"
+    },
+    {
+     "id": "destructive-lowest",
+     "prompt": "What is the lowest frequency for which there is a minimum signal due to destructive interference? {_0}{_u}",
+     "answer": "v / (2 * dpath)",
+     "unit": "Hz"
+    },
+    {
+     "id": "destructive-second",
+     "prompt": "What is the second-lowest frequency for which there is a minimum signal? {_0}{_u}",
+     "answer": "3 * v / (2 * dpath)",
+     "unit": "Hz"
+    }
+   ],
+   "fig": "figures/unnamed_005_OTxQ.png"
+  }
+ },
+ {
+  "n": 82,
+  "section": "Waves",
+  "text": "Two megaphones at distance x = 4.8 m to each other are driven in phase by the same amplifier. A listener is located directly in front of one of the megaphones at point A at distance L = 3.05 m. The speed of sound can be taken as 342 m/s. What is the lowest frequency for which there is a minimum signal due to destructive interference? (64.845 Hz)",
+  "answer": "64.845 Hz",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p079-megaphones-interference",
+   "comment": "P79–P83 — two in-phase sources a distance x apart; the listener at A is a distance L in front of\none of them, so the path difference is Δ = sqrt(x² + L²) − L (P80). Constructive interference:\nΔ = n λ, f = n v / Δ (n = 1, 2); destructive interference: Δ = (n − 1/2) λ,\nf = (2n − 1) v / (2Δ) (n = 1, 2). The base canonical values are P79's; the other parts override\nthem with their own (P80 states no speed of sound and keeps P79's). The figure comes from P80\nand P81 and fits all five.",
+   "derived": [
+    {
+     "name": "dpath",
+     "expr": "sqrt(x^2 + L^2) - L",
+     "unit": "m"
+    }
+   ],
+   "parts": [
+    {
+     "id": "path-difference",
+     "prompt": "By how much do the path lengths from the two megaphones to the listener differ? {_0}{_u}",
+     "answer": "dpath",
+     "unit": "m"
+    },
+    {
+     "id": "constructive-lowest",
+     "prompt": "What is the lowest frequency at which constructive interference occurs? {_0}{_u}",
+     "answer": "v / dpath",
+     "unit": "Hz"
+    },
+    {
+     "id": "constructive-second",
+     "prompt": "What is the second-lowest frequency at which constructive interference occurs? {_0}{_u}",
+     "answer": "2 * v / dpath",
+     "unit": "Hz"
+    },
+    {
+     "id": "destructive-lowest",
+     "prompt": "What is the lowest frequency for which there is a minimum signal due to destructive interference? {_0}{_u}",
+     "answer": "v / (2 * dpath)",
+     "unit": "Hz"
+    },
+    {
+     "id": "destructive-second",
+     "prompt": "What is the second-lowest frequency for which there is a minimum signal? {_0}{_u}",
+     "answer": "3 * v / (2 * dpath)",
+     "unit": "Hz"
+    }
+   ],
+   "fig": "figures/unnamed_005_OTxQ.png"
+  }
+ },
+ {
+  "n": 83,
+  "section": "Waves",
+  "text": "Two megaphones at distance x = 6.17 m to each other are driven in phase by the same amplifier. A listener is located directly in front of one of the megaphones at point A at distance L = 3.95 m. The speed of sound can be taken as 349.8 m/s. What is the second-lowest frequency for which there is a minimum signal? (155.417 Hz)",
+  "answer": "155.417 Hz",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p079-megaphones-interference",
+   "comment": "P79–P83 — two in-phase sources a distance x apart; the listener at A is a distance L in front of\none of them, so the path difference is Δ = sqrt(x² + L²) − L (P80). Constructive interference:\nΔ = n λ, f = n v / Δ (n = 1, 2); destructive interference: Δ = (n − 1/2) λ,\nf = (2n − 1) v / (2Δ) (n = 1, 2). The base canonical values are P79's; the other parts override\nthem with their own (P80 states no speed of sound and keeps P79's). The figure comes from P80\nand P81 and fits all five.",
+   "derived": [
+    {
+     "name": "dpath",
+     "expr": "sqrt(x^2 + L^2) - L",
+     "unit": "m"
+    }
+   ],
+   "parts": [
+    {
+     "id": "path-difference",
+     "prompt": "By how much do the path lengths from the two megaphones to the listener differ? {_0}{_u}",
+     "answer": "dpath",
+     "unit": "m"
+    },
+    {
+     "id": "constructive-lowest",
+     "prompt": "What is the lowest frequency at which constructive interference occurs? {_0}{_u}",
+     "answer": "v / dpath",
+     "unit": "Hz"
+    },
+    {
+     "id": "constructive-second",
+     "prompt": "What is the second-lowest frequency at which constructive interference occurs? {_0}{_u}",
+     "answer": "2 * v / dpath",
+     "unit": "Hz"
+    },
+    {
+     "id": "destructive-lowest",
+     "prompt": "What is the lowest frequency for which there is a minimum signal due to destructive interference? {_0}{_u}",
+     "answer": "v / (2 * dpath)",
+     "unit": "Hz"
+    },
+    {
+     "id": "destructive-second",
+     "prompt": "What is the second-lowest frequency for which there is a minimum signal? {_0}{_u}",
+     "answer": "3 * v / (2 * dpath)",
+     "unit": "Hz"
+    }
+   ],
+   "fig": "figures/unnamed_005_OTxQ.png"
+  }
+ },
+ {
+  "n": 84,
+  "section": "Waves",
+  "text": "Calculate the wavelength of a sea animal’s echolocation wave, if the frequencies of echolocation wave is 105000 Hz. Density of the sea water is 1.025×10^3 kg/m^3. Bulk modulus of water B_w = 2.0×10^9 N/m^2. (0.0133 m)",
+  "answer": "0.0133 m",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p084-echolocation-sea-water",
+   "comment": "P84/P86 — sound in sea water travels at v = sqrt(B_w / ρ). The echolocation wavelength is\nλ = v / f, and an echo from an obstacle a distance d away returns after t = 2d / v. The density\nof sea water and the bulk modulus of water are the source's known values (constants).",
+   "derived": [
+    {
+     "name": "rho",
+     "expr": "1.025e3",
+     "unit": "kg/m^3"
+    },
+    {
+     "name": "Bw",
+     "expr": "2.0e9",
+     "unit": "N/m^2"
+    },
+    {
+     "name": "vs",
+     "expr": "sqrt(Bw / rho)",
+     "unit": "m/s"
+    }
+   ],
+   "parts": [
+    {
+     "id": "wavelength",
+     "prompt": "Calculate the wavelength of a sea animal’s echolocation wave, if the frequencies of echolocation wave is {f:unit}. {_0}{_u}",
+     "answer": "vs / f",
+     "unit": "m"
+    },
+    {
+     "id": "round-trip-time",
+     "prompt": "If an obstacle is {d:unit} from the animal, how long does it take for the echolocation wave to make a round trip between the animal and the object? {_0}{_u}",
+     "answer": "2 * d / vs",
+     "unit": "s"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 85,
+  "section": "Waves",
+  "text": "Calculate the speed of a longitudinal wave in sea water. The density of the sea water is 1.025×10^3 kg/m^3 and the bulk modulus of water is 1.95×10^9 N/m^2. (1379.29 m/s)",
+  "answer": "1379.29 m/s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p085-sea-water-wave-speed",
+   "comment": "P85 — a longitudinal (sound) wave in a fluid travels at v = sqrt(B / ρ). The density of sea\nwater is the source's constant; the bulk modulus (1.95 × 10⁹ here, 2.0 × 10⁹ in P84/P86) is\npart of the data.",
+   "derived": [
+    {
+     "name": "rho",
+     "expr": "1.025e3",
+     "unit": "kg/m^3"
+    }
+   ],
+   "parts": [
+    {
+     "id": "wave-speed",
+     "prompt": "Calculate the speed of a longitudinal wave in sea water. The density of the sea water is {rho:unit} and the bulk modulus of water is {B:unit}. {_0}{_u}",
+     "answer": "sqrt(B / rho)",
+     "unit": "m/s"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 86,
+  "section": "Waves",
+  "text": "An animal emits an echolocation wave. If an obstacle is 100 m from the animal, how long does it take for the echolocation wave to make a round trip between the animal and the object? Density of the sea water is 1.025×10^3 kg/m^3. Bulk modulus of water B_w = 2.0×10^9 N/m^2. (0.143178 s)",
+  "answer": "0.143178 s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p084-echolocation-sea-water",
+   "comment": "P84/P86 — sound in sea water travels at v = sqrt(B_w / ρ). The echolocation wavelength is\nλ = v / f, and an echo from an obstacle a distance d away returns after t = 2d / v. The density\nof sea water and the bulk modulus of water are the source's known values (constants).",
+   "derived": [
+    {
+     "name": "rho",
+     "expr": "1.025e3",
+     "unit": "kg/m^3"
+    },
+    {
+     "name": "Bw",
+     "expr": "2.0e9",
+     "unit": "N/m^2"
+    },
+    {
+     "name": "vs",
+     "expr": "sqrt(Bw / rho)",
+     "unit": "m/s"
+    }
+   ],
+   "parts": [
+    {
+     "id": "wavelength",
+     "prompt": "Calculate the wavelength of a sea animal’s echolocation wave, if the frequencies of echolocation wave is {f:unit}. {_0}{_u}",
+     "answer": "vs / f",
+     "unit": "m"
+    },
+    {
+     "id": "round-trip-time",
+     "prompt": "If an obstacle is {d:unit} from the animal, how long does it take for the echolocation wave to make a round trip between the animal and the object? {_0}{_u}",
+     "answer": "2 * d / vs",
+     "unit": "s"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 88,
+  "section": "Waves",
+  "text": "Calculate the time required to travel the distance 620 m by a wave with wavelength 0.755 m and frequency 425 Hz. (1.9322 s)",
+  "answer": "1.9322 s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p088-wave-travel-time",
+   "comment": "P88/P89 — wave speed v = λ f, so the time to cover a distance d is t = d / (λ f) (P88), and\nd holds d / λ wavelengths (P89, printed unrounded; the frequency does not enter it). The base\ncanonical values are P88's; P89 overrides them.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "travel-time",
+     "prompt": "Calculate the time required to travel the distance {d:unit} by a wave with wavelength {lam:unit} and frequency {f:unit}. {_0}{_u}",
+     "answer": "d / (lam * f)",
+     "unit": "s"
+    },
+    {
+     "id": "wavelength-count",
+     "prompt": "A wave of wavelength {lam:unit} and frequency {f:unit} travels along a long string. How many complete wavelengths fit into a distance of {d:unit}? {_0}",
+     "answer": "d / lam",
+     "unit": null
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 89,
+  "section": "Waves",
+  "text": "A wave of wavelength 0.925 m and frequency 450 Hz travels along a long string. How many complete wavelengths fit into a distance of 596 m? (644.324)",
+  "answer": "644.324",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p088-wave-travel-time",
+   "comment": "P88/P89 — wave speed v = λ f, so the time to cover a distance d is t = d / (λ f) (P88), and\nd holds d / λ wavelengths (P89, printed unrounded; the frequency does not enter it). The base\ncanonical values are P88's; P89 overrides them.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "travel-time",
+     "prompt": "Calculate the time required to travel the distance {d:unit} by a wave with wavelength {lam:unit} and frequency {f:unit}. {_0}{_u}",
+     "answer": "d / (lam * f)",
+     "unit": "s"
+    },
+    {
+     "id": "wavelength-count",
+     "prompt": "A wave of wavelength {lam:unit} and frequency {f:unit} travels along a long string. How many complete wavelengths fit into a distance of {d:unit}? {_0}",
+     "answer": "d / lam",
+     "unit": null
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 90,
+  "section": "Waves",
+  "text": "Calculate the speed of transverse waves on a steel piano wire of length 1.7 m and mass 4.3 g that is stretched under a tension of 648 N? (506.148 m/s)",
+  "answer": "506.148 m/s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p090-piano-wire-wave-speed",
+   "comment": "P90/P91 — transverse wave speed on a string: v = sqrt(F / μ) with μ = m / L (P90), and a pulse\ncrosses the wire in t = L / v = sqrt(m L / F) (P91). The mass is given in grams and converted\ninside the formulas. The base canonical values are P90's; P91 overrides them.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "wave-speed",
+     "prompt": "Calculate the speed of transverse waves on a steel piano wire of length {L:unit} and mass {m:unit} that is stretched under a tension of {F:unit}? {_0}{_u}",
+     "answer": "sqrt(F * L / (m / 1000))",
+     "unit": "m/s"
+    },
+    {
+     "id": "pulse-time",
+     "prompt": "Calculate the time taken by a transverse pulse to travel the length of a steel piano wire of length {L:unit} and mass {m:unit} that is stretched under a tension of {F:unit}. {_0}{_u}",
+     "answer": "L / sqrt(F * L / (m / 1000))",
+     "unit": "s"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 91,
+  "section": "Waves",
+  "text": "Calculate the time taken by a transverse pulse to travel the length of a steel piano wire of length 1.6 m and mass 4.85 g that is stretched under a tension of 685 N. (0.00336578 s)",
+  "answer": "0.00336578 s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p090-piano-wire-wave-speed",
+   "comment": "P90/P91 — transverse wave speed on a string: v = sqrt(F / μ) with μ = m / L (P90), and a pulse\ncrosses the wire in t = L / v = sqrt(m L / F) (P91). The mass is given in grams and converted\ninside the formulas. The base canonical values are P90's; P91 overrides them.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "wave-speed",
+     "prompt": "Calculate the speed of transverse waves on a steel piano wire of length {L:unit} and mass {m:unit} that is stretched under a tension of {F:unit}? {_0}{_u}",
+     "answer": "sqrt(F * L / (m / 1000))",
+     "unit": "m/s"
+    },
+    {
+     "id": "pulse-time",
+     "prompt": "Calculate the time taken by a transverse pulse to travel the length of a steel piano wire of length {L:unit} and mass {m:unit} that is stretched under a tension of {F:unit}. {_0}{_u}",
+     "answer": "L / sqrt(F * L / (m / 1000))",
+     "unit": "s"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 92,
+  "section": "Waves",
+  "text": "The tension in a thin cable of length 3.2 m and mass 0.6 kg, stretched between two poles, is T = 275 N. Due to the wind in the air the cable is vibrating and produces a standing wave at 2 times its fundamental frequency. What is the frequency of the hum that is produced? (11.9678 Hz)",
+  "answer": "11.9678 Hz",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p092-cable-hum-harmonic",
+   "comment": "P92/P93 — string fixed at both ends: v = sqrt(T L / m), f₁ = v / (2L), and the n-th harmonic is\nf_n = n f₁ (P92) with wavelength λ_n = 2L / n (P93, which needs neither the mass nor the\ntension). The multiple n of the fundamental is a small whole number, drawn from 2–4. The base\ncanonical values are P92's; P93 overrides them.",
+   "derived": [
+    {
+     "name": "v",
+     "expr": "sqrt(T * L / m)",
+     "unit": "m/s"
+    }
+   ],
+   "parts": [
+    {
+     "id": "hum-frequency",
+     "prompt": "What is the frequency of the hum that is produced? {_0}{_u}",
+     "answer": "n * v / (2 * L)",
+     "unit": "Hz"
+    },
+    {
+     "id": "wavelength",
+     "prompt": "What is the wavelength of the standing wave on the cable? {_0}{_u}",
+     "answer": "2 * L / n",
+     "unit": "m"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 93,
+  "section": "Waves",
+  "text": "A thin cable of length 3.25 m and mass 0.52 kg is stretched between two poles under a tension of 310 N. The wind makes it vibrate at 3 times its fundamental frequency. What is the wavelength of the standing wave on the cable? (2.16667 m)",
+  "answer": "2.16667 m",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p092-cable-hum-harmonic",
+   "comment": "P92/P93 — string fixed at both ends: v = sqrt(T L / m), f₁ = v / (2L), and the n-th harmonic is\nf_n = n f₁ (P92) with wavelength λ_n = 2L / n (P93, which needs neither the mass nor the\ntension). The multiple n of the fundamental is a small whole number, drawn from 2–4. The base\ncanonical values are P92's; P93 overrides them.",
+   "derived": [
+    {
+     "name": "v",
+     "expr": "sqrt(T * L / m)",
+     "unit": "m/s"
+    }
+   ],
+   "parts": [
+    {
+     "id": "hum-frequency",
+     "prompt": "What is the frequency of the hum that is produced? {_0}{_u}",
+     "answer": "n * v / (2 * L)",
+     "unit": "Hz"
+    },
+    {
+     "id": "wavelength",
+     "prompt": "What is the wavelength of the standing wave on the cable? {_0}{_u}",
+     "answer": "2 * L / n",
+     "unit": "m"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 94,
+  "section": "Waves",
+  "text": "A string on a certain guitar of the length of 52 cm vibrates at a fundamental frequency of 262 Hz. Calculate the speed of the transverse waves on the string. (272.48 m/s)",
+  "answer": "272.48 m/s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p094-guitar-string-wave-speed",
+   "comment": "P94/P95 — the fundamental of a string fixed at both ends has λ = 2L, so v = λ f = 2 L f (P94).\nAt the same tension v stays the same, so shortening the string to L₂ raises the fundamental to\nf₂ = f L / L₂ (P95). The lengths are given in cm. The base canonical values are P94's; P95\noverrides them.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "wave-speed",
+     "prompt": "Calculate the speed of the transverse waves on the string. {_0}{_u}",
+     "answer": "2 * (L / 100) * f",
+     "unit": "m/s"
+    },
+    {
+     "id": "shortened-frequency",
+     "prompt": "Without changing the tension, the vibrating length is shortened to {L2:unit}. What fundamental frequency does the string now produce? {_0}{_u}",
+     "answer": "f * L / L2",
+     "unit": "Hz"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 95,
+  "section": "Waves",
+  "text": "A string on a guitar of length 56 cm vibrates at a fundamental frequency of 270 Hz. Without changing the tension, the vibrating length is shortened to 34 cm. What fundamental frequency does the string now produce? (444.706 Hz)",
+  "answer": "444.706 Hz",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p094-guitar-string-wave-speed",
+   "comment": "P94/P95 — the fundamental of a string fixed at both ends has λ = 2L, so v = λ f = 2 L f (P94).\nAt the same tension v stays the same, so shortening the string to L₂ raises the fundamental to\nf₂ = f L / L₂ (P95). The lengths are given in cm. The base canonical values are P94's; P95\noverrides them.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "wave-speed",
+     "prompt": "Calculate the speed of the transverse waves on the string. {_0}{_u}",
+     "answer": "2 * (L / 100) * f",
+     "unit": "m/s"
+    },
+    {
+     "id": "shortened-frequency",
+     "prompt": "Without changing the tension, the vibrating length is shortened to {L2:unit}. What fundamental frequency does the string now produce? {_0}{_u}",
+     "answer": "f * L / L2",
+     "unit": "Hz"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 96,
+  "section": "Waves",
+  "text": "A string on a certain guitar of the length of 54 cm vibrates at a fundamental frequency of 250 Hz. Suppose the linear mass density of the guitar is 1.37 g/m. Find the tension required to tune the string. (99.873 N)",
+  "answer": "99.873 N",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p096-guitar-string-tension",
+   "comment": "P96 — a string fixed at both ends vibrates in its fundamental with λ = 2L, so the wave speed is\nv = 2 L f and the tension is F = μ v² = μ (2 L f)². L is given in cm and μ in g/m.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "tension",
+     "prompt": "Find the tension required to tune the string. {_0}{_u}",
+     "answer": "(mu / 1000) * (2 * (L / 100) * f)^2",
+     "unit": "N"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 97,
+  "section": "Waves",
+  "text": "A transverse wave, traveling along a string of length 8.45 m and mass 1.8 kg, moves by 14.7 m during a time interval of 1.45 s. Calculate the tension in the string. (21.89 N)",
+  "answer": "21.89 N",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p097-string-tension-wave-travel",
+   "comment": "P97 — the wave speed is v = d / t and the linear mass density is μ = m / L, so the tension is\nF = μ v² = (m / L) (d / t)².",
+   "derived": null,
+   "parts": [
+    {
+     "id": "tension",
+     "prompt": "Calculate the tension in the string. {_0}{_u}",
+     "answer": "(m / L) * (d / t)^2",
+     "unit": "N"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 98,
+  "section": "Waves",
+  "text": "A transverse harmonic wave with an amplitude of 2 mm and wavelength of 1.65 m travels from left to right along a long, horizontal, stretched string with a speed of 29 m/s. Take the origin at the left end of the undisturbed string. At time t = 0 s the left end of the string has its maximum upward displacement. Find the magnitude of transverse displacement of a particle 1.4 m to the right of the origin at time t = 0.0595 s. (0.0006505 m)",
+  "answer": "0.0006505 m",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p098-harmonic-wave-particle-motion",
+   "comment": "P98/P100 — the wave travels in +x and the left end (x = 0) is at its maximum upward displacement\nat t = 0, so y(x, t) = A cos(kx − ωt) with k = 2π / λ and ω = k v. The displacement magnitude\nis |A cos(kx − ωt)| (P98) and the transverse velocity magnitude |∂y/∂t| = |A ω sin(kx − ωt)|\n(P100). The amplitude is given in mm. The constraints keep both answers away from a zero of the\ncosine or sine, where rounding the phase would swamp the tolerance. The base canonical values\nare P98's; P100 overrides them with its own.",
+   "derived": [
+    {
+     "name": "phase",
+     "expr": "2 * pi * (x - v * t) / lam",
+     "unit": "rad"
+    }
+   ],
+   "parts": [
+    {
+     "id": "displacement",
+     "prompt": "Find the magnitude of transverse displacement of a particle {x:unit} to the right of the origin at time t = {t:unit}. {_0}{_u}",
+     "answer": "abs((A / 1000) * cos(phase))",
+     "unit": "m"
+    },
+    {
+     "id": "transverse-velocity",
+     "prompt": "Find the magnitude of the transverse velocity of a particle {x:unit} to the right of the origin at time t = {t:unit}. {_0}{_u}",
+     "answer": "abs((A / 1000) * (2 * pi * v / lam) * sin(phase))",
+     "unit": "m/s"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 99,
+  "section": "Waves",
+  "text": "A transverse harmonic wave with an amplitude of 1.25 mm and a wavelength of 1.72 m travels from left to right along a long, horizontal, stretched string with a speed of 31 m/s. What is the maximum transverse acceleration of a particle of the string? (16.0301 m/s^2)",
+  "answer": "16.0301 m/s^2",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p099-harmonic-wave-max-acceleration",
+   "comment": "P99 — every particle of the string moves in simple harmonic motion with the wave's angular\nfrequency ω = 2π v / λ, so its maximum transverse acceleration is ω² A. The amplitude is given\nin mm.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "max-acceleration",
+     "prompt": "What is the maximum transverse acceleration of a particle of the string? {_0}{_u}",
+     "answer": "(2 * pi * v / lam)^2 * A / 1000",
+     "unit": "m/s^2"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 100,
+  "section": "Waves",
+  "text": "A transverse harmonic wave with an amplitude of 1.5 mm and wavelength of 1.85 m travels from left to right along a long, horizontal, stretched string with a speed of 38 m/s. Take the origin at the left end of the undisturbed string. At time t = 0 s the left end of the string has its maximum upward displacement. Find the magnitude of the transverse velocity of a particle 1.75 m to the right of the origin at time t = 0.0425 s. (0.08568 m/s)",
+  "answer": "0.08568 m/s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p098-harmonic-wave-particle-motion",
+   "comment": "P98/P100 — the wave travels in +x and the left end (x = 0) is at its maximum upward displacement\nat t = 0, so y(x, t) = A cos(kx − ωt) with k = 2π / λ and ω = k v. The displacement magnitude\nis |A cos(kx − ωt)| (P98) and the transverse velocity magnitude |∂y/∂t| = |A ω sin(kx − ωt)|\n(P100). The amplitude is given in mm. The constraints keep both answers away from a zero of the\ncosine or sine, where rounding the phase would swamp the tolerance. The base canonical values\nare P98's; P100 overrides them with its own.",
+   "derived": [
+    {
+     "name": "phase",
+     "expr": "2 * pi * (x - v * t) / lam",
+     "unit": "rad"
+    }
+   ],
+   "parts": [
+    {
+     "id": "displacement",
+     "prompt": "Find the magnitude of transverse displacement of a particle {x:unit} to the right of the origin at time t = {t:unit}. {_0}{_u}",
+     "answer": "abs((A / 1000) * cos(phase))",
+     "unit": "m"
+    },
+    {
+     "id": "transverse-velocity",
+     "prompt": "Find the magnitude of the transverse velocity of a particle {x:unit} to the right of the origin at time t = {t:unit}. {_0}{_u}",
+     "answer": "abs((A / 1000) * (2 * pi * v / lam) * sin(phase))",
+     "unit": "m/s"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 101,
+  "section": "Waves",
+  "text": "One string of a certain musical instrument is 55 cm long and has a mass of 8.5 g. It is being played in a room where the speed of sound is 344 m/s. To what tension must you adjust the string so that, when vibrating in its second overtone, it produces sound of wavelength 3.4 m? (21.2695 N)",
+  "answer": "21.2695 N",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p101-string-overtone-tension",
+   "comment": "P101 — the string's frequency equals the sound's, f = v_sound / λ. The second overtone of a string\nfixed at both ends is the third harmonic, f₃ = 3 v / (2L), so the wave speed on the string is\nv = 2 L f / 3 and the tension is F = μ v² with μ = m / L. L is given in cm and m in g; the\nspeed of sound is a constant stated by the source.",
+   "derived": [
+    {
+     "name": "vs",
+     "expr": "344",
+     "unit": "m/s"
+    }
+   ],
+   "parts": [
+    {
+     "id": "tension",
+     "prompt": "To what tension must you adjust the string so that, when vibrating in its second overtone, it produces sound of wavelength {lam:unit}? {_0}{_u}",
+     "answer": "((m / 1000) / (L / 100)) * (2 * (L / 100) * (vs / lam) / 3)^2",
+     "unit": "N"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 102,
+  "section": "Waves",
+  "text": "One string of a musical instrument is 61.5 cm long and has a mass of 9.5 g. It is played in a room where the speed of sound is 345 m/s. When the string vibrates in its second overtone, what is the wavelength of the standing wave on the string itself? (0.41 m)",
+  "answer": "0.41 m",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p102-string-overtone-wavelength",
+   "comment": "P102 — the second overtone of a string fixed at both ends is the third harmonic, three half\nwavelengths along the string: λ = 2L / 3. The string's mass and the speed of sound in the room\ndo not affect the answer. L is given in cm.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "wavelength",
+     "prompt": "When the string vibrates in its second overtone, what is the wavelength of the standing wave on the string itself? {_0}{_u}",
+     "answer": "2 * (L / 100) / 3",
+     "unit": "m"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 103,
+  "section": "Waves",
+  "text": "One string of a certain musical instrument is 60 cm long and has a mass of 9.5 g. It is being played in a room where the speed of sound is 344 m/s. What frequency sound does this string produce in its fundamental mode of vibration, if when vibrating in its second overtone, it produces sound of wavelength 3.7 cm? (3099.099 Hz)",
+  "answer": "3099.099 Hz",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p103-string-overtone-fundamental",
+   "comment": "P103 — the string's frequency equals the sound's, f₃ = v_sound / λ. The second overtone of a\nstring fixed at both ends is the third harmonic, so the fundamental is f₁ = f₃ / 3. The sound\nwavelength is given in cm; the string's length and mass do not affect the answer. The speed of\nsound is a constant stated by the source.",
+   "derived": [
+    {
+     "name": "vs",
+     "expr": "344",
+     "unit": "m/s"
+    }
+   ],
+   "parts": [
+    {
+     "id": "fundamental",
+     "prompt": "What frequency sound does this string produce in its fundamental mode of vibration, if when vibrating in its second overtone, it produces sound of wavelength {lam:unit}? {_0}{_u}",
+     "answer": "vs / (lam / 100) / 3",
+     "unit": "Hz"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 104,
+  "section": "Waves",
+  "text": "Three pieces of string, each of length 58 cm, are joined together end to end, to make a combined string of length 174 cm. The first piece of string has mass per unit length 3.55⋅10^-6 kg/cm, the second piece has mass per unit length 14.2⋅10^-6 kg/cm, and the third piece has mass per unit length 0.8875⋅10^-6 kg/cm. If the combined string is under tension 0.46 N, how much time does it take a transverse wave to travel the entire length of 174 cm? (0.05639 s)",
+  "answer": "0.05639 s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p104-three-strings-travel-time",
+   "comment": "P104 — the tension is the same in all three pieces, so the wave speed in piece i is\nvᵢ = sqrt(F / μᵢ) and the total travel time is t = Σ L / vᵢ = L Σ sqrt(μᵢ / F). The lengths are\ngiven in cm and the linear densities in kg/cm (×100 → kg/m). The combined length is 3L.",
+   "derived": [
+    {
+     "name": "Ltot",
+     "expr": "3 * L",
+     "unit": "cm"
+    }
+   ],
+   "parts": [
+    {
+     "id": "travel-time",
+     "prompt": "If the combined string is under tension {F:unit}, how much time does it take a transverse wave to travel the entire length of {Ltot:unit}? {_0}{_u}",
+     "answer": "(L / 100) * (sqrt(100 * mu1 / F) + sqrt(100 * mu2 / F) + sqrt(100 * mu3 / F))",
+     "unit": "s"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 107,
+  "section": "Waves",
+  "text": "A 1700-N irregular beam is hanging horizontally by its ends from the ceiling by two vertical wires (A and B), each 1.25 m long and weighing 1.5 N. The center of gravity of this beam is one-third of the way along the beam from the end where wire A is attached. If you pluck both strings at the same time at the beam, what is the time delay between the arrival of the two pulses at the ceiling? (0.00538 s)",
+  "answer": "0.00538 s",
+  "figures": [
+   "figures/unnamed_003_OTxQ.png"
+  ],
+  "scenario": {
+   "id": "phys161-e3-p107-beam-wires-pulse-delay",
+   "comment": "P107 — with the center of gravity one-third of the way from A, the wire tensions are\nT_A = 2W/3 and T_B = W/3. Each wire has mass w / g, so μ = w / (g L) and a pulse takes\nt = L / v = L sqrt(μ / T) = sqrt(w L / (g T)). The delay is t_B − t_A. The source states no g;\n9.8 m/s² (as elsewhere in the set) reproduces the printed answer.",
+   "derived": [
+    {
+     "name": "g",
+     "expr": "9.8",
+     "unit": "m/s^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "time-delay",
+     "prompt": "If you pluck both strings at the same time at the beam, what is the time delay between the arrival of the two pulses at the ceiling? {_0}{_u}",
+     "answer": "sqrt(w * L / (g * W / 3)) - sqrt(w * L / (g * 2 * W / 3))",
+     "unit": "s"
+    }
+   ],
+   "fig": "figures/unnamed_003_OTxQ.png"
+  }
+ },
+ {
+  "n": 108,
+  "section": "Waves",
+  "text": "A 2000-N irregular beam is hanging horizontally by its ends from the ceiling by two vertical wires, A and B, each 1.7 m long and weighing 1.95 N. The center of gravity of this beam is one-4th of the way along the beam from the end where wire A is attached. If wire A is plucked, what is the fundamental frequency at which it vibrates? The gravitational acceleration on Earth is g = 9.8 m/s^2. (33.2956 Hz)",
+  "answer": "33.2956 Hz",
+  "figures": [
+   "figures/unnamed_003_OTxQ.png"
+  ],
+  "scenario": {
+   "id": "phys161-e3-p108-beam-wire-fundamental",
+   "comment": "P108 — with the center of gravity a fraction 1/n of the way from A, torques about B give the\ntension in wire A, T_A = W (1 − 1/n). The wire has mass w / g, so μ = w / (g L), the wave speed\nis v = sqrt(T_A / μ) and the fundamental is f₁ = v / (2L). The source prints the fraction as\n\"one-4th\"; n is drawn from 4–6 so the same wording always reads correctly.",
+   "derived": [
+    {
+     "name": "g",
+     "expr": "9.8",
+     "unit": "m/s^2"
+    },
+    {
+     "name": "TA",
+     "expr": "W * (1 - 1 / n)",
+     "unit": "N"
+    }
+   ],
+   "parts": [
+    {
+     "id": "fundamental-a",
+     "prompt": "If wire A is plucked, what is the fundamental frequency at which it vibrates? {_0}{_u}",
+     "answer": "sqrt(TA * g * L / w) / (2 * L)",
+     "unit": "Hz"
+    }
+   ],
+   "fig": "figures/unnamed_003_OTxQ.png"
+  }
+ },
+ {
+  "n": 109,
+  "section": "Waves",
+  "text": "A continuous succession of sinusoidal wave pulses are produced at one end of a very long string and travel along the length of the string. The wave has frequency 64 Hz, amplitude 3 mm, and wavelength 0.51 m. How long does it take the wave to travel a distance of 8 m along the length of the string? (0.245 s)",
+  "answer": "0.245 s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p109-wave-pulses-travel-time",
+   "comment": "P109 — the wave speed is v = f λ, so the travel time over a distance d is t = d / (f λ). The\namplitude (given in mm) does not affect the answer.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "travel-time",
+     "prompt": "How long does it take the wave to travel a distance of {d:unit} along the length of the string? {_0}{_u}",
+     "answer": "d / (f * lam)",
+     "unit": "s"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 110,
+  "section": "Waves",
+  "text": "A sinusoidal transverse wave travels on a string. The string has length 8 m and mass 7.65 g. The wave speed is 26 m/s and the wavelength is 0.22 m. If the wave is to have an average power of 51 W, what must be the amplitude of the wave? (0.086 m)",
+  "answer": "0.086 m",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p110-string-wave-power-amplitude",
+   "comment": "P110/P111 — the average power of a sinusoidal wave on a string is P = ½ μ ω² A² v, with\nμ = m / L and ω = 2π v / λ (P111, amplitude in cm), so A = sqrt(2P / (μ ω² v)) (P110). The\nmass is given in g. The constraints keep both amplitudes below half a wavelength (the source's\nratios are about 0.4 and 0.3), so no draw gives an absurdly large amplitude. The base\ncanonical values are P110's; P111 overrides them.",
+   "derived": [
+    {
+     "name": "mu",
+     "expr": "(m / 1000) / L",
+     "unit": "kg/m"
+    },
+    {
+     "name": "omega",
+     "expr": "2 * pi * v / lam",
+     "unit": "rad/s"
+    },
+    {
+     "name": "amp",
+     "expr": "sqrt(2 * P / (mu * omega^2 * v))",
+     "unit": "m"
+    }
+   ],
+   "parts": [
+    {
+     "id": "amplitude",
+     "prompt": "If the wave is to have an average power of {P:unit}, what must be the amplitude of the wave? {_0}{_u}",
+     "answer": "amp",
+     "unit": "m"
+    },
+    {
+     "id": "average-power",
+     "prompt": "The amplitude is {A:unit}. What is the average power carried by the wave? {_0}{_u}",
+     "answer": "mu * omega^2 * (A / 100)^2 * v / 2",
+     "unit": "W"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 111,
+  "section": "Waves",
+  "text": "A sinusoidal transverse wave travels on a string of length 6.6 m and mass 6.2 g. The wave speed is 23 m/s, the wavelength is 0.255 m and the amplitude is 8.2 cm. What is the average power carried by the wave? (23.3297 W)",
+  "answer": "23.3297 W",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p110-string-wave-power-amplitude",
+   "comment": "P110/P111 — the average power of a sinusoidal wave on a string is P = ½ μ ω² A² v, with\nμ = m / L and ω = 2π v / λ (P111, amplitude in cm), so A = sqrt(2P / (μ ω² v)) (P110). The\nmass is given in g. The constraints keep both amplitudes below half a wavelength (the source's\nratios are about 0.4 and 0.3), so no draw gives an absurdly large amplitude. The base\ncanonical values are P110's; P111 overrides them.",
+   "derived": [
+    {
+     "name": "mu",
+     "expr": "(m / 1000) / L",
+     "unit": "kg/m"
+    },
+    {
+     "name": "omega",
+     "expr": "2 * pi * v / lam",
+     "unit": "rad/s"
+    },
+    {
+     "name": "amp",
+     "expr": "sqrt(2 * P / (mu * omega^2 * v))",
+     "unit": "m"
+    }
+   ],
+   "parts": [
+    {
+     "id": "amplitude",
+     "prompt": "If the wave is to have an average power of {P:unit}, what must be the amplitude of the wave? {_0}{_u}",
+     "answer": "amp",
+     "unit": "m"
+    },
+    {
+     "id": "average-power",
+     "prompt": "The amplitude is {A:unit}. What is the average power carried by the wave? {_0}{_u}",
+     "answer": "mu * omega^2 * (A / 100)^2 * v / 2",
+     "unit": "W"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 112,
+  "section": "Waves",
+  "text": "A uniform cylindrical steel wire, 48 cm long and 1.52 mm in diameter, is fixed at both ends. To what tension must it be adjusted so that, when vibrating in its first overtone, it produces the note of frequency 439 Hz? Assume that it stretches an insignificant amount. Density of steel ρ = 7.8 ×10^3 kg/m^3. (628.4680 N)",
+  "answer": "628.4680 N",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p112-steel-wire-overtone-tension",
+   "comment": "P112 — the wire's linear density is μ = ρ π d² / 4. The first overtone of a wire fixed at both\nends is the second harmonic, f₂ = 2 v / (2L) = v / L, so v = f L and the tension is\nF = μ v² = μ (f L)². The length is given in cm and the diameter in mm; the density of steel is\na constant stated by the source.",
+   "derived": [
+    {
+     "name": "rho",
+     "expr": "7.8e3",
+     "unit": "kg/m^3"
+    }
+   ],
+   "parts": [
+    {
+     "id": "tension",
+     "prompt": "To what tension must it be adjusted so that, when vibrating in its first overtone, it produces the note of frequency {f:unit}? Assume that it stretches an insignificant amount. Density of steel $\\rho = {= rho / 1000} \\times 10^3\\ \\text{kg/m}^3$. {_0}{_u}",
+     "answer": "rho * pi * (d / 1000)^2 / 4 * (f * L / 100)^2",
+     "unit": "N"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 113,
+  "section": "Waves",
+  "text": "A uniform cylindrical steel wire is 49 cm long and 1.63 mm in diameter, and is fixed at both ends so that in its first overtone it sounds the note 451 Hz. What is the mass of this wire? The density of steel is ρ = 7.95×10^3 kg/m^3. (0.00812883 kg)",
+  "answer": "0.00812883 kg",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p113-steel-wire-mass",
+   "comment": "P113 — the wire is a cylinder, so its mass is m = ρ π d² L / 4. The first-overtone note is\npart of the problem's data but does not enter the answer. The length is given in cm and the\ndiameter in mm; the density of steel is the constant the source states (7.95 × 10³ kg/m³, not\nP112's 7.8 × 10³).",
+   "derived": [
+    {
+     "name": "rho",
+     "expr": "7.95e3",
+     "unit": "kg/m^3"
+    }
+   ],
+   "parts": [
+    {
+     "id": "mass",
+     "prompt": "What is the mass of this wire? {_0}{_u}",
+     "answer": "rho * pi * (d / 1000)^2 / 4 * (L / 100)",
+     "unit": "kg"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 114,
+  "section": "Waves",
+  "text": "A musician tunes the string of her instrument to a fundamental frequency of 74 Hz. The vibrating portion of the string is 0.66 m long and has a mass of 14.7 g. With what tension must the musician stretch it? (212.51 N)",
+  "answer": "212.51 N",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p114-musician-string-tension",
+   "comment": "P114 — in the fundamental λ = 2L, so the wave speed is v = 2 L f; with μ = m / L the tension is\nF = μ v² = (m / L) (2 L f)². The mass is given in g.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "tension",
+     "prompt": "With what tension must the musician stretch it? {_0}{_u}",
+     "answer": "((m / 1000) / L) * (2 * L * f)^2",
+     "unit": "N"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 115,
+  "section": "Sound",
+  "text": "As the train passes the crossing, the receiver at the crossing notices how the sound of the train's whistle changes, with frequency decreasing from 547 Hz on approach to 475 Hz on departure. Using 333 m/s for the speed of sound in air, calculate the speed of the train. (23.46 m/s)",
+  "answer": "23.46 m/s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p115-train-whistle-doppler",
+   "comment": "P115 — Doppler shift of a moving source heard by a receiver at rest: on approach\nf_a = f₀ v / (v − u), on departure f_d = f₀ v / (v + u). Dividing, f_a / f_d = (v + u) / (v − u),\nso the train's speed is u = v (f_a − f_d) / (f_a + f_d). The constraints keep the approach\nfrequency above the departure one by a margin that gives a realistic train speed.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "train-speed",
+     "prompt": "Using {v:unit} for the speed of sound in air, calculate the speed of the train. {_0}{_u}",
+     "answer": "v * (fa - fd) / (fa + fd)",
+     "unit": "m/s"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 116,
+  "section": "Sound",
+  "text": "A man walks down a long hall carrying a tuning fork vibrating at 431 Hz, so that the sound reflects from the closed end of the hall. If the man hears 3 beats per second, how fast is the man walking? Use the velocity of sound of 340 m/s.(1.179 m/s)",
+  "answer": "1.179 m/s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p116-tuning-fork-hall-beats",
+   "comment": "P116 — the man hears the fork directly at f and its echo from the closed end of the hall. The\nwall receives f v / (v − u) from the approaching source and reflects it back to the approaching\nman, who hears f (v + u) / (v − u). The beat frequency is B = f (v + u) / (v − u) − f\n= 2 f u / (v − u), so the walking speed is u = B v / (2 f + B).",
+   "derived": null,
+   "parts": [
+    {
+     "id": "walking-speed",
+     "prompt": "If the man hears {B} beats per second, how fast is the man walking? Use the velocity of sound of {v:unit}. {_0}{_u}",
+     "answer": "B * v / (2 * f + B)",
+     "unit": "m/s"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 117,
+  "section": "Sound",
+  "text": "Calculate the wavelength of sound at the lower extreme of the audible range 20 Hz, when the speed of sound in air is 332 m/s. (16.6 m)",
+  "answer": "16.6 m",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p117-audible-low-wavelength",
+   "comment": "P117 — wavelength λ = v / f. The 20 Hz lower limit of human hearing is a fixed fact, not data,\nso it is a constant; only the speed of sound in air (which depends on the temperature) varies.",
+   "derived": [
+    {
+     "name": "f",
+     "expr": "20",
+     "unit": "Hz"
+    }
+   ],
+   "parts": [
+    {
+     "id": "wavelength",
+     "prompt": "Calculate the wavelength of sound at the lower extreme of the audible range {f:unit}, when the speed of sound in air is {v:unit}. {_0}{_u}",
+     "answer": "v / f",
+     "unit": "m"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 118,
+  "section": "Sound",
+  "text": "Calculate the wavelength of sound at the higher extreme of the audible range 20 kHz, when the speed of sound in air is 336 m/s. (0.0168 m)",
+  "answer": "0.0168 m",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p118-audible-high-wavelength",
+   "comment": "P118 — wavelength λ = v / f. The 20 kHz upper limit of human hearing is a fixed fact, not data,\nso it is a constant (converted from kHz inside the formula); only the speed of sound in air\n(which depends on the temperature) varies.",
+   "derived": [
+    {
+     "name": "f",
+     "expr": "20",
+     "unit": "kHz"
+    }
+   ],
+   "parts": [
+    {
+     "id": "wavelength",
+     "prompt": "Calculate the wavelength of sound at the higher extreme of the audible range {f:unit}, when the speed of sound in air is {v:unit}. {_0}{_u}",
+     "answer": "v / (f * 1000)",
+     "unit": "m"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 119,
+  "section": "Sound",
+  "text": "Calculate the sound intensity level in decibels for a sound wave traveling in air at 339 m/s and having a pressure amplitude of 0.82 Pa. Air density is 1.29 kg/m^3. I_0=10^-12 W/m^2 (88.858 dB)",
+  "answer": "88.858 dB",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p119-pressure-amplitude-level",
+   "comment": "P119 — intensity of a sound wave from its pressure amplitude, I = p_max² / (2 ρ v), and the\nsound intensity level β = 10 log₁₀(I / I₀). The air density 1.29 kg/m³ and I₀ = 10⁻¹² W/m² are\nthe source's constants; the pressure amplitude and the speed of sound are its data.",
+   "derived": [
+    {
+     "name": "rho",
+     "expr": "1.29",
+     "unit": "kg/m^3"
+    },
+    {
+     "name": "I0",
+     "expr": "1e-12",
+     "unit": "W/m^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "sound-level",
+     "prompt": "Calculate the sound intensity level in decibels for a sound wave traveling in air at {v:unit} and having a pressure amplitude of {p:unit}. Air density is {rho:unit}. $I_0 = {I0:unit}$. {_0}{_u}",
+     "answer": "10 * log10(p^2 / (2 * rho * v) / I0)",
+     "unit": "dB"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 120,
+  "section": "Sound",
+  "text": "Calculate the intensity of a sound wave traveling in air at 335.5 m/s and having a pressure amplitude of 0.8 Pa. The density of air is 1.22 kg/m^3. (0.000781804 W/m^2)",
+  "answer": "0.000781804 W/m^2",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p120-sound-intensity-pressure",
+   "comment": "P120 — intensity of a sound wave from its pressure amplitude, I = p_max² / (2 ρ v). The air\ndensity 1.22 kg/m³ is the source's constant; the pressure amplitude and the speed of sound are\nits data.",
+   "derived": [
+    {
+     "name": "rho",
+     "expr": "1.22",
+     "unit": "kg/m^3"
+    }
+   ],
+   "parts": [
+    {
+     "id": "intensity",
+     "prompt": "Calculate the intensity of a sound wave traveling in air at {v:unit} and having a pressure amplitude of {p:unit}. The density of air is {rho:unit}. {_0}{_u}",
+     "answer": "p^2 / (2 * rho * v)",
+     "unit": "W/m^2"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 121,
+  "section": "Sound",
+  "text": "An organ pipe has two successive harmonics with frequencies 555 Hz and 925 Hz. What is the fundamental frequency? (185 Hz)",
+  "answer": "185 Hz",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p121-organ-pipe-harmonics",
+   "comment": "P121/P123/P124/P126 — two successive harmonics of an organ pipe. A pipe open at both ends has every\nharmonic n f₁, so successive ones differ by f₁ and f_low / Δf is a whole number (P123: 732 and\n915 Hz are the 4th and 5th harmonics of 183 Hz; P126: 582 and 776 Hz the 3rd and 4th of 194 Hz).\nA pipe closed at one end has only odd harmonics, so successive ones differ by 2 f₁ and\nf_low / Δf is a half-integer (P121/P124: 555 and 925 Hz are the 3rd and 5th of 185 Hz). The\nfundamental is Δf (open) or Δf / 2 (closed); in both cases Δf = v / (2L), so L = v / (2 Δf).\nThe printed frequencies are built from the pipe type, the fundamental and the harmonic index,\nso every draw is a genuine pair of successive harmonics of an open or a closed pipe.\nThe base canonical values are P121's (P124 shares them); P123 and P126 override them.",
+   "derived": [
+    {
+     "name": "n1",
+     "expr": "closed * (2 * k - 1) + (1 - closed) * k"
+    },
+    {
+     "name": "f1",
+     "expr": "n1 * f0",
+     "unit": "Hz"
+    },
+    {
+     "name": "f2",
+     "expr": "(n1 + 1 + closed) * f0",
+     "unit": "Hz"
+    }
+   ],
+   "parts": [
+    {
+     "id": "fundamental",
+     "prompt": "What is the fundamental frequency? {_0}{_u}",
+     "answer": "(f2 - f1) / (1 + closed)",
+     "unit": "Hz"
+    },
+    {
+     "id": "length",
+     "prompt": "What is the length of the pipe? Speed of sound in air is {v:unit}. {_0}{_u}",
+     "answer": "v / (2 * (f2 - f1))",
+     "unit": "m"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 123,
+  "section": "Sound",
+  "text": "An organ pipe has two successive harmonics with frequencies 732 Hz and 915 Hz. What is the fundamental frequency? (183 Hz)",
+  "answer": "183 Hz",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p121-organ-pipe-harmonics",
+   "comment": "P121/P123/P124/P126 — two successive harmonics of an organ pipe. A pipe open at both ends has every\nharmonic n f₁, so successive ones differ by f₁ and f_low / Δf is a whole number (P123: 732 and\n915 Hz are the 4th and 5th harmonics of 183 Hz; P126: 582 and 776 Hz the 3rd and 4th of 194 Hz).\nA pipe closed at one end has only odd harmonics, so successive ones differ by 2 f₁ and\nf_low / Δf is a half-integer (P121/P124: 555 and 925 Hz are the 3rd and 5th of 185 Hz). The\nfundamental is Δf (open) or Δf / 2 (closed); in both cases Δf = v / (2L), so L = v / (2 Δf).\nThe printed frequencies are built from the pipe type, the fundamental and the harmonic index,\nso every draw is a genuine pair of successive harmonics of an open or a closed pipe.\nThe base canonical values are P121's (P124 shares them); P123 and P126 override them.",
+   "derived": [
+    {
+     "name": "n1",
+     "expr": "closed * (2 * k - 1) + (1 - closed) * k"
+    },
+    {
+     "name": "f1",
+     "expr": "n1 * f0",
+     "unit": "Hz"
+    },
+    {
+     "name": "f2",
+     "expr": "(n1 + 1 + closed) * f0",
+     "unit": "Hz"
+    }
+   ],
+   "parts": [
+    {
+     "id": "fundamental",
+     "prompt": "What is the fundamental frequency? {_0}{_u}",
+     "answer": "(f2 - f1) / (1 + closed)",
+     "unit": "Hz"
+    },
+    {
+     "id": "length",
+     "prompt": "What is the length of the pipe? Speed of sound in air is {v:unit}. {_0}{_u}",
+     "answer": "v / (2 * (f2 - f1))",
+     "unit": "m"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 124,
+  "section": "Sound",
+  "text": "An organ pipe has two successive harmonics with frequencies 555 Hz and 925 Hz. What is the length of the pipe? Speed of sound in air is 344 m/s. (0.465 m)",
+  "answer": "0.465 m",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p121-organ-pipe-harmonics",
+   "comment": "P121/P123/P124/P126 — two successive harmonics of an organ pipe. A pipe open at both ends has every\nharmonic n f₁, so successive ones differ by f₁ and f_low / Δf is a whole number (P123: 732 and\n915 Hz are the 4th and 5th harmonics of 183 Hz; P126: 582 and 776 Hz the 3rd and 4th of 194 Hz).\nA pipe closed at one end has only odd harmonics, so successive ones differ by 2 f₁ and\nf_low / Δf is a half-integer (P121/P124: 555 and 925 Hz are the 3rd and 5th of 185 Hz). The\nfundamental is Δf (open) or Δf / 2 (closed); in both cases Δf = v / (2L), so L = v / (2 Δf).\nThe printed frequencies are built from the pipe type, the fundamental and the harmonic index,\nso every draw is a genuine pair of successive harmonics of an open or a closed pipe.\nThe base canonical values are P121's (P124 shares them); P123 and P126 override them.",
+   "derived": [
+    {
+     "name": "n1",
+     "expr": "closed * (2 * k - 1) + (1 - closed) * k"
+    },
+    {
+     "name": "f1",
+     "expr": "n1 * f0",
+     "unit": "Hz"
+    },
+    {
+     "name": "f2",
+     "expr": "(n1 + 1 + closed) * f0",
+     "unit": "Hz"
+    }
+   ],
+   "parts": [
+    {
+     "id": "fundamental",
+     "prompt": "What is the fundamental frequency? {_0}{_u}",
+     "answer": "(f2 - f1) / (1 + closed)",
+     "unit": "Hz"
+    },
+    {
+     "id": "length",
+     "prompt": "What is the length of the pipe? Speed of sound in air is {v:unit}. {_0}{_u}",
+     "answer": "v / (2 * (f2 - f1))",
+     "unit": "m"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 126,
+  "section": "Sound",
+  "text": "An organ pipe has two successive harmonics with frequencies 582 Hz and 776 Hz. What is the length of the pipe? Speed of sound in air is 344 m/s. (0.8866 m)",
+  "answer": "0.8866 m",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p121-organ-pipe-harmonics",
+   "comment": "P121/P123/P124/P126 — two successive harmonics of an organ pipe. A pipe open at both ends has every\nharmonic n f₁, so successive ones differ by f₁ and f_low / Δf is a whole number (P123: 732 and\n915 Hz are the 4th and 5th harmonics of 183 Hz; P126: 582 and 776 Hz the 3rd and 4th of 194 Hz).\nA pipe closed at one end has only odd harmonics, so successive ones differ by 2 f₁ and\nf_low / Δf is a half-integer (P121/P124: 555 and 925 Hz are the 3rd and 5th of 185 Hz). The\nfundamental is Δf (open) or Δf / 2 (closed); in both cases Δf = v / (2L), so L = v / (2 Δf).\nThe printed frequencies are built from the pipe type, the fundamental and the harmonic index,\nso every draw is a genuine pair of successive harmonics of an open or a closed pipe.\nThe base canonical values are P121's (P124 shares them); P123 and P126 override them.",
+   "derived": [
+    {
+     "name": "n1",
+     "expr": "closed * (2 * k - 1) + (1 - closed) * k"
+    },
+    {
+     "name": "f1",
+     "expr": "n1 * f0",
+     "unit": "Hz"
+    },
+    {
+     "name": "f2",
+     "expr": "(n1 + 1 + closed) * f0",
+     "unit": "Hz"
+    }
+   ],
+   "parts": [
+    {
+     "id": "fundamental",
+     "prompt": "What is the fundamental frequency? {_0}{_u}",
+     "answer": "(f2 - f1) / (1 + closed)",
+     "unit": "Hz"
+    },
+    {
+     "id": "length",
+     "prompt": "What is the length of the pipe? Speed of sound in air is {v:unit}. {_0}{_u}",
+     "answer": "v / (2 * (f2 - f1))",
+     "unit": "m"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 127,
+  "section": "Sound",
+  "text": "The sound from a trumpet radiates uniformly in all directions. At a distance of 4 m from the trumpet the sound intensity level is 50 dB. At what distance the sound intensity level is 20 dB? I_0=10^-12 W/m^2. (126.49 m)",
+  "answer": "126.49 m",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p127-trumpet-level-distance",
+   "comment": "P127/P128 — a source radiating uniformly in all directions: I ∝ 1 / r², so the level drops by\nβ₁ − β₂ = 10 log₁₀(I₁ / I₂) = 20 log₁₀(r₂ / r₁), giving r₂ = r₁ · 10^((β₁ − β₂) / 20) (P127)\nand β₂ = β₁ − 20 log₁₀(r₂ / r₁) (P128, with its own distance r₂ = d2).\nI₀ = 10⁻¹² W/m² is stated by the source but cancels. The constraints keep P127's level drop,\nand hence the distance ratio, near the source's (30 dB, a factor of about 32); P128's distances\n(r₁ ≤ 8 m, d2 ≥ 20 m) keep its drop between about 8 and 34 dB, so β₂ stays positive.\nThe base canonical values are P127's; P128 overrides them (its β₂ = 30 dB is not part of P128,\nonly a value inside P127's constraints).",
+   "derived": [
+    {
+     "name": "I0",
+     "expr": "1e-12",
+     "unit": "W/m^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "distance",
+     "prompt": "At what distance the sound intensity level is {beta2:unit}? $I_0 = {I0:unit}$. {_0}{_u}",
+     "answer": "r1 * 10^((beta1 - beta2) / 20)",
+     "unit": "m"
+    },
+    {
+     "id": "level-at-distance",
+     "prompt": "What is the sound intensity level at a distance of {d2:unit}? {_0}{_u}",
+     "answer": "beta1 - 20 * log10(d2 / r1)",
+     "unit": "dB"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 128,
+  "section": "Sound",
+  "text": "The sound from a trumpet radiates uniformly in all directions. At a distance of 3.5 m from the trumpet the sound intensity level is 73 dB. What is the sound intensity level at a distance of 74 m? (46.4967 dB)",
+  "answer": "46.4967 dB",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p127-trumpet-level-distance",
+   "comment": "P127/P128 — a source radiating uniformly in all directions: I ∝ 1 / r², so the level drops by\nβ₁ − β₂ = 10 log₁₀(I₁ / I₂) = 20 log₁₀(r₂ / r₁), giving r₂ = r₁ · 10^((β₁ − β₂) / 20) (P127)\nand β₂ = β₁ − 20 log₁₀(r₂ / r₁) (P128, with its own distance r₂ = d2).\nI₀ = 10⁻¹² W/m² is stated by the source but cancels. The constraints keep P127's level drop,\nand hence the distance ratio, near the source's (30 dB, a factor of about 32); P128's distances\n(r₁ ≤ 8 m, d2 ≥ 20 m) keep its drop between about 8 and 34 dB, so β₂ stays positive.\nThe base canonical values are P127's; P128 overrides them (its β₂ = 30 dB is not part of P128,\nonly a value inside P127's constraints).",
+   "derived": [
+    {
+     "name": "I0",
+     "expr": "1e-12",
+     "unit": "W/m^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "distance",
+     "prompt": "At what distance the sound intensity level is {beta2:unit}? $I_0 = {I0:unit}$. {_0}{_u}",
+     "answer": "r1 * 10^((beta1 - beta2) / 20)",
+     "unit": "m"
+    },
+    {
+     "id": "level-at-distance",
+     "prompt": "What is the sound intensity level at a distance of {d2:unit}? {_0}{_u}",
+     "answer": "beta1 - 20 * log10(d2 / r1)",
+     "unit": "dB"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 129,
+  "section": "Sound",
+  "text": "The sound from a trumpet radiates uniformly in all directions. At a distance of 7 m from the trumpet the sound intensity level is 70 dB. What is the pressure amplitude at this distance? The air density at 20°C is 1.2 kg/m^3 and speed of sound is 343 m/s. I_0=10^-12 W/m^2. (0.0907 Pa)",
+  "answer": "0.0907 Pa",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p129-trumpet-pressure-amplitude",
+   "comment": "P129 — from the sound intensity level, I = I₀ · 10^(β / 10), and from I = p_max² / (2 ρ v) the\npressure amplitude is p_max = sqrt(2 ρ v I). The distance does not enter the answer. The air\ndensity and speed of sound are the source's values for air at 20 °C, so they are constants.",
+   "derived": [
+    {
+     "name": "rho",
+     "expr": "1.2",
+     "unit": "kg/m^3"
+    },
+    {
+     "name": "v",
+     "expr": "343",
+     "unit": "m/s"
+    },
+    {
+     "name": "I0",
+     "expr": "1e-12",
+     "unit": "W/m^2"
+    }
+   ],
+   "parts": [
+    {
+     "id": "pressure-amplitude",
+     "prompt": "What is the pressure amplitude at this distance? The air density at 20°C is {rho:unit} and speed of sound is {v:unit}. $I_0 = {I0:unit}$. {_0}{_u}",
+     "answer": "sqrt(2 * rho * v * I0 * 10^(beta / 10))",
+     "unit": "Pa"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 130,
+  "section": "Sound",
+  "text": "Two organ pipes, open at one end but closed at the other, are each 1.28 m long. One is now lengthened by 1 cm. Find the frequency of the beat they produce when playing together in their fundamental mode. Speed of sound in the air is 344 m/s. (0.521 Hz)",
+  "answer": "0.521 Hz",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p130-stopped-pipes-beat",
+   "comment": "P130 — a pipe closed at one end has fundamental f = v / (4L). Lengthening one pipe by ΔL lowers\nits fundamental, and the beat frequency is f_beat = v / (4L) − v / (4 (L + ΔL)). ΔL is given in\ncm and converted inside the formula.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "beat-frequency",
+     "prompt": "Find the frequency of the beat they produce when playing together in their fundamental mode. Speed of sound in the air is {v:unit}. {_0}{_u}",
+     "answer": "v / (4 * L) - v / (4 * (L + dL / 100))",
+     "unit": "Hz"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 131,
+  "section": "Sound",
+  "text": "An organ pipe that is open at one end but closed at the other is 1.41 m long. Find the frequency of its fundamental mode. The speed of sound in air is 339 m/s. (60.1064 Hz)",
+  "answer": "60.1064 Hz",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p131-stopped-pipe-fundamental",
+   "comment": "P131 — a pipe closed at one end has a node at the closed end and an antinode at the open end,\nso its fundamental has λ = 4L and f = v / (4L).",
+   "derived": null,
+   "parts": [
+    {
+     "id": "fundamental",
+     "prompt": "An organ pipe that is open at one end but closed at the other is {L:unit} long. Find the frequency of its fundamental mode. The speed of sound in air is {v:unit}. {_0}{_u}",
+     "answer": "v / (4 * L)",
+     "unit": "Hz"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 132,
+  "section": "Sound",
+  "text": "A bat flies toward a wall, emitting a steady sound of frequency 2.1 kHz. This bat hears its own sound plus the sound reflected by the wall. How fast should the bat fly in order to hear a beat frequency of 8 Hz? Use speed of sound in air v = 344 m/s. (0.654 m/s)",
+  "answer": "0.654 m/s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p132-bat-wall-beats",
+   "comment": "P132/P133 — the bat hears its own call at f and the echo from the wall. The wall receives\nf v / (v − u) from the approaching bat and reflects it back to the approaching bat, which hears\nf (v + u) / (v − u). The beat frequency is B = 2 f u / (v − u) (P133), so the bat's speed is\nu = B v / (2 f + B) (P132). The emitted frequency is given in kHz and converted inside the\nformulas. The base canonical values are P132's; P133 overrides them.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "bat-speed",
+     "prompt": "How fast should the bat fly in order to hear a beat frequency of {B:unit}? Use speed of sound in air $v = {v:unit}$. {_0}{_u}",
+     "answer": "B * v / (2 * f * 1000 + B)",
+     "unit": "m/s"
+    },
+    {
+     "id": "beat-frequency",
+     "prompt": "The bat flies at {u:unit}. What beat frequency does it hear? Use {v:unit} for the speed of sound in air. {_0}{_u}",
+     "answer": "2 * f * 1000 * u / (v - u)",
+     "unit": "Hz"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 133,
+  "section": "Sound",
+  "text": "A bat flies toward a wall at 0.57 m/s, emitting a steady sound of frequency 2.15 kHz. The bat hears its own sound plus the sound reflected from the wall. What beat frequency does it hear? Use 347.5 m/s for the speed of sound in air. (7.06483 Hz)",
+  "answer": "7.06483 Hz",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p132-bat-wall-beats",
+   "comment": "P132/P133 — the bat hears its own call at f and the echo from the wall. The wall receives\nf v / (v − u) from the approaching bat and reflects it back to the approaching bat, which hears\nf (v + u) / (v − u). The beat frequency is B = 2 f u / (v − u) (P133), so the bat's speed is\nu = B v / (2 f + B) (P132). The emitted frequency is given in kHz and converted inside the\nformulas. The base canonical values are P132's; P133 overrides them.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "bat-speed",
+     "prompt": "How fast should the bat fly in order to hear a beat frequency of {B:unit}? Use speed of sound in air $v = {v:unit}$. {_0}{_u}",
+     "answer": "B * v / (2 * f * 1000 + B)",
+     "unit": "m/s"
+    },
+    {
+     "id": "beat-frequency",
+     "prompt": "The bat flies at {u:unit}. What beat frequency does it hear? Use {v:unit} for the speed of sound in air. {_0}{_u}",
+     "answer": "2 * f * 1000 * u / (v - u)",
+     "unit": "Hz"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 134,
+  "section": "Sound",
+  "text": "A car at rest is emitting alarm sound waves of frequency 490 Hz. A motorcyclist is traveling directly away from the car. What is the magnitude of the motorcyclist's velocity if he detects a frequency of 470 Hz. Use speed of sound in air v = 344 m/s. (14.041 m/s)",
+  "answer": "14.041 m/s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p134-motorcyclist-doppler",
+   "comment": "P134 — Doppler effect, source at rest and listener receding: f_L = f_S (v − v_L) / v, so\nv_L = v (1 − f_L / f_S) = v (f_S − f_L) / f_S. The detected frequency is drawn as a drop\nbelow the emitted one, so the listener always recedes at a road speed (about 6–35 m/s).\nThe speed of sound, 344 m/s, is the value the source states.",
+   "derived": [
+    {
+     "name": "v",
+     "expr": "344",
+     "unit": "m/s"
+    },
+    {
+     "name": "f2",
+     "expr": "f - df",
+     "unit": "Hz"
+    }
+   ],
+   "parts": [
+    {
+     "id": "speed",
+     "prompt": "What is the magnitude of the motorcyclist's velocity if he detects a frequency of {f2:unit}. Use speed of sound in air $v = {v:unit}$. {_0}{_u}",
+     "answer": "v * (f - f2) / f",
+     "unit": "m/s"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 135,
+  "section": "Sound",
+  "text": "A car at rest is emitting alarm sound waves of frequency 470 Hz. A motorcyclist is traveling directly toward the car. What is the magnitude of the motorcyclist's velocity if he detects a frequency of 608 Hz? Use 341.5 m/s for the speed of sound in air. (100.27 m/s)",
+  "answer": "100.27 m/s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p135-motorcyclist-approaching-doppler",
+   "comment": "P135 — Doppler effect, source at rest and listener approaching: f_L = f_S (v + v_L) / v, so\nv_L = v (f_L / f_S − 1) = v (f_L − f_S) / f_S. The detected frequency is drawn as a rise above\nthe emitted one, so the listener always approaches (about 17–120 m/s, around the source's\n100 m/s).",
+   "derived": [
+    {
+     "name": "f2",
+     "expr": "f + df",
+     "unit": "Hz"
+    }
+   ],
+   "parts": [
+    {
+     "id": "speed",
+     "prompt": "What is the magnitude of the motorcyclist's velocity if he detects a frequency of {f2:unit}? Use {v:unit} for the speed of sound in air. {_0}{_u}",
+     "answer": "v * (f2 - f) / f",
+     "unit": "m/s"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 136,
+  "section": "Sound",
+  "text": "On a clear day a person sees a jet plane flying overhead flying at a constant altitude of 8 km. The person hears the sonic boom at time 0.9 s after the plane passes directly overhead. Assuming that the speed of sound v = 344 m/s is the same at all altitudes, calculate the speed of the plane. (344.258 m/s)",
+  "answer": "344.258 m/s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p136-sonic-boom-plane-speed",
+   "comment": "P136 — shock wave: the Mach cone has sin α = v / u. The boom reaches the person when the plane\nis u t past overhead and the cone's edge runs through the person: tan α = h / (u t). With\ntan α = v / sqrt(u² − v²) this gives u = h v / sqrt(h² − (v t)²). The altitude is given in km.\nThe speed of sound, 344 m/s, is the value the source states. v t ≪ h, so the answer exceeds v\nby only ½ (v t / h)² (0.075% in the source: 344.258 m/s). The constraint keeps that excess above\n0.07% and the tolerance is 0.05%, so typing the speed of sound itself is never accepted.",
+   "derived": [
+    {
+     "name": "v",
+     "expr": "344",
+     "unit": "m/s"
+    }
+   ],
+   "parts": [
+    {
+     "id": "plane-speed",
+     "prompt": "Assuming that the speed of sound $v = {v:unit}$ is the same at all altitudes, calculate the speed of the plane. {_0}{_u}",
+     "answer": "h * 1000 * v / sqrt((h * 1000)^2 - (v * t)^2)",
+     "unit": "m/s"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 137,
+  "section": "Sound",
+  "text": "Two guitarists attempt to play the same note of wavelength 7.3 cm at the same time, but one of the instruments is slightly out of tune and plays a note of wavelength 7.32 cm instead. What is the frequency of the beat these musicians hear when they play together? The speed of sound in air is v = 344 m/s. (12.875 Hz)",
+  "answer": "12.875 Hz",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p137-guitar-beat-wavelengths",
+   "comment": "P137 — beats: f_beat = |f₁ − f₂| = v |1/λ₁ − 1/λ₂|. The wavelengths are given in cm. The\nout-of-tune wavelength is drawn as a small offset from the intended one (either sign, never\nzero), printed with two decimals as in the source. The speed of sound, 344 m/s, is the value\nthe source states.",
+   "derived": [
+    {
+     "name": "v",
+     "expr": "344",
+     "unit": "m/s"
+    },
+    {
+     "name": "L2",
+     "expr": "L + dL",
+     "unit": "cm"
+    }
+   ],
+   "parts": [
+    {
+     "id": "beat-frequency",
+     "prompt": "What is the frequency of the beat these musicians hear when they play together? The speed of sound in air is $v = {v:unit}$. {_0}{_u}",
+     "answer": "v * abs(1 / (L / 100) - 1 / (L2 / 100))",
+     "unit": "Hz"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 138,
+  "section": "Sound",
+  "text": "Two guitarists try to play the same note at the same time. One plays a note of wavelength 7.1 cm; the other is slightly out of tune and they hear a beat of 13.45 Hz, the out-of-tune note being the lower in frequency. What is the wavelength of the out-of-tune note? The speed of sound in air is 345.5 m/s. (0.0711968 m)",
+  "answer": "0.0711968 m",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p138-guitar-beat-out-of-tune",
+   "comment": "P138 — beats: the out-of-tune note is lower by the beat frequency, f₂ = v / λ₁ − f_beat, so its\nwavelength is λ₂ = v / f₂. λ₁ is given in cm; the answer is in m.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "wavelength",
+     "prompt": "What is the wavelength of the out-of-tune note? {_0}{_u}",
+     "answer": "v / (v / (L1 / 100) - B)",
+     "unit": "m"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 139,
+  "section": "Sound",
+  "text": "In a liquid with density 1100 kg/m^3, longitudinal waves with frequency 275 Hz are found to have wavelength 8 m. Calculate the bulk modulus of the liquid. (5324000000 Pa)",
+  "answer": "5324000000 Pa",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p139-liquid-bulk-modulus",
+   "comment": "P139 — speed of a longitudinal wave in a fluid: v = sqrt(B / ρ) and v = f λ, so the bulk\nmodulus is B = ρ (f λ)².",
+   "derived": null,
+   "parts": [
+    {
+     "id": "bulk-modulus",
+     "prompt": "Calculate the bulk modulus of the liquid. {_0}{_u}",
+     "answer": "rho * (f * L)^2",
+     "unit": "Pa"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 140,
+  "section": "Sound",
+  "text": "A metal bar with a length of 1 m has density 6200 kg/m^3. Longitudinal sound waves take 4.3x10^-4 s to travel from one end of the bar to the other. What is Young's modulus for this metal? (33531638723.63 Pa)",
+  "answer": "33531638723.63 Pa",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p140-metal-bar-youngs-modulus",
+   "comment": "P140 — longitudinal waves in a solid rod travel at v = sqrt(Y / ρ); the pulse covers the bar's\nlength L in time t, so v = L / t and Y = ρ (L / t)². The constraint keeps the wave speed in the\nrange of real metals (1500–6000 m/s).",
+   "derived": null,
+   "parts": [
+    {
+     "id": "youngs-modulus",
+     "prompt": "What is Young's modulus for this metal? {_0}{_u}",
+     "answer": "rho * (L / t)^2",
+     "unit": "Pa"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 141,
+  "section": "Sound",
+  "text": "A 88 m long brass rod is stuck at one end. A person at the other end hears two sounds as a result of two longitudinal waves, one traveling in the metal rod and the other traveling in the air. What is the time interval between the two sounds? The speed of sound in air is 344 m/s. Young's modulus of the brass is 9x10^10 Pa and density of the brass is 8600 kg/m^3. (0.229 s)",
+  "answer": "0.229 s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p141-brass-rod-two-sounds",
+   "comment": "P141 — the same length d is covered in air at v = 344 m/s and in the rod at sqrt(Y / ρ), so the\ntwo sounds arrive Δt = d / v − d / sqrt(Y / ρ) apart. The speed of sound in air, 344 m/s, is\nthe value the source states; Young's modulus is printed with one significant figure as in the\nsource.",
+   "derived": [
+    {
+     "name": "v",
+     "expr": "344",
+     "unit": "m/s"
+    }
+   ],
+   "parts": [
+    {
+     "id": "time-interval",
+     "prompt": "What is the time interval between the two sounds? The speed of sound in air is {v:unit}. Young's modulus of the brass is {Y:unit} and density of the brass is {rho:unit}. {_0}{_u}",
+     "answer": "d / v - d / sqrt(Y / rho)",
+     "unit": "s"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 142,
+  "section": "Sound",
+  "text": "A uniform 150-N bar is supported horizontally by two identical wires A and B. A small 185-N cube of lead is placed 3/4 of the way from A to B. The wires are each 56 cm long and have a mass of 6 g. If both of them are simultaneously plucked at the center, what is the frequency of the beats that they will produce when vibrating in their fundamental? (31.129 Hz)",
+  "answer": "31.129 Hz",
+  "figures": [
+   "figures/unnamed_006_OTxQ.png"
+  ],
+  "scenario": {
+   "id": "phys161-e3-p142-bar-wires-beats",
+   "comment": "P142 — torques about each end give the wire tensions: with the cube a fraction x/x2 of the\nway from A to B, T_A = W/2 + w (1 − x/x2) and T_B = W/2 + w x/x2. Each wire (length L, mass m,\nμ = m / L) vibrates in its fundamental at f = sqrt(T / μ) / (2 L), and the beat frequency is\nf_B − f_A. The length is given in cm and the mass in g.",
+   "derived": [
+    {
+     "name": "TA",
+     "expr": "W / 2 + w * (1 - x / x2)",
+     "unit": "N"
+    },
+    {
+     "name": "TB",
+     "expr": "W / 2 + w * x / x2",
+     "unit": "N"
+    },
+    {
+     "name": "mu",
+     "expr": "(m / 1000) / (L / 100)",
+     "unit": "kg/m"
+    }
+   ],
+   "parts": [
+    {
+     "id": "beat-frequency",
+     "prompt": "If both of them are simultaneously plucked at the center, what is the frequency of the beats that they will produce when vibrating in their fundamental? {_0}{_u}",
+     "answer": "(sqrt(TB / mu) - sqrt(TA / mu)) / (2 * L / 100)",
+     "unit": "Hz"
+    }
+   ],
+   "fig": "figures/unnamed_006_OTxQ.png"
+  }
+ },
+ {
+  "n": 143,
+  "section": "Sound",
+  "text": "A uniform 135-N bar is supported horizontally by two identical wires, A and B, attached at its ends. Each wire is 57 cm long and has a mass of 7.6 g. A small 175-N cube of lead is placed a fraction 0.7 of the way from A to B. If wire B is plucked, what is the fundamental frequency at which it vibrates? (104.713 Hz)",
+  "answer": "104.713 Hz",
+  "figures": [
+   "figures/unnamed_006_OTxQ.png"
+  ],
+  "scenario": {
+   "id": "phys161-e3-p143-bar-wire-fundamental",
+   "comment": "P143 — torques about A give the tension in wire B: with the cube a fraction x of the way from A\nto B, T_B = W/2 + w x. The wire (length L, mass m, μ = m / L) vibrates in its fundamental at\nf = sqrt(T_B / μ) / (2 L). The length is given in cm and the mass in g. The figure draws the\ncube about three quarters of the way to B, so x stays between 0.6 and 0.85.",
+   "derived": [
+    {
+     "name": "TB",
+     "expr": "W / 2 + w * x",
+     "unit": "N"
+    },
+    {
+     "name": "mu",
+     "expr": "(m / 1000) / (L / 100)",
+     "unit": "kg/m"
+    }
+   ],
+   "parts": [
+    {
+     "id": "fundamental-b",
+     "prompt": "If wire B is plucked, what is the fundamental frequency at which it vibrates? {_0}{_u}",
+     "answer": "sqrt(TB / mu) / (2 * L / 100)",
+     "unit": "Hz"
+    }
+   ],
+   "fig": "figures/unnamed_006_OTxQ.png"
+  }
+ },
+ {
+  "n": 144,
+  "section": "Sound",
+  "text": "One type of steel has a density of 7.8×10^3 kg/m^3 and a breaking stress of 7×10^8 N/m^2. A cylindrical guitar string is to be made of 6 g of this steel. What is the length of the longest and thinnest string that can be placed under a tension of 930 N without breaking? (0.579 m)",
+  "answer": "0.579 m",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p144-steel-guitar-string",
+   "comment": "P144/P145 — the thinnest string that survives tension F has stress F / A equal to the breaking\nstress σ, so A = F / σ and r = sqrt(F / (π σ)). A fixed mass m of steel then gives the longest\nstring L = m / (ρ A) = m σ / (ρ F). The mass is given in g. The base canonical values are\nP144's; P145 overrides the tension with its own.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "length",
+     "prompt": "What is the length of the longest and thinnest string that can be placed under a tension of {F:unit} without breaking? {_0}{_u}",
+     "answer": "(m / 1000) * sigma / (rho * F)",
+     "unit": "m"
+    },
+    {
+     "id": "radius",
+     "prompt": "What is the radius of the longest and thinnest string that can be placed under a tension of {F:unit} without breaking? {_0}{_u}",
+     "answer": "sqrt(F / (pi * sigma))",
+     "unit": "m"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 145,
+  "section": "Sound",
+  "text": "One type of steel has a density of 7.8×10^3 kg/m^3 and a breaking stress of 7×10^8 N/m^2. A cylindrical guitar string is to be made of 6 g of this steel. What is the radius of the longest and thinnest string that can be placed under a tension of 780 N without breaking? (0.0005956 m)",
+  "answer": "0.0005956 m",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p144-steel-guitar-string",
+   "comment": "P144/P145 — the thinnest string that survives tension F has stress F / A equal to the breaking\nstress σ, so A = F / σ and r = sqrt(F / (π σ)). A fixed mass m of steel then gives the longest\nstring L = m / (ρ A) = m σ / (ρ F). The mass is given in g. The base canonical values are\nP144's; P145 overrides the tension with its own.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "length",
+     "prompt": "What is the length of the longest and thinnest string that can be placed under a tension of {F:unit} without breaking? {_0}{_u}",
+     "answer": "(m / 1000) * sigma / (rho * F)",
+     "unit": "m"
+    },
+    {
+     "id": "radius",
+     "prompt": "What is the radius of the longest and thinnest string that can be placed under a tension of {F:unit} without breaking? {_0}{_u}",
+     "answer": "sqrt(F / (pi * sigma))",
+     "unit": "m"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 146,
+  "section": "Sound",
+  "text": "The sound source of a ship's sonar system operates at a frequency of 22 kHz. The speed of sound in water is 1471 m/s. What is the wavelength of the waves emitted by the source? (0.06686 m)",
+  "answer": "0.06686 m",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p146-ship-sonar-whale",
+   "comment": "P146/P147/P148 — sonar in water: λ = v / f, and a pulse returns from a target a distance d\naway after t = 2d / v (P147). A whale approaching the ship at speed u first hears\nf (v + u) / v as a moving listener, then re-radiates it as a moving source, so the echo\narrives at f (v + u) / (v − u) and differs from the emitted frequency by 2 u f / (v − u).\nThe frequency is given in kHz. The two source problems use different sonar frequencies and\nspeeds of sound in water, so both are parameters: the base canonical values are P146's\n(with P147's distance and P148's whale speed), and P147 and P148 override them with their own.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "wavelength",
+     "prompt": "What is the wavelength of the waves emitted by the source? {_0}{_u}",
+     "answer": "v / (f * 1000)",
+     "unit": "m"
+    },
+    {
+     "id": "echo-time",
+     "prompt": "How long does it take a pulse to travel from the ship to a target {d:unit} away and back? {_0}{_u}",
+     "answer": "2 * d / v",
+     "unit": "s"
+    },
+    {
+     "id": "echo-frequency-difference",
+     "prompt": "Calculate the absolute value of the difference in frequency between the directly radiated waves and the waves reflected from a whale traveling directly toward the ship at {u:unit}. The ship is at rest in the water. {_0}{_u}",
+     "answer": "f * 1000 * 2 * u / (v - u)",
+     "unit": "Hz"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 147,
+  "section": "Sound",
+  "text": "The sound source of a ship's sonar system operates at a frequency of 24.5 kHz. The speed of sound in water is 1490 m/s. How long does it take a pulse to travel from the ship to a target 830 m away and back? (1.11409 s)",
+  "answer": "1.11409 s",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p146-ship-sonar-whale",
+   "comment": "P146/P147/P148 — sonar in water: λ = v / f, and a pulse returns from a target a distance d\naway after t = 2d / v (P147). A whale approaching the ship at speed u first hears\nf (v + u) / v as a moving listener, then re-radiates it as a moving source, so the echo\narrives at f (v + u) / (v − u) and differs from the emitted frequency by 2 u f / (v − u).\nThe frequency is given in kHz. The two source problems use different sonar frequencies and\nspeeds of sound in water, so both are parameters: the base canonical values are P146's\n(with P147's distance and P148's whale speed), and P147 and P148 override them with their own.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "wavelength",
+     "prompt": "What is the wavelength of the waves emitted by the source? {_0}{_u}",
+     "answer": "v / (f * 1000)",
+     "unit": "m"
+    },
+    {
+     "id": "echo-time",
+     "prompt": "How long does it take a pulse to travel from the ship to a target {d:unit} away and back? {_0}{_u}",
+     "answer": "2 * d / v",
+     "unit": "s"
+    },
+    {
+     "id": "echo-frequency-difference",
+     "prompt": "Calculate the absolute value of the difference in frequency between the directly radiated waves and the waves reflected from a whale traveling directly toward the ship at {u:unit}. The ship is at rest in the water. {_0}{_u}",
+     "answer": "f * 1000 * 2 * u / (v - u)",
+     "unit": "Hz"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 148,
+  "section": "Sound",
+  "text": "The sound source of a ship's sonar system operates at a frequency of 21 kHz. The speed of sound in water is 1488 m/s. Calculate the absolute value of the difference in frequency between the directly radiated waves and the waves reflected from a whale traveling directly toward the ship at 4.3 m/s. The ship is at rest in the water. (121.72 Hz)",
+  "answer": "121.72 Hz",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p146-ship-sonar-whale",
+   "comment": "P146/P147/P148 — sonar in water: λ = v / f, and a pulse returns from a target a distance d\naway after t = 2d / v (P147). A whale approaching the ship at speed u first hears\nf (v + u) / v as a moving listener, then re-radiates it as a moving source, so the echo\narrives at f (v + u) / (v − u) and differs from the emitted frequency by 2 u f / (v − u).\nThe frequency is given in kHz. The two source problems use different sonar frequencies and\nspeeds of sound in water, so both are parameters: the base canonical values are P146's\n(with P147's distance and P148's whale speed), and P147 and P148 override them with their own.",
+   "derived": null,
+   "parts": [
+    {
+     "id": "wavelength",
+     "prompt": "What is the wavelength of the waves emitted by the source? {_0}{_u}",
+     "answer": "v / (f * 1000)",
+     "unit": "m"
+    },
+    {
+     "id": "echo-time",
+     "prompt": "How long does it take a pulse to travel from the ship to a target {d:unit} away and back? {_0}{_u}",
+     "answer": "2 * d / v",
+     "unit": "s"
+    },
+    {
+     "id": "echo-frequency-difference",
+     "prompt": "Calculate the absolute value of the difference in frequency between the directly radiated waves and the waves reflected from a whale traveling directly toward the ship at {u:unit}. The ship is at rest in the water. {_0}{_u}",
+     "answer": "f * 1000 * 2 * u / (v - u)",
+     "unit": "Hz"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 149,
+  "section": "Sound",
+  "text": "A police siren of frequency 24 kHz is attached to a vibrating platform. The platform and siren oscillate up and down in simple harmonic motion with amplitude 3 cm and frequency 7 Hz. Find the maximum sound frequency that you would hear at a position directly above the siren. Use 340 m/s for the speed of sound in air. (24093.50 Hz)",
+  "answer": "24093.50 Hz",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p149-oscillating-siren-doppler",
+   "comment": "P149 — the siren moves in SHM with maximum speed v_s = ω A = 2π f_p A. A listener directly\nabove hears the highest frequency while the siren moves up toward them at v_s:\nf_max = f v / (v − v_s). The siren frequency is given in kHz and the amplitude in cm. The speed\nof sound, 340 m/s, is the value the source states. The shift is below 1% of f for every draw\n(as in the source: 24093.50 Hz from 24 kHz) but at least 0.15%, so the tolerance is 0.1%:\ntyping the unshifted siren frequency is never accepted.",
+   "derived": [
+    {
+     "name": "v",
+     "expr": "340",
+     "unit": "m/s"
+    },
+    {
+     "name": "vs",
+     "expr": "2 * pi * fp * A / 100",
+     "unit": "m/s"
+    }
+   ],
+   "parts": [
+    {
+     "id": "max-frequency",
+     "prompt": "Find the maximum sound frequency that you would hear at a position directly above the siren. Use {v:unit} for the speed of sound in air. {_0}{_u}",
+     "answer": "f * 1000 * v / (v - vs)",
+     "unit": "Hz"
+    }
+   ],
+   "fig": null
+  }
+ },
+ {
+  "n": 150,
+  "section": "Sound",
+  "text": "A police siren of frequency 20.5 kHz is attached to a vibrating platform. The platform and siren oscillate up and down in simple harmonic motion with amplitude 3.1 cm and frequency 8.5 Hz. Find the minimum sound frequency that you would hear at a position directly above the siren. Use 338.5 m/s for the speed of sound in air. (20400.2 Hz)",
+  "answer": "20400.2 Hz",
+  "figures": [],
+  "scenario": {
+   "id": "phys161-e3-p150-oscillating-siren-min-frequency",
+   "comment": "P150 — the siren moves in SHM with maximum speed v_s = ω A = 2π f_p A. A listener directly\nabove hears the lowest frequency while the siren moves down, away from them, at v_s:\nf_min = f v / (v + v_s). The siren frequency is given in kHz and the amplitude in cm. The shift\nis below 1% of f for every draw (as in the source: 20400.2 Hz from 20.5 kHz) but at least about\n0.15%, so the tolerance is 0.1%: typing the unshifted siren frequency is never accepted.",
+   "derived": [
+    {
+     "name": "vs",
+     "expr": "2 * pi * fp * A / 100",
+     "unit": "m/s"
+    }
+   ],
+   "parts": [
+    {
+     "id": "min-frequency",
+     "prompt": "Find the minimum sound frequency that you would hear at a position directly above the siren. Use {v:unit} for the speed of sound in air. {_0}{_u}",
+     "answer": "f * 1000 * v / (v + vs)",
+     "unit": "Hz"
+    }
+   ],
+   "fig": null
+  }
+ }
+]
