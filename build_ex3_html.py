@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 
 from build_ex2 import CSS
+import ex3_top
 
 ROOT = Path(__file__).resolve().parent
 DATA_DIR = ROOT / "ex3_data"
@@ -44,7 +45,7 @@ def prob_details(p):
     )
     fig = f'<img class="fig" loading="lazy" src="{FIGS[n]}" alt="Рисунок к P{n}"/>' if n in FIGS else ""
     return (
-        f'<details class="prob"><summary><span class="pn mono">P{n}</span>'
+        f'<details class="prob" id="p{n}"><summary><span class="pn mono">P{n}</span>'
         f'<span class="ptext">{q}</span>'
         f'<span class="ans-badge mono">{ans}</span></summary>'
         f'<div class="solution">{fig}<p class="step-intro">{intro}</p>'
@@ -78,6 +79,8 @@ cheat_story = r"""
 data_items = [
     {"id": "cheat", "title": "Шпаргалка", "range": "все формулы", "isCheatSheet": True,
      "formulas": [], "problems": [], "story": cheat_story},
+    {"id": "top", "title": "Топ-15 формул", "range": "по частоте в 145 задачах", "isTop": True,
+     "formulas": [], "problems": [], "story": ex3_top.build_story(by_n)},
     {"id": "solutions", "title": "Все решения", "range": f"{len(problems)} задач · P1–P150", "isSolutionsTab": True,
      "formulas": [], "problems": [], "story": "".join(sol)},
 ]
@@ -96,6 +99,10 @@ js_start = template.index("const tabs = document.getElementById('tabs');")
 js_end = template.index("</script>\n</body>")
 page_js = template[js_start:js_end].replace("{{", "{").replace("}}", "}").replace("\\\\", "\\")
 
+page_js = page_js.replace("if(sec.isSolutionsTab) qn = '✓';",
+                          "if(sec.isSolutionsTab) qn = '✓';\n  if(sec.isTop) qn = '🔥';")
+assert "sec.isTop" in page_js
+
 html = f"""<!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -111,6 +118,7 @@ html = f"""<!DOCTYPE html>
 <style>
 {CSS}
 {EXTRA_CSS}
+{ex3_top.CSS}
 </style>
 </head>
 <body>
@@ -127,7 +135,9 @@ html = f"""<!DOCTYPE html>
 <script>
 const DATA = {data_js};
 
-{page_js}</script>
+{page_js}
+{ex3_top.JS}
+</script>
 </body>
 </html>
 """
