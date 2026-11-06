@@ -7,7 +7,7 @@ import json
 from pathlib import Path
 
 from build_ex2 import CSS
-import ex3_top
+import ex3_top_render as ex3_top
 
 ROOT = Path(__file__).resolve().parent
 DATA_DIR = ROOT / "ex3_data"
@@ -79,7 +79,7 @@ cheat_story = r"""
 data_items = [
     {"id": "cheat", "title": "Шпаргалка", "range": "все формулы", "isCheatSheet": True,
      "formulas": [], "problems": [], "story": cheat_story},
-    {"id": "top", "title": "Топ-15 формул", "range": "по частоте в 145 задачах", "isTop": True,
+    {"id": "top", "title": "Top 15 formulas", "range": "ranked by frequency · 145 problems", "isTop": True,
      "formulas": [], "problems": [], "story": ex3_top.build_story(by_n)},
     {"id": "solutions", "title": "Все решения", "range": f"{len(problems)} задач · P1–P150", "isSolutionsTab": True,
      "formulas": [], "problems": [], "story": "".join(sol)},
