@@ -1,0 +1,451 @@
+{
+ "idealgas": {
+  "ru": {
+   "tex": "pV=nRT,\\qquad pV=NkT",
+   "title": "Уравнение идеального газа",
+   "legend": "<b>p</b> — давление (Па), <b>V</b> — объём (м³), <b>n</b> — число молей, <b>R</b> = 8,31 Дж/(моль·К), <b>T</b> — температура (К), <b>N</b> — число молекул, <b>k</b> = 1,38·10⁻²³ Дж/К.",
+   "triggers": "«ideal gas», «pressure», «volume», «balloon», «moles», «temperature», «container».",
+   "how": [
+    "Выпиши p, V, n (или N), T — что известно.",
+    "Переведи всё в СИ: Па, м³, К.",
+    "Выразь неизвестное из pV = nRT и подставь."
+   ],
+   "trap": "Литры → м³ (÷1000), атм → Па (×101325), °C → К (+273). Для числа молекул бери k, для молей — R."
+  },
+  "en": {
+   "title": "Ideal gas law",
+   "legend": "<b>p</b> — pressure (Pa), <b>V</b> — volume (m³), <b>n</b> — moles, <b>R</b> = 8.31 J/(mol·K), <b>T</b> — temperature (K), <b>N</b> — number of molecules, <b>k</b> = 1.38·10⁻²³ J/K.",
+   "triggers": "“ideal gas”, “pressure”, “volume”, “balloon”, “moles”, “temperature”, “container”.",
+   "how": [
+    "Write down p, V, n (or N), T — whatever is given.",
+    "Convert everything to SI: Pa, m³, K.",
+    "Solve pV = nRT for the unknown and plug in."
+   ],
+   "trap": "Litres → m³ (÷1000), atm → Pa (×101325), °C → K (+273). Use k for molecules, R for moles.",
+   "ex_intro": "Plain ideal gas law pV = nRT, solve for T. Convert litres to m³.",
+   "ex_notes": [
+    "solve for T",
+    "24.2 L = 0.0242 m³"
+   ]
+  }
+ },
+ "latent": {
+  "ru": {
+   "tex": "Q=mL",
+   "title": "Скрытая теплота (фазовые переходы)",
+   "legend": "<b>Q</b> — тепло (Дж), <b>m</b> — масса (кг), <b>L</b> — удельная теплота плавления <i>L<sub>f</sub></i> или парообразования <i>L<sub>v</sub></i> (Дж/кг). Температура при переходе не меняется.",
+   "triggers": "«melts», «freezes», «evaporates», «boils», «latent heat», «ice», «steam», «L_f», «L_v».",
+   "how": [
+    "Определи переход: плавление или испарение — какое L дано.",
+    "Q = mL (или m = Q/L, если нужна масса).",
+    "Если тепло идёт ещё и на нагрев — добавь отдельно mcΔT."
+   ],
+   "trap": "Граммы → кг, кДж → Дж, чтобы L и m были в одних единицах. Мощность Вт = Дж/с."
+  },
+  "en": {
+   "title": "Latent heat (phase changes)",
+   "legend": "<b>Q</b> — heat (J), <b>m</b> — mass (kg), <b>L</b> — latent heat of fusion <i>L<sub>f</sub></i> or vaporization <i>L<sub>v</sub></i> (J/kg). The temperature does not change during the transition.",
+   "triggers": "“melts”, “freezes”, “evaporates”, “boils”, “latent heat”, “ice”, “steam”, “L_f”, “L_v”.",
+   "how": [
+    "Decide which transition it is: melting or boiling — whichever L is given.",
+    "Q = mL (or m = Q/L if you need the mass).",
+    "If heat also warms the substance, add mcΔT separately."
+   ],
+   "trap": "Grams → kg, kJ → J so that L and m use matching units. Power in W = J/s.",
+   "ex_intro": "Each gram of evaporated water carries away 2.43 kJ. Divide the power by the heat per gram.",
+   "ex_notes": [
+    "1 W = 1 J/s"
+   ]
+  }
+ },
+ "qmcdt": {
+  "ru": {
+   "tex": "Q=mc\\,\\Delta T",
+   "title": "Нагрев: Q = mcΔT",
+   "legend": "<b>Q</b> — тепло (Дж), <b>m</b> — масса (кг), <b>c</b> — удельная теплоёмкость (Дж/(кг·К)), <b>ΔT</b> = T<sub>кон</sub> − T<sub>нач</sub> (К или °C — разность одинакова).",
+   "triggers": "«specific heat», «heats up», «temperature rise», «heat capacity», «mixed», «calorimeter».",
+   "how": [
+    "Найди m, c и ΔT.",
+    "Подставь в Q = mcΔT.",
+    "При смешивании: тепло, отданное горячим, = тепло, взятому холодным."
+   ],
+   "trap": "Граммы → кг. Для ΔT °C и К равны, но для абсолютной T нужны кельвины. Калории → Дж: 1 кал = 4,186 Дж."
+  },
+  "en": {
+   "title": "Heating: Q = mcΔT",
+   "legend": "<b>Q</b> — heat (J), <b>m</b> — mass (kg), <b>c</b> — specific heat (J/(kg·K)), <b>ΔT</b> = T<sub>final</sub> − T<sub>initial</sub> (K or °C — the difference is the same).",
+   "triggers": "“specific heat”, “heats up”, “temperature rise”, “heat capacity”, “mixed”, “calorimeter”.",
+   "how": [
+    "Find m, c and ΔT.",
+    "Plug into Q = mcΔT.",
+    "When mixing: heat lost by the hot body = heat gained by the cold one."
+   ],
+   "trap": "Grams → kg. For ΔT °C and K are equal, but an absolute T needs kelvins. Calories → J: 1 cal = 4.186 J.",
+   "ex_intro": "The falling energy mgh all goes into heating mcΔT; the mass cancels.",
+   "ex_notes": [
+    "from mgh = mcΔT",
+    "plug in"
+   ]
+  }
+ },
+ "firstlaw": {
+  "ru": {
+   "tex": "\\Delta U=Q-W",
+   "title": "Первое начало термодинамики",
+   "legend": "<b>ΔU</b> — изменение внутренней энергии (Дж), <b>Q</b> — тепло, полученное газом, <b>W</b> — работа, совершённая газом. Тепло внутрь и работа газа наружу — плюс.",
+   "triggers": "«first law», «internal energy», «heat added», «work done by the gas», «adiabatic», «isothermal», «friction».",
+   "how": [
+    "Определи знаки: Q > 0 если тепло подводят, W > 0 если газ расширяется.",
+    "Найди два из трёх (ΔU, Q, W) и подставь в ΔU = Q − W.",
+    "Адиабата: Q = 0. Изотерма идеального газа: ΔU = 0."
+   ],
+   "trap": "Знак W: работа ПО газу — это −W. Всё в джоулях (кДж → Дж, калории → Дж)."
+  },
+  "en": {
+   "title": "First law of thermodynamics",
+   "legend": "<b>ΔU</b> — change in internal energy (J), <b>Q</b> — heat added to the gas, <b>W</b> — work done by the gas. Heat in and work out are positive.",
+   "triggers": "“first law”, “internal energy”, “heat added”, “work done by the gas”, “adiabatic”, “isothermal”, “friction”.",
+   "how": [
+    "Fix the signs: Q > 0 if heat is added, W > 0 if the gas expands.",
+    "Find two of the three (ΔU, Q, W) and plug into ΔU = Q − W.",
+    "Adiabatic: Q = 0. Ideal-gas isothermal: ΔU = 0."
+   ],
+   "trap": "Sign of W: work done ON the gas is −W. Keep everything in joules (kJ → J, calories → J).",
+   "ex_intro": "All the block's kinetic energy turns into heat by friction, and heat at 0 °C melts ice.",
+   "ex_notes": [
+    "kinetic energy",
+    "that is about 0.6 g"
+   ]
+  }
+ },
+ "wisobar": {
+  "ru": {
+   "tex": "W=p\\,\\Delta V=p\\,(V_2-V_1)",
+   "title": "Работа при постоянном давлении",
+   "legend": "<b>W</b> — работа газа (Дж), <b>p</b> — давление (Па), <b>ΔV</b> — изменение объёма (м³). Расширение: W > 0; сжатие: W < 0.",
+   "triggers": "«isobaric», «constant pressure», «expands», «work done by the gas», «piston».",
+   "how": [
+    "Найди ΔV = V₂ − V₁.",
+    "Переведи p в Па, V в м³.",
+    "W = pΔV; для идеального газа ещё W = nRΔT."
+   ],
+   "trap": "атм → Па: ×101325. Литры → м³: ÷1000. Не забудь знак при сжатии."
+  },
+  "en": {
+   "title": "Work at constant pressure",
+   "legend": "<b>W</b> — work by the gas (J), <b>p</b> — pressure (Pa), <b>ΔV</b> — volume change (m³). Expansion: W > 0; compression: W < 0.",
+   "triggers": "“isobaric”, “constant pressure”, “expands”, “work done by the gas”, “piston”.",
+   "how": [
+    "Find ΔV = V₂ − V₁.",
+    "Convert p to Pa and V to m³.",
+    "W = pΔV; for an ideal gas also W = nRΔT."
+   ],
+   "trap": "atm → Pa: ×101325. Litres → m³: ÷1000. Mind the sign on compression.",
+   "ex_intro": "The pressure is constant, so the work is just pressure times the volume increase.",
+   "ex_notes": [
+    "convert to SI",
+    "work done by the gas"
+   ]
+  }
+ },
+ "carnot": {
+  "ru": {
+   "tex": "e_{\\max}=1-\\dfrac{T_c}{T_h},\\qquad \\dfrac{Q_c}{Q_h}=\\dfrac{T_c}{T_h}",
+   "title": "КПД Карно (идеальная машина)",
+   "legend": "<b>e</b> — максимальный КПД, <b>T<sub>h</sub></b> и <b>T<sub>c</sub></b> — температуры горячего и холодного резервуаров (К), <b>Q<sub>h</sub></b>, <b>Q<sub>c</sub></b> — тепло от горячего и к холодному.",
+   "triggers": "«Carnot», «ideal engine», «maximum efficiency», «reservoirs», «heat engine», «refrigerator».",
+   "how": [
+    "Переведи T<sub>h</sub> и T<sub>c</sub> в кельвины.",
+    "Посчитай e = 1 − T<sub>c</sub>/T<sub>h</sub>.",
+    "Для идеальной машины Q<sub>c</sub> = Q<sub>h</sub>·T<sub>c</sub>/T<sub>h</sub>; работа W = e·Q<sub>h</sub>."
+   ],
+   "trap": "°C → К (+273) обязательно! Температуры в отношении только в кельвинах."
+  },
+  "en": {
+   "title": "Carnot efficiency (ideal engine)",
+   "legend": "<b>e</b> — maximum efficiency, <b>T<sub>h</sub></b> and <b>T<sub>c</sub></b> — hot and cold reservoir temperatures (K), <b>Q<sub>h</sub></b>, <b>Q<sub>c</sub></b> — heat taken from the hot and given to the cold reservoir.",
+   "triggers": "“Carnot”, “ideal engine”, “maximum efficiency”, “reservoirs”, “heat engine”, “refrigerator”.",
+   "how": [
+    "Convert T<sub>h</sub> and T<sub>c</sub> to kelvins.",
+    "Compute e = 1 − T<sub>c</sub>/T<sub>h</sub>.",
+    "For an ideal engine Q<sub>c</sub> = Q<sub>h</sub>·T<sub>c</sub>/T<sub>h</sub>; work W = e·Q<sub>h</sub>."
+   ],
+   "trap": "°C → K (+273) is a must! Temperatures in the ratio are in kelvins only.",
+   "ex_intro": "For an ideal engine Q_c/Q_h = T_c/T_h. The heat rejected comes straight from the temperature ratio.",
+   "ex_notes": [
+    "heat given to the cold reservoir"
+   ]
+  }
+ },
+ "entropy": {
+  "ru": {
+   "tex": "\\Delta S=\\dfrac{Q}{T},\\quad \\Delta S=mc\\ln\\dfrac{T_2}{T_1},\\quad \\Delta S=nR\\ln\\dfrac{V_2}{V_1}",
+   "title": "Изменение энтропии",
+   "legend": "<b>ΔS</b> — энтропия (Дж/К). Первая формула — при постоянной T (плавление, резервуар), вторая — при нагреве, третья — изотермическое расширение газа.",
+   "triggers": "«entropy», «melts», «reservoir», «heated from … to …», «isothermal expansion», «irreversible».",
+   "how": [
+    "Выбери случай: постоянная T → Q/T; меняется T → mc ln(T₂/T₁); меняется V → nR ln(V₂/V₁).",
+    "Все T — в кельвинах, Q — со знаком (получил +, отдал −).",
+    "Для системы из нескольких тел сложи ΔS каждого."
+   ],
+   "trap": "T только в К, логарифм — натуральный (ln). Граммы → кг, кДж → Дж."
+  },
+  "en": {
+   "title": "Entropy change",
+   "legend": "<b>ΔS</b> — entropy change (J/K). First formula — constant T (melting, a reservoir), second — heating, third — isothermal gas expansion.",
+   "triggers": "“entropy”, “melts”, “reservoir”, “heated from … to …”, “isothermal expansion”, “irreversible”.",
+   "how": [
+    "Pick the case: constant T → Q/T; T changes → mc ln(T₂/T₁); V changes → nR ln(V₂/V₁).",
+    "All T in kelvins, Q with its sign (gained +, lost −).",
+    "For several bodies add up each ΔS."
+   ],
+   "trap": "T in K only, and the logarithm is natural (ln). Grams → kg, kJ → J.",
+   "ex_intro": "Ice melts at a constant 273 K and absorbs heat Q = mL. The entropy change is Q/T.",
+   "ex_notes": [
+    "heat of melting",
+    "the ice absorbs heat, so entropy rises"
+   ]
+  }
+ },
+ "power": {
+  "ru": {
+   "tex": "P=\\dfrac{W}{t},\\qquad P=\\dfrac{Q}{t}",
+   "title": "Мощность = энергия / время",
+   "legend": "<b>P</b> — мощность (Вт = Дж/с), <b>W</b> или <b>Q</b> — работа или тепло (Дж), <b>t</b> — время (с).",
+   "triggers": "«power», «watts», «per second», «per hour», «cycles per second», «rate».",
+   "how": [
+    "Выпиши мощность и время.",
+    "Энергия E = P·t (или P = E/t).",
+    "Для машины: работа за цикл = P / (циклов в секунду)."
+   ],
+   "trap": "Часы → секунды (×3600), сутки → 86400 с, кДж → Дж, ккал → Дж (×4186)."
+  },
+  "en": {
+   "title": "Power = energy / time",
+   "legend": "<b>P</b> — power (W = J/s), <b>W</b> or <b>Q</b> — work or heat (J), <b>t</b> — time (s).",
+   "triggers": "“power”, “watts”, “per second”, “per hour”, “cycles per second”, “rate”.",
+   "how": [
+    "Write down the power and the time.",
+    "Energy E = P·t (or P = E/t).",
+    "For an engine: work per cycle = P / (cycles per second)."
+   ],
+   "trap": "Hours → seconds (×3600), a day → 86400 s, kJ → J, kcal → J (×4186).",
+   "ex_intro": "Power is work per second. If the engine makes f cycles per second, each cycle gets P/f. The efficiency is not needed here.",
+   "ex_notes": [
+    "work per cycle"
+   ]
+  }
+ },
+ "moles": {
+  "ru": {
+   "tex": "n=\\dfrac{m}{M},\\qquad N=nN_A",
+   "title": "Моли, масса и число молекул",
+   "legend": "<b>n</b> — число молей, <b>m</b> — масса (г или кг), <b>M</b> — молярная масса (г/моль), <b>N</b> — число молекул, <b>N<sub>A</sub></b> = 6,02·10²³ 1/моль.",
+   "triggers": "«moles», «molar mass», «grams of gas», «molecules», «mixture», «average molar mass».",
+   "how": [
+    "Найди n = m/M (m и M в согласованных единицах).",
+    "Число молекул N = n·N<sub>A</sub>.",
+    "Для смеси: M<sub>ср</sub> = сумма (доля × M)."
+   ],
+   "trap": "Г/моль → кг/моль (÷1000), если дальше используешь СИ. Доли смеси в сумме дают 100%."
+  },
+  "en": {
+   "title": "Moles, mass and number of molecules",
+   "legend": "<b>n</b> — number of moles, <b>m</b> — mass (g or kg), <b>M</b> — molar mass (g/mol), <b>N</b> — number of molecules, <b>N<sub>A</sub></b> = 6.02·10²³ 1/mol.",
+   "triggers": "“moles”, “molar mass”, “grams of gas”, “molecules”, “mixture”, “average molar mass”.",
+   "how": [
+    "Find n = m/M (m and M in matching units).",
+    "Number of molecules N = n·N<sub>A</sub>.",
+    "For a mixture: M<sub>avg</sub> = sum of (fraction × M)."
+   ],
+   "trap": "g/mol → kg/mol (÷1000) if you go on in SI. Mixture fractions add to 100%.",
+   "ex_intro": "Average molar mass is the sum of “fraction × molar mass” over all gases. The argon fraction is what is left to 100%.",
+   "ex_notes": [
+    "the remainder",
+    "add them up"
+   ]
+  }
+ },
+ "linexp": {
+  "ru": {
+   "tex": "\\Delta L=\\alpha L_0\\,\\Delta T",
+   "title": "Линейное тепловое расширение",
+   "legend": "<b>ΔL</b> — удлинение (м), <b>α</b> — коэффициент линейного расширения (1/К), <b>L<sub>0</sub></b> — начальная длина, <b>ΔT</b> — перепад температуры.",
+   "triggers": "«expansion», «coefficient of linear expansion», «rail», «bridge», «gap», «steel», «rod».",
+   "how": [
+    "Найди ΔT = T₂ − T₁.",
+    "ΔL = α·L₀·ΔT.",
+    "Новая длина L = L₀ + ΔL."
+   ],
+   "trap": "ΔT можно брать в °C (разность равна разности в К). Длины — в одних единицах."
+  },
+  "en": {
+   "title": "Linear thermal expansion",
+   "legend": "<b>ΔL</b> — elongation (m), <b>α</b> — coefficient of linear expansion (1/K), <b>L<sub>0</sub></b> — original length, <b>ΔT</b> — temperature change.",
+   "triggers": "“expansion”, “coefficient of linear expansion”, “rail”, “bridge”, “gap”, “steel”, “rod”.",
+   "how": [
+    "Find ΔT = T₂ − T₁.",
+    "ΔL = α·L₀·ΔT.",
+    "New length L = L₀ + ΔL."
+   ],
+   "trap": "ΔT may be in °C (the difference equals the difference in K). Keep lengths in the same units.",
+   "ex_intro": "If the rail were not fixed, it would simply lengthen by the linear expansion formula.",
+   "ex_notes": [
+    "temperature change 33 − 17 = 16 K"
+   ]
+  }
+ },
+ "tconv": {
+  "ru": {
+   "tex": "T_K=T_C+273.15,\\qquad T_F=\\dfrac95T_C+32",
+   "title": "Перевод температур",
+   "legend": "<b>T<sub>K</sub></b> — кельвины, <b>T<sub>C</sub></b> — градусы Цельсия, <b>T<sub>F</sub></b> — градусы Фаренгейта.",
+   "triggers": "«Celsius», «Fahrenheit», «Kelvin», «absolute temperature», «final temperature».",
+   "how": [
+    "Если формула требует абсолютную T — прибавь 273 к °C.",
+    "Из °F: T<sub>C</sub> = (T<sub>F</sub> − 32)·5/9.",
+    "Разность температур ΔT одинакова в °C и К."
+   ],
+   "trap": "В газовых законах, КПД Карно, энтропии и v<sub>rms</sub> — только кельвины!"
+  },
+  "en": {
+   "title": "Temperature conversion",
+   "legend": "<b>T<sub>K</sub></b> — kelvins, <b>T<sub>C</sub></b> — degrees Celsius, <b>T<sub>F</sub></b> — degrees Fahrenheit.",
+   "triggers": "“Celsius”, “Fahrenheit”, “Kelvin”, “absolute temperature”, “final temperature”.",
+   "how": [
+    "If the formula needs an absolute T — add 273 to °C.",
+    "From °F: T<sub>C</sub> = (T<sub>F</sub> − 32)·5/9.",
+    "A temperature difference ΔT is the same in °C and K."
+   ],
+   "trap": "In gas laws, Carnot efficiency, entropy and v<sub>rms</sub> — kelvins only!",
+   "ex_intro": "Potential energy mgh turns into heat mcΔT. The mass cancels, so it is not needed.",
+   "ex_notes": [
+    "heating of the ball",
+    "add the initial temperature and convert to kelvins"
+   ]
+  }
+ },
+ "vrms": {
+  "ru": {
+   "tex": "v_{rms}=\\sqrt{\\dfrac{3RT}{M}}=\\sqrt{\\dfrac{3kT}{m}}",
+   "title": "Среднеквадратичная скорость молекул",
+   "legend": "<b>v<sub>rms</sub></b> — скорость (м/с), <b>R</b> = 8,31 Дж/(моль·К), <b>T</b> — температура (К), <b>M</b> — молярная масса (кг/моль).",
+   "triggers": "«rms speed», «root-mean-square», «molecules», «thermal speed», «mixture of gases».",
+   "how": [
+    "Переведи T в К, M в кг/моль.",
+    "v = √(3RT/M).",
+    "Сравнение газов при одной T: v₁/v₂ = √(M₂/M₁)."
+   ],
+   "trap": "M в кг/моль (32 г/моль = 0,032 кг/моль)! Иначе ответ неверен в √1000 раз."
+  },
+  "en": {
+   "title": "RMS speed of molecules",
+   "legend": "<b>v<sub>rms</sub></b> — speed (m/s), <b>R</b> = 8.31 J/(mol·K), <b>T</b> — temperature (K), <b>M</b> — molar mass (kg/mol).",
+   "triggers": "“rms speed”, “root-mean-square”, “molecules”, “thermal speed”, “mixture of gases”.",
+   "how": [
+    "Convert T to K and M to kg/mol.",
+    "v = √(3RT/M).",
+    "Comparing gases at the same T: v₁/v₂ = √(M₂/M₁)."
+   ],
+   "trap": "M in kg/mol (32 g/mol = 0.032 kg/mol)! Otherwise the answer is off by √1000.",
+   "ex_intro": "In a mixture all molecules share one temperature. Since v_rms = √(3RT/M), light helium is faster by the square root of the molar-mass ratio.",
+   "ex_notes": [
+    "T is the same and cancels",
+    "multiply the oxygen speed by the ratio"
+   ]
+  }
+ },
+ "conduct": {
+  "ru": {
+   "tex": "H=\\dfrac{Q}{t}=\\dfrac{kA\\,\\Delta T}{L}",
+   "title": "Теплопроводность через стенку",
+   "legend": "<b>H</b> — поток тепла (Вт), <b>k</b> — теплопроводность (Вт/(м·К)), <b>A</b> — площадь (м²), <b>ΔT</b> — разность температур, <b>L</b> — толщина (м).",
+   "triggers": "«conduction», «thermal conductivity», «wall», «insulation», «heat flow rate», «icebox».",
+   "how": [
+    "Выпиши k, A, L и ΔT.",
+    "Переведи толщину L в метры.",
+    "H = kAΔT/L; тепло за время: Q = H·t."
+   ],
+   "trap": "см → м (÷100). ΔT можно брать в °C. Площадь в м²."
+  },
+  "en": {
+   "title": "Heat conduction through a wall",
+   "legend": "<b>H</b> — heat flow rate (W), <b>k</b> — thermal conductivity (W/(m·K)), <b>A</b> — area (m²), <b>ΔT</b> — temperature difference, <b>L</b> — thickness (m).",
+   "triggers": "“conduction”, “thermal conductivity”, “wall”, “insulation”, “heat flow rate”, “icebox”.",
+   "how": [
+    "Write down k, A, L and ΔT.",
+    "Convert the thickness L to metres.",
+    "H = kAΔT/L; heat over time: Q = H·t."
+   ],
+   "trap": "cm → m (÷100). ΔT may be in °C. Area in m².",
+   "ex_intro": "Conduction through a wall.",
+   "ex_notes": [
+    "thickness 2.2 cm = 0.022 m"
+   ]
+  }
+ },
+ "du": {
+  "ru": {
+   "tex": "\\Delta U=nC_V\\Delta T,\\qquad U=\\tfrac32 nRT",
+   "title": "Внутренняя энергия идеального газа",
+   "legend": "<b>U</b> — внутренняя энергия (Дж), <b>C<sub>V</sub></b> — молярная теплоёмкость при постоянном объёме (одноатомный газ: 3R/2, двухатомный: 5R/2), <b>n</b> — моли.",
+   "triggers": "«internal energy», «monatomic», «diatomic», «kinetic energy of the molecules», «molar heat capacity».",
+   "how": [
+    "Определи газ: одноатомный C<sub>V</sub> = 3R/2, двухатомный 5R/2.",
+    "ΔU = nC<sub>V</sub>ΔT (зависит только от ΔT).",
+    "Полная кинетическая энергия одноатомного газа: (3/2)nRT."
+   ],
+   "trap": "T в кельвинах для U = (3/2)nRT. ΔU не зависит от пути процесса."
+  },
+  "en": {
+   "title": "Internal energy of an ideal gas",
+   "legend": "<b>U</b> — internal energy (J), <b>C<sub>V</sub></b> — molar heat capacity at constant volume (monatomic: 3R/2, diatomic: 5R/2), <b>n</b> — moles.",
+   "triggers": "“internal energy”, “monatomic”, “diatomic”, “kinetic energy of the molecules”, “molar heat capacity”.",
+   "how": [
+    "Identify the gas: monatomic C<sub>V</sub> = 3R/2, diatomic 5R/2.",
+    "ΔU = nC<sub>V</sub>ΔT (depends only on ΔT).",
+    "Total kinetic energy of a monatomic gas: (3/2)nRT."
+   ],
+   "trap": "T in kelvins for U = (3/2)nRT. ΔU does not depend on the path of the process.",
+   "ex_intro": "A monatomic gas has only translational energy: (3/2)kT per atom. For n moles that is (3/2)nRT.",
+   "ex_notes": [
+    "N k = n R",
+    "plug in"
+   ]
+  }
+ },
+ "efficiency": {
+  "ru": {
+   "tex": "e=\\dfrac{W}{Q_h}=1-\\dfrac{Q_c}{Q_h},\\qquad W=Q_h-Q_c",
+   "title": "КПД тепловой машины",
+   "legend": "<b>e</b> — КПД, <b>W</b> — полезная работа (Дж), <b>Q<sub>h</sub></b> — тепло от нагревателя, <b>Q<sub>c</sub></b> — тепло, отданное холодильнику.",
+   "triggers": "«efficiency», «heat engine», «work per cycle», «heat exhausted», «heat absorbed».",
+   "how": [
+    "Запиши Q<sub>h</sub>, Q<sub>c</sub> или W: W = Q<sub>h</sub> − Q<sub>c</sub>.",
+    "e = W/Q<sub>h</sub>.",
+    "Если КПД дан, работа W = e·Q<sub>h</sub>."
+   ],
+   "trap": "КПД — доля, а не %: 15% = 0,15. Q<sub>h</sub> и Q<sub>c</sub> берутся по модулю."
+  },
+  "en": {
+   "title": "Heat engine efficiency",
+   "legend": "<b>e</b> — efficiency, <b>W</b> — useful work (J), <b>Q<sub>h</sub></b> — heat from the hot reservoir, <b>Q<sub>c</sub></b> — heat rejected to the cold reservoir.",
+   "triggers": "“efficiency”, “heat engine”, “work per cycle”, “heat exhausted”, “heat absorbed”.",
+   "how": [
+    "Write Q<sub>h</sub>, Q<sub>c</sub> or W: W = Q<sub>h</sub> − Q<sub>c</sub>.",
+    "e = W/Q<sub>h</sub>.",
+    "If e is given, the work is W = e·Q<sub>h</sub>."
+   ],
+   "trap": "Efficiency is a fraction, not %: 15% = 0.15. Use magnitudes of Q<sub>h</sub> and Q<sub>c</sub>.",
+   "ex_intro": "For a Carnot engine the efficiency depends only on temperatures: e = 1 − T_c/T_h. The work is the fraction e of the heat taken from the hot reservoir.",
+   "ex_notes": [
+    "Carnot efficiency: temperatures in kelvins",
+    "work = efficiency · heat absorbed"
+   ]
+  }
+ },
+ "_units": {
+  "ru": "<b>⚠️ Единицы — главная причина ошибок:</b><ul><li>°C → К: прибавь 273 (газовые законы, КПД Карно, энтропия, v<sub>rms</sub>).</li><li>Литры → м³: ÷1000; атм → Па: ×101325.</li><li>Граммы → кг; г/моль → кг/моль (для v<sub>rms</sub>).</li><li>кДж → Дж (×1000), ккал → Дж (×4186); Вт = Дж/с.</li></ul>",
+  "en": "<b>⚠️ Units are the #1 source of mistakes:</b><ul><li>°C → K: add 273 (gas laws, Carnot efficiency, entropy, v<sub>rms</sub>).</li><li>Litres → m³: ÷1000; atm → Pa: ×101325.</li><li>Grams → kg; g/mol → kg/mol (for v<sub>rms</sub>).</li><li>kJ → J (×1000), kcal → J (×4186); W = J/s.</li></ul>"
+ }
+}

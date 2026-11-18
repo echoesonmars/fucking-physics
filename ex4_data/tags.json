@@ -1,0 +1,568 @@
+{
+"1": [
+"power",
+"qmcdt"
+],
+"2": [
+"power"
+],
+"3": [
+"qmcdt",
+"latent",
+"tconv"
+],
+"4": [
+"linexp"
+],
+"5": [
+"linexp"
+],
+"6": [
+"linexp"
+],
+"7": [
+"linexp"
+],
+"8": [
+"linexp"
+],
+"9": [
+"calor",
+"latent",
+"qmcdt"
+],
+"10": [
+"calor",
+"latent",
+"qmcdt"
+],
+"11": [
+"calor",
+"latent",
+"qmcdt"
+],
+"12": [
+"calor",
+"latent",
+"qmcdt"
+],
+"13": [
+"qmcdt",
+"tconv"
+],
+"14": [
+"qmcdt"
+],
+"15": [
+"latent",
+"firstlaw"
+],
+"16": [
+"calor",
+"qmcdt"
+],
+"17": [
+"qmcdt"
+],
+"18": [
+"qmcdt"
+],
+"19": [
+"qmcdt",
+"latent"
+],
+"20": [
+"linexp"
+],
+"21": [
+"linexp"
+],
+"22": [
+"linexp"
+],
+"23": [
+"volexp",
+"linexp"
+],
+"24": [
+"qmcdt"
+],
+"25": [
+"qmcdt"
+],
+"26": [
+"qmcdt",
+"power"
+],
+"27": [
+"qmcdt",
+"power"
+],
+"28": [
+"calor",
+"latent",
+"qmcdt"
+],
+"29": [
+"linexp"
+],
+"30": [
+"linexp"
+],
+"31": [
+"conduct",
+"tconv"
+],
+"32": [
+"conduct",
+"latent",
+"power"
+],
+"33": [
+"conduct"
+],
+"34": [
+"latent",
+"power"
+],
+"35": [
+"latent",
+"power"
+],
+"36": [
+"conduct"
+],
+"37": [
+"conduct",
+"power"
+],
+"38": [
+"conduct"
+],
+"39": [
+"calor",
+"latent",
+"qmcdt"
+],
+"40": [
+"idealgas"
+],
+"41": [
+"idealgas"
+],
+"42": [
+"vrms"
+],
+"43": [
+"vrms"
+],
+"44": [
+"vrms"
+],
+"45": [
+"idealgas",
+"kebar"
+],
+"46": [
+"idealgas"
+],
+"47": [
+"idealgas",
+"vrms"
+],
+"48": [
+"idealgas"
+],
+"49": [
+"kebar",
+"du"
+],
+"50": [
+"kebar"
+],
+"51": [
+"vrms"
+],
+"52": [
+"vrms"
+],
+"53": [
+"kebar"
+],
+"54": [
+"idealgas"
+],
+"55": [
+"idealgas"
+],
+"56": [
+"idealgas"
+],
+"57": [
+"idealgas",
+"moles"
+],
+"58": [
+"moles",
+"du"
+],
+"59": [
+"idealgas"
+],
+"60": [
+"idealgas"
+],
+"61": [
+"idealgas"
+],
+"62": [
+"idealgas",
+"moles"
+],
+"63": [
+"moles"
+],
+"64": [
+"moles"
+],
+"65": [
+"moles"
+],
+"66": [
+"moles"
+],
+"67": [
+"idealgas",
+"moles"
+],
+"68": [
+"idealgas"
+],
+"69": [
+"idealgas",
+"vrms"
+],
+"70": [
+"idealgas",
+"moles"
+],
+"71": [
+"idealgas",
+"moles"
+],
+"72": [
+"vrms"
+],
+"73": [
+"vrms"
+],
+"74": [
+"vrms"
+],
+"75": [
+"idealgas",
+"moles"
+],
+"76": [
+"idealgas",
+"moles"
+],
+"77": [
+"firstlaw",
+"wisobar",
+"molarheat"
+],
+"78": [
+"wisobar",
+"firstlaw"
+],
+"79": [
+"molarheat",
+"wisobar",
+"idealgas"
+],
+"80": [
+"firstlaw",
+"wisobar"
+],
+"81": [
+"idealgas"
+],
+"82": [
+"idealgas"
+],
+"83": [
+"idealgas"
+],
+"84": [
+"wisobar"
+],
+"85": [
+"wisobar"
+],
+"86": [
+"wisotherm"
+],
+"87": [
+"wisotherm"
+],
+"88": [
+"wisotherm",
+"idealgas"
+],
+"89": [
+"idealgas"
+],
+"90": [
+"pvgraph",
+"firstlaw"
+],
+"91": [
+"pvgraph"
+],
+"92": [
+"pvgraph"
+],
+"93": [
+"pvgraph",
+"wisobar",
+"adiabatic",
+"molarheat",
+"firstlaw"
+],
+"94": [
+"idealgas"
+],
+"95": [
+"wisobar"
+],
+"96": [
+"idealgas"
+],
+"97": [
+"idealgas"
+],
+"98": [
+"idealgas"
+],
+"99": [
+"pvgraph",
+"wisobar"
+],
+"100": [
+"firstlaw",
+"pvgraph",
+"du"
+],
+"101": [
+"adiabatic",
+"tconv"
+],
+"102": [
+"adiabatic",
+"firstlaw",
+"du"
+],
+"103": [
+"adiabatic"
+],
+"104": [
+"adiabatic",
+"idealgas"
+],
+"105": [
+"firstlaw",
+"wisobar",
+"du"
+],
+"106": [
+"firstlaw",
+"wisotherm"
+],
+"107": [
+"du",
+"wisobar"
+],
+"108": [
+"wisobar",
+"pvgraph"
+],
+"109": [
+"firstlaw",
+"du",
+"idealgas"
+],
+"110": [
+"firstlaw",
+"du",
+"adiabatic"
+],
+"111": [
+"firstlaw",
+"du"
+],
+"112": [
+"firstlaw",
+"wisobar",
+"pvgraph"
+],
+"113": [
+"latent",
+"firstlaw",
+"wisobar"
+],
+"114": [
+"wisobar",
+"latent"
+],
+"115": [
+"carnot",
+"efficiency"
+],
+"116": [
+"carnot",
+"efficiency"
+],
+"117": [
+"cop",
+"carnot"
+],
+"118": [
+"cop",
+"carnot"
+],
+"119": [
+"tconv",
+"carnot"
+],
+"120": [
+"tconv",
+"carnot"
+],
+"121": [
+"latent",
+"entropy"
+],
+"122": [
+"latent",
+"entropy"
+],
+"123": [
+"latent",
+"entropy"
+],
+"124": [
+"qmcdt",
+"entropy"
+],
+"125": [
+"qmcdt"
+],
+"126": [
+"entropy",
+"qmcdt"
+],
+"127": [
+"entropy",
+"qmcdt"
+],
+"128": [
+"efficiency",
+"power"
+],
+"129": [
+"efficiency",
+"power"
+],
+"130": [
+"power"
+],
+"131": [
+"carnot",
+"efficiency"
+],
+"132": [
+"carnot",
+"efficiency"
+],
+"133": [
+"carnot",
+"cop"
+],
+"134": [
+"efficiency",
+"power"
+],
+"135": [
+"efficiency",
+"power"
+],
+"136": [
+"firstlaw",
+"wisotherm",
+"entropy"
+],
+"137": [
+"firstlaw",
+"wisotherm",
+"entropy"
+],
+"138": [
+"latent",
+"conduct",
+"entropy"
+],
+"139": [
+"latent",
+"conduct",
+"entropy"
+],
+"140": [
+"latent",
+"conduct",
+"entropy"
+],
+"141": [
+"molarheat",
+"entropy",
+"idealgas"
+],
+"142": [
+"idealgas"
+],
+"143": [
+"latent",
+"entropy"
+],
+"144": [
+"latent",
+"entropy"
+],
+"145": [
+"carnot",
+"efficiency",
+"tconv"
+],
+"146": [
+"carnot",
+"latent",
+"firstlaw"
+],
+"147": [
+"carnot",
+"tconv"
+],
+"148": [
+"carnot",
+"tconv"
+],
+"149": [
+"carnot",
+"tconv"
+],
+"150": [
+"molarheat",
+"firstlaw",
+"pvgraph"
+]
+}
