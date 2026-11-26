@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 
 from build_ex2 import CSS
+from pretty_text import pretty
 import ex3_top_render as ex3_top
 
 ROOT = Path(__file__).resolve().parent
@@ -19,12 +20,16 @@ for key, _ in BIG:
     problems += json.loads((DATA_DIR / f"{key}_problems.json").read_text(encoding="utf-8"))
     topics += json.loads((DATA_DIR / f"{key}_sections.json").read_text(encoding="utf-8"))
 by_n = {p[0]: p for p in problems}
+# Short restatements are plain text from the exam: render ^ and _ as real super/subscripts.
+for _p in problems:
+    if "<" not in _p[1]:
+        _p[1] = pretty(_p[1])
 FIGS = {int(k): v for k, v in json.loads((DATA_DIR / "figures.json").read_text(encoding="utf-8")).items()}
 RAW = {p["n"]: p for p in json.loads((DATA_DIR / "raw.json").read_text(encoding="utf-8"))}
 # Badge always shows the official answer from the exam source.
 for n, p in by_n.items():
     if RAW[n].get("answer"):
-        p[2] = RAW[n]["answer"]
+        p[2] = pretty(RAW[n]["answer"])
 assert set(by_n) == set(RAW), sorted(set(RAW) ^ set(by_n))
 ids = [t["id"] for t in topics]
 assert len(ids) == len(set(ids)), ids
