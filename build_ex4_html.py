@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 # Exam 4 (Temperature and heat, Kinetic theory, 1st and 2nd laws) — same layout as ex2.html.
-# Data: ex3_data/<Section>_problems.json  [n, q, ans, intro, steps]
-#       ex3_data/<Section>_sections.json  topic tabs
-#       ex3_data/figures.json             {n: "ex3_fig/<file>"}
+# Data: ex4_data/<Section>_problems.json  [n, q, ans, intro, steps]
+#       ex4_data/plan.json                {n: {given, find, formulas}}
+#       ex4_data/<Section>_sections.json  topic tabs
+#       ex4_data/figures.json             {n: "ex4_fig/<file>"}
+import html
 import json
 from pathlib import Path
 
@@ -30,31 +32,117 @@ ids = [t["id"] for t in topics]
 assert len(ids) == len(set(ids)), ids
 assert sorted(n for t in topics for n in t["nums"]) == sorted(RAW), "topic tabs must cover every problem once"
 
+# What the student sees before opening the solution: {n: {given, find, formulas}}.
+PLANS = {int(k): v for k, v in json.loads((DATA_DIR / "plan.json").read_text(encoding="utf-8")).items()}
+assert set(PLANS) == set(RAW), sorted(set(RAW) ^ set(PLANS))
+
 EXTRA_CSS = """
 .back{display:inline-flex; align-items:center; gap:6px; color:var(--accent); text-decoration:none; font-weight:600; font-size:15px; margin-bottom:10px;}
 .back:hover{text-decoration:underline;}
 .fig{display:block; max-width:100%; max-height:320px; margin:0 auto 14px; border-radius:10px; background:#fff; padding:6px;}
+.task{border:1px solid var(--rule); border-radius:14px; background:var(--surface); padding:16px; display:flex; flex-direction:column; gap:14px; min-width:0; scroll-margin-top:12px; margin-bottom:14px;}
+.task.solved{opacity:.6;}
+.task-head{display:flex; align-items:center; gap:10px;}
+.task-head .pn{color:var(--accent); font-weight:700; font-size:16px;}
+.done{margin-left:auto; display:inline-flex; align-items:center; gap:6px; font-size:15px; cursor:pointer; user-select:none; padding:4px 10px; border:1px solid var(--rule); border-radius:999px;}
+.done input{width:18px; height:18px; accent-color:var(--accent); margin:0;}
+.task.solved .done{border-color:var(--accent); color:var(--accent); font-weight:600;}
+.stmt{font-size:17px; line-height:1.6;}
+.plan{display:grid; gap:12px;}
+.pl{background:var(--story-bg); border:1px solid var(--rule); border-radius:10px; padding:10px 14px; min-width:0;}
+.pl .lbl{font-weight:700; font-size:13px; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); margin-bottom:6px;}
+.pl ul, .pl ol{margin:0; padding-left:22px; display:flex; flex-direction:column; gap:6px;}
+.pl li{font-size:16px; overflow-x:auto; -webkit-overflow-scrolling:touch;}
+.pl .why{color:var(--ink-muted); font-size:15px;}
+.pl.find{background:var(--accent-2-soft);}
+.pl.formulas .katex{font-size:1.2em;}
+details.reveal{border:2px dashed var(--accent); border-radius:12px; overflow:hidden;}
+details.reveal > summary{list-style:none; cursor:pointer; padding:12px 16px; font-weight:700; color:var(--accent); text-align:center;}
+details.reveal > summary::-webkit-details-marker{display:none;}
+details.reveal[open] > summary{border-bottom:1px dashed var(--accent);}
+details.reveal[open] > summary .show{display:none;}
+details.reveal:not([open]) > summary .hide{display:none;}
+.ansline{margin-top:14px; font-size:17px;}
+.progress{position:sticky; top:0; z-index:5; background:var(--bg); padding:10px 0; display:flex; align-items:center; gap:12px;}
+.progress .pbar{flex:1; height:10px; border-radius:5px; background:var(--accent-soft); overflow:hidden;}
+.progress .pbar i{display:block; height:100%; width:0; background:var(--accent); transition:width .3s;}
+.progress b{font-family:"IBM Plex Mono",monospace; font-size:15px; white-space:nowrap;}
 """
+
+PROGRESS_JS = r"""
+(function(){
+  var KEY = 'ex4-solved';
+  var done = {};
+  try { (JSON.parse(localStorage.getItem(KEY) || '[]')).forEach(function(n){ done[n] = true; }); } catch(e) {}
+  var boxes = document.querySelectorAll('.done input');
+  function paint(){
+    var c = 0;
+    boxes.forEach(function(b){
+      var on = !!done[b.dataset.n];
+      b.checked = on;
+      b.closest('.task').classList.toggle('solved', on);
+      if (on) c++;
+    });
+    document.querySelectorAll('.progress b').forEach(function(el){ el.textContent = c + ' / ' + boxes.length; });
+    document.querySelectorAll('.progress .pbar i').forEach(function(el){ el.style.width = (100 * c / boxes.length) + '%'; });
+  }
+  boxes.forEach(function(b){
+    b.addEventListener('change', function(){
+      if (b.checked) done[b.dataset.n] = true; else delete done[b.dataset.n];
+      try { localStorage.setItem(KEY, JSON.stringify(Object.keys(done))); } catch(e) {}
+      paint();
+    });
+  });
+  paint();
+})();
+"""
+
+
+def statement(n):
+    """Full problem text from the exam, without the official answer in parentheses at the end."""
+    t = RAW[n]["text"].strip()
+    if t.endswith(")"):
+        depth = 0
+        for i in range(len(t) - 1, -1, -1):
+            depth += {")": 1, "(": -1}.get(t[i], 0)
+            if depth == 0:
+                t = t[:i].rstrip()
+                break
+    return html.escape(t)
 
 
 def prob_details(p):
     n, q, ans, intro, steps = p
+    plan = PLANS[n]
     lis = "".join(
         f'<li><div class="eqwrap">\\({eq}\\)</div><div class="stepnote">{note}</div></li>'
         for eq, note in steps
     )
+    given = "".join(f'<li>\\({s}={v}\\) <span class="why">— {why}</span></li>' for s, v, why in plan["given"])
+    find = "".join(f'<li>\\({s}\\) <span class="why">— {why}</span></li>' for s, why in plan["find"])
+    forms = "".join(f'<li>\\({f}\\) <span class="why">— {why}</span></li>' for f, why in plan["formulas"])
     fig = f'<img class="fig" loading="lazy" src="{FIGS[n]}" alt="Рисунок к P{n}"/>' if n in FIGS else ""
     return (
-        f'<details class="prob" id="p{n}"><summary><span class="pn mono">P{n}</span>'
-        f'<span class="ptext">{q}</span>'
-        f'<span class="ans-badge mono">{ans}</span></summary>'
-        f'<div class="solution">{fig}<p class="step-intro">{intro}</p>'
-        f'<ol class="sol-steps">{lis}</ol></div></details>'
+        f'<div class="task" id="p{n}">'
+        f'<div class="task-head"><span class="pn mono">P{n}</span>'
+        f'<label class="done"><input type="checkbox" data-n="{n}"/> Решил</label></div>'
+        f'{fig}<div class="stmt">{statement(n)}</div>'
+        f'<div class="plan">'
+        f'<div class="pl given"><div class="lbl">Дано</div><ul>{given}</ul></div>'
+        f'<div class="pl find"><div class="lbl">Найти</div><ul>{find}</ul></div>'
+        f'<div class="pl formulas"><div class="lbl">Формулы по порядку</div><ol>{forms}</ol></div>'
+        f'</div>'
+        f'<details class="reveal"><summary><span class="show">👀 Показать решение</span><span class="hide">Скрыть решение</span></summary>'
+        f'<div class="solution"><p class="step-intro">{intro}</p>'
+        f'<ol class="sol-steps">{lis}</ol>'
+        f'<div class="ansline">Ответ: <span class="ans-badge mono">{ans}</span></div></div></details>'
+        f'</div>'
     )
 
 
-sol = ['<p>Каждая задача свёрнута — нажми, чтобы увидеть шаги «как для ребёнка». Ответ в жёлтом бейдже справа. '
-       '</p>']
+sol = ['<p>У каждой задачи сразу видно, что <b>дано</b>, что <b>найти</b> и какие <b>формулы</b> нужны по порядку. '
+       'Попробуй решить сам, а потом нажми «Показать решение» и сверься. Решил — ставь галочку, прогресс сохраняется в браузере.</p>'
+       '<div class="progress"><span>Решено</span><div class="pbar"><i></i></div><b>0 / 150</b></div>']
 for key, title in BIG:
     nums = sorted(n for n, r in RAW.items() if r["section"] == key)
     sol.append(f'<div class="sec-divider"><h3>{title}</h3><span class="range mono">P{nums[0]}–P{nums[-1]}</span></div>')
@@ -81,7 +169,7 @@ data_items = [
      "formulas": [], "problems": [], "story": cheat_story},
     {"id": "top", "title": "Top 15 formulas", "range": f"ranked by frequency · {len(problems)} problems", "isTop": True,
      "formulas": [], "problems": [], "story": ex3_top.build_story(by_n)},
-    {"id": "solutions", "title": "Все решения", "range": f"{len(problems)} задач · P1–P150", "isSolutionsTab": True,
+    {"id": "solutions", "title": "Все задачи", "range": f"{len(problems)} задач · P1–P150", "isSolutionsTab": True,
      "formulas": [], "problems": [], "story": "".join(sol)},
 ]
 for t in topics:
@@ -137,6 +225,7 @@ const DATA = {data_js};
 
 {page_js}
 {ex3_top.JS}
+{PROGRESS_JS}
 </script>
 </body>
 </html>
