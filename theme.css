@@ -1,0 +1,47 @@
+/* Shared theme for every page: black, monochrome, small corners.
+   Linked after each page's own <style>, so it overrides the original palette.
+   Variables are set on body, which beats the pages' :root and dark-mode :root rules. */
+html, body { background: #0a0a0a !important; color-scheme: dark; }
+body {
+  --bg: #0a0a0a;
+  --surface: #121212;
+  --story-bg: #0f0f0f;
+  --rule: #262626;
+  --ink: #ededed;
+  --ink-muted: #8c8c8c;
+  /* one accent: plain white, so emphasis is weight and contrast rather than colour */
+  --accent: #ffffff;
+  --accent-soft: #1a1a1a;
+  --accent-2: #ffffff;
+  --accent-2-soft: #161616;
+  --warn: #ededed;
+  --warn-soft: #161616;
+  color: var(--ink);
+}
+
+/* Small, consistent corners everywhere (KaTeX keeps its own shapes). */
+body *:not(.katex):not(.katex *) { border-radius: 4px !important; }
+
+/* Headings: same sans as the body text, so the page reads as one system. */
+h1, h2, h3, h4, .frank, .num, .stat b, .card h2 { font-family: "IBM Plex Sans", system-ui, sans-serif !important; letter-spacing: -0.01em; }
+
+/* Active tab and selected buttons: white fill with black text. */
+.tab-btn.active, .langbar button.on { background: #ffffff !important; color: #0a0a0a !important; border-color: #ffffff !important; }
+.tab-btn.active .qn { color: #0a0a0a !important; }
+
+/* Boxes that used tinted backgrounds now differ only by a left rule. */
+.kid, .warn, .trapline, .step-intro, .pl.find { background: var(--story-bg) !important; border-left: 2px solid #3a3a3a; }
+.warn, .trapline { border-left-color: #8c8c8c; }
+
+/* Answers and solved state stand out by contrast, not by colour. */
+.ans-badge, .excase .ans, .fcount { color: #ffffff !important; background: transparent !important; border: 1px solid #3a3a3a !important; }
+a.pchip { background: transparent !important; }
+a.pchip.ex { border-color: #ffffff !important; color: #ffffff !important; }
+.bar i, .progress .pbar i { background: #ffffff !important; }
+details.reveal { border: 1px dashed #3a3a3a !important; }
+details.reveal > summary { color: #ffffff !important; }
+.done input { accent-color: #ffffff; }
+.fig { background: #ffffff; }
+
+/* Sticky progress bar (Exam 4): cover the content scrolling under it on both sides. */
+.progress { box-shadow: -80px 0 0 var(--bg), 80px 0 0 var(--bg), 0 1px 0 var(--rule); }

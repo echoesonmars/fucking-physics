@@ -120,6 +120,7 @@ html = f"""<!DOCTYPE html>
 {EXTRA_CSS}
 {ex3_top.CSS}
 </style>
+<link rel="stylesheet" href="theme.css"/>
 </head>
 <body>
 <div class="wrap">
