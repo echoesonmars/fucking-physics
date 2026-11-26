@@ -297,7 +297,7 @@
  },
  "tconv": {
   "ru": {
-   "tex": "T_K=T_C+273.15,\\qquad T_F=\\dfrac95T_C+32",
+   "tex": "T_K=T_c+273.15,\\qquad T_F=\\dfrac95T_c+32",
    "title": "Перевод температур",
    "legend": "<b>T<sub>K</sub></b> — кельвины, <b>T<sub>C</sub></b> — градусы Цельсия, <b>T<sub>F</sub></b> — градусы Фаренгейта.",
    "triggers": "«Celsius», «Fahrenheit», «Kelvin», «absolute temperature», «final temperature».",
@@ -327,7 +327,7 @@
  },
  "vrms": {
   "ru": {
-   "tex": "v_{rms}=\\sqrt{\\dfrac{3RT}{M}}=\\sqrt{\\dfrac{3kT}{m}}",
+   "tex": "v_{rms}=\\sqrt{\\dfrac{3RT}{M}}=\\sqrt{\\dfrac{3k_BT}{m}}",
    "title": "Среднеквадратичная скорость молекул",
    "legend": "<b>v<sub>rms</sub></b> — скорость (м/с), <b>R</b> = 8,31 Дж/(моль·К), <b>T</b> — температура (К), <b>M</b> — молярная масса (кг/моль).",
    "triggers": "«rms speed», «root-mean-square», «molecules», «thermal speed», «mixture of gases».",
@@ -407,7 +407,7 @@
     "Total kinetic energy of a monatomic gas: (3/2)nRT."
    ],
    "trap": "T in kelvins for U = (3/2)nRT. ΔU does not depend on the path of the process.",
-   "ex_intro": "A monatomic gas has only translational energy: (3/2)kT per atom. For n moles that is (3/2)nRT.",
+   "ex_intro": "A monatomic gas has only translational energy: (3/2)k<sub>B</sub>T per atom. For n moles that is (3/2)nRT.",
    "ex_notes": [
     "N k = n R",
     "plug in"

@@ -194,11 +194,11 @@ cheat_story = r"""
   <div class="fbox"><div class="eqwrap">\[Q=mc\Delta T,\quad Q=mL,\quad \Delta L=\alpha L_0\Delta T,\quad \sum Q=0\]</div><div class="flegend">Нагрев, плавление/кипение, расширение, смешивание (сколько отдал горячий — столько получил холодный).</div></div>
   <div class="fbox"><div class="eqwrap">\[H=\dfrac{kA\,\Delta T}{L},\quad P=e\sigma A T^4\]</div><div class="flegend">Теплопроводность и излучение (T в кельвинах!).</div></div>
   <h3>Газы</h3>
-  <div class="fbox"><div class="eqwrap">\[pV=nRT=NkT,\quad \overline{K}=\tfrac32 kT,\quad v_{\text{rms}}=\sqrt{\dfrac{3RT}{M}}\]</div><div class="flegend">Уравнение газа, средняя кинетическая энергия молекулы, среднеквадратичная скорость (M в кг/моль).</div></div>
+  <div class="fbox"><div class="eqwrap">\[pV=nRT=NkT,\quad \overline{K}=\tfrac32 k_B T,\quad v_{\text{rms}}=\sqrt{\dfrac{3RT}{M}}\]</div><div class="flegend">Уравнение газа, средняя кинетическая энергия молекулы, среднеквадратичная скорость (M в кг/моль).</div></div>
   <h3>Первый закон</h3>
   <div class="fbox"><div class="eqwrap">\[\Delta U=Q-W,\quad W=p\Delta V,\quad W_{T}=nRT\ln\dfrac{V_2}{V_1},\quad \Delta U=nC_V\Delta T\]</div><div class="flegend">Энергия, работа при p = const, при T = const, внутренняя энергия.</div></div>
   <h3>Второй закон</h3>
-  <div class="fbox"><div class="eqwrap">\[e=\dfrac{W}{Q_H}=1-\dfrac{Q_C}{Q_H},\quad e_{\text{Carnot}}=1-\dfrac{T_C}{T_H},\quad \Delta S=\dfrac{Q}{T}\]</div><div class="flegend">КПД двигателя, КПД Карно, энтропия.</div></div>
+  <div class="fbox"><div class="eqwrap">\[e=\dfrac{W}{Q_h}=1-\dfrac{Q_c}{Q_h},\quad e_{\text{Carnot}}=1-\dfrac{T_c}{T_h},\quad \Delta S=\dfrac{Q}{T}\]</div><div class="flegend">КПД двигателя, КПД Карно, энтропия.</div></div>
   <div id="allformulas"></div>
 """
 
