@@ -43,6 +43,11 @@ assert set(PLANS) == set(RAW), sorted(set(RAW) ^ set(PLANS))
 # Plain-language explanations: {n: {kid, notes (one per solution step), check}}.
 KID = {int(k): v for k, v in json.loads((DATA_DIR / "kid.json").read_text(encoding="utf-8")).items()}
 assert set(KID) == set(RAW), sorted(set(RAW) ^ set(KID))
+# Short routes: {n: {trick, given, find, formulas, steps: [[tex, kid_note]], kid, check}}.
+# A problem listed here is shown with its short route instead of the long one.
+_short_file = DATA_DIR / "short.json"
+SHORT = {int(k): v for k, v in json.loads(_short_file.read_text(encoding="utf-8")).items()} if _short_file.exists() else {}
+assert set(SHORT) <= set(RAW), sorted(set(SHORT) - set(RAW))
 
 EXTRA_CSS = """
 .back{display:inline-flex; align-items:center; gap:6px; color:var(--accent); text-decoration:none; font-weight:600; font-size:15px; margin-bottom:10px;}
@@ -79,6 +84,8 @@ details.reveal[open] > summary .show{display:none;}
 details.reveal:not([open]) > summary .hide{display:none;}
 .ansline{margin-top:14px; font-size:17px;}
 .kidbox{font-size:17px; line-height:1.65; background:var(--story-bg); border-left:2px solid #ffffff; padding:12px 14px;}
+.trick{font-size:16px; line-height:1.6; padding:12px 14px; border:1px solid #ffffff; margin-top:10px;}
+.trick .lbl{font-weight:700; font-size:13px; letter-spacing:.06em; text-transform:uppercase; margin-bottom:6px;}
 .kidbox .lbl{font-weight:700; font-size:13px; letter-spacing:.06em; text-transform:uppercase; margin-bottom:6px;}
 .checkline{margin-top:12px; font-size:16px; line-height:1.55; color:#d0d0d0;}
 ol.sol-steps li .stepnote{color:#cfcfcf !important; font-size:16.5px !important; line-height:1.6 !important;}
@@ -135,9 +142,17 @@ def prob_details(p):
     plan = PLANS[n]
     kid = KID[n]
     assert len(kid["notes"]) == len(steps), n
+    pairs = [(eq, note) for (eq, _), note in zip(steps, kid["notes"])]
+    trick = ""
+    if n in SHORT:
+        s = SHORT[n]
+        plan = {"given": s["given"], "find": s["find"], "formulas": s["formulas"]}
+        kid = {"kid": s["kid"], "check": s["check"]}
+        pairs = [tuple(x) for x in s["steps"]]
+        trick = f'<div class="trick"><div class="lbl">⚡ Короткий путь</div>{s["trick"]}</div>'
     lis = "".join(
         f'<li><div class="eqwrap">\\({eq}\\)</div><div class="stepnote">{note}</div></li>'
-        for (eq, _), note in zip(steps, kid["notes"])
+        for eq, note in pairs
     )
     given = "".join(f'<li><div class="f">\\({s}={v}\\)</div><div class="why">{why}</div></li>' for s, v, why in plan["given"])
     find = "".join(f'<li><div class="f">\\({s}\\)</div><div class="why">{why}</div></li>' for s, why in plan["find"])
@@ -150,7 +165,7 @@ def prob_details(p):
         f'<label class="done"><input type="checkbox" data-n="{n}"/> Решил</label></div>'
         f'{fig}<div class="stmt">{statement(n)}</div>'
         f'<div class="kidbox"><div class="lbl">🧸 Простыми словами</div>{kid["kid"]}</div>'
-        f'<div class="plan">'
+        f'{trick}<div class="plan">'
         f'<div class="pl given"><div class="lbl">Дано</div><ul>{given}</ul></div>'
         f'<div class="pl find"><div class="lbl">Найти</div><ul>{find}</ul></div>'
         f'<div class="pl formulas"><div class="lbl">Формулы по порядку</div><ol>{forms}</ol></div>'
