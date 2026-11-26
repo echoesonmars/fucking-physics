@@ -11,6 +11,7 @@ from pathlib import Path
 from build_ex2 import CSS
 from pretty_text import pretty
 import ex4_top_render as ex3_top
+import ex4_nav
 
 ROOT = Path(__file__).resolve().parent
 DATA_DIR = ROOT / "ex4_data"
@@ -216,10 +217,12 @@ for t in topics:
     data_items.append({
         "id": t["id"], "title": t["title"], "range": t["range"],
         "formulas": t["formulas"], "story": t["story"],
-        "problems": [[n, by_n[n][1], by_n[n][2]] for n in t["nums"] if n in by_n],
+        # Full problem cards are copied into the tab by ex4_nav.JS, so no short answer list here.
+        "problems": [],
     })
 
 data_js = json.dumps(data_items, ensure_ascii=False).replace("</", "<\\/")
+topics_js = json.dumps([{"id": t["id"], "nums": [n for n in t["nums"] if n in by_n]} for t in topics])
 
 template = (ROOT / "build_ex2_html.py").read_text(encoding="utf-8")
 # Reuse the ex2 page script verbatim: everything between "<script>\nconst DATA" and "</script>".
@@ -246,6 +249,7 @@ html = f"""<!DOCTYPE html>
 <style>
 {CSS}
 {EXTRA_CSS}
+{ex4_nav.CSS}
 {ex3_top.CSS}
 </style>
 <link rel="stylesheet" href="theme.css"/>
@@ -266,7 +270,8 @@ const DATA = {data_js};
 
 {page_js}
 {ex3_top.JS}
-{PROGRESS_JS}
+window.EX4_TOPICS = {topics_js};
+{ex4_nav.JS}
 </script>
 </body>
 </html>
