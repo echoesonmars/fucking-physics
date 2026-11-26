@@ -88,6 +88,8 @@ details.reveal:not([open]) > summary .hide{display:none;}
 .trick .lbl{font-weight:700; font-size:13px; letter-spacing:.06em; text-transform:uppercase; margin-bottom:6px;}
 .kidbox .lbl{font-weight:700; font-size:13px; letter-spacing:.06em; text-transform:uppercase; margin-bottom:6px;}
 .checkline{margin-top:12px; font-size:16px; line-height:1.55; color:#d0d0d0;}
+ol.sol-steps{list-style:none; padding-left:0 !important;}
+ol.sol-steps .stepno{font-family:"IBM Plex Mono",monospace; font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-muted); margin-bottom:4px;}
 ol.sol-steps li .stepnote{color:#cfcfcf !important; font-size:16.5px !important; line-height:1.6 !important;}
 .progress{position:sticky; top:0; z-index:5; background:var(--bg); padding:10px 0; display:flex; align-items:center; gap:12px;}
 .progress .pbar{flex:1; height:10px; border-radius:5px; background:var(--accent-soft); overflow:hidden;}
@@ -151,8 +153,8 @@ def prob_details(p):
         pairs = [tuple(x) for x in s["steps"]]
         trick = f'<div class="trick"><div class="lbl">⚡ Короткий путь</div>{s["trick"]}</div>'
     lis = "".join(
-        f'<li><div class="eqwrap">\\({eq}\\)</div><div class="stepnote">{note}</div></li>'
-        for eq, note in pairs
+        f'<li><div class="stepno">Шаг {i}</div><div class="eqwrap">\\({eq}\\)</div><div class="stepnote">{note}</div></li>'
+        for i, (eq, note) in enumerate(pairs, 1)
     )
     given = "".join(f'<li><div class="f">\\({s}={v}\\)</div><div class="why">{why}</div></li>' for s, v, why in plan["given"])
     find = "".join(f'<li><div class="f">\\({s}\\)</div><div class="why">{why}</div></li>' for s, why in plan["find"])
