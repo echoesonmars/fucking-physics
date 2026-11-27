@@ -197,7 +197,7 @@ cheat_story = r"""
   <div class="fbox"><div class="eqwrap">\[Q=mc\Delta T,\quad Q=mL,\quad \Delta L=\alpha L_0\Delta T,\quad \sum Q=0\]</div><div class="flegend">Нагрев, плавление/кипение, расширение, смешивание (сколько отдал горячий — столько получил холодный).</div></div>
   <div class="fbox"><div class="eqwrap">\[H=\dfrac{kA\,\Delta T}{L},\quad P=e\sigma A T^4\]</div><div class="flegend">Теплопроводность и излучение (T в кельвинах!).</div></div>
   <h3>Газы</h3>
-  <div class="fbox"><div class="eqwrap">\[pV=nRT=NkT,\quad \overline{K}=\tfrac32 k_B T,\quad v_{\text{rms}}=\sqrt{\dfrac{3RT}{M}}\]</div><div class="flegend">Уравнение газа, средняя кинетическая энергия молекулы, среднеквадратичная скорость (M в кг/моль).</div></div>
+  <div class="fbox"><div class="eqwrap">\[pV=nRT=Nk_BT,\quad \overline{K}=\tfrac32 k_B T,\quad v_{\text{rms}}=\sqrt{\dfrac{3RT}{M}}\]</div><div class="flegend">Уравнение газа, средняя кинетическая энергия молекулы, среднеквадратичная скорость (M в кг/моль).</div></div>
   <h3>Первый закон</h3>
   <div class="fbox"><div class="eqwrap">\[\Delta U=Q-W,\quad W=p\Delta V,\quad W_{T}=nRT\ln\dfrac{V_2}{V_1},\quad \Delta U=nC_V\Delta T\]</div><div class="flegend">Энергия, работа при p = const, при T = const, внутренняя энергия.</div></div>
   <div class="fbox"><div class="eqwrap">\[C_V=\tfrac32R,\quad C_p=\tfrac52R,\quad \Delta U=\tfrac32\,nR\,\Delta T,\quad Q_V=\tfrac32\,nR\,\Delta T,\quad Q_p=\tfrac52\,nR\,\Delta T\]</div><div class="flegend"><b>Одноатомный газ</b> (гелий, неон, аргон). Двухатомный (O₂, N₂, воздух): C<sub>V</sub> = 5/2·R, C<sub>p</sub> = 7/2·R.</div></div>
@@ -205,6 +205,7 @@ cheat_story = r"""
   <div class="fbox"><div class="eqwrap">\[pV^{\gamma}=\text{const},\quad TV^{\gamma-1}=\text{const},\quad \gamma=\tfrac53\ (\text{одноатомный}),\ \gamma=1.4\ (\text{двухатомный})\]</div><div class="flegend">Адиабата (тепло не входит и не выходит). Выучи как правило.</div></div>
   <h3>Второй закон</h3>
   <div class="fbox"><div class="eqwrap">\[e=\dfrac{W}{Q_h}=1-\dfrac{Q_c}{Q_h},\quad e_{\text{Carnot}}=1-\dfrac{T_c}{T_h},\quad \Delta S=\dfrac{Q}{T}\]</div><div class="flegend">КПД двигателя, КПД Карно, энтропия.</div></div>
+  <div class="fbox"><div class="eqwrap">\[K=\dfrac{Q_c}{W},\quad K_{\text{Carnot}}=\dfrac{T_c}{T_h-T_c},\quad Q_h=Q_c+W,\quad \Delta S=mc\ln\dfrac{T_2}{T_1},\quad Q=mL_c\]</div><div class="flegend">Холодильник (K — сколько тепла забрал на 1 Дж работы), энергия цикла, энтропия при нагреве, тепло сгорания топлива (L<sub>c</sub> — сколько Дж даёт 1 кг).</div></div>
   <h3>Вспомогательные формулы (механика, геометрия, моли)</h3>
   <div class="kid">Они не про тепло, но встречаются внутри задач. Их тоже надо знать.</div>
   <div class="fbox"><div class="eqwrap">\[A=\pi r^2=\dfrac{\pi d^2}{4},\quad V_{\text{шар}}=\tfrac43\pi r^3,\quad V_{\text{куб}}=a^3,\quad V_{\text{цилиндр}}=A\cdot h\]</div><div class="flegend">Площадь круга (r — радиус, d — диаметр), объём шара, куба, цилиндра. Размеры в метрах.</div></div>
