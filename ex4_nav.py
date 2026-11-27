@@ -30,6 +30,11 @@ CSS = r"""
 .toast{position:fixed; left:50%; bottom:70px; transform:translateX(-50%); z-index:60; background:#ffffff; color:#0a0a0a;
   padding:9px 14px; font-size:15px; font-weight:600; opacity:0; transition:opacity .3s; pointer-events:none;}
 .toast.show{opacity:1;}
+.inlinecard{margin:12px 0 6px; border:1px solid #ffffff; padding:10px;}
+.inlinecard .ic-head{display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; font-size:14px; color:var(--ink-muted);}
+.inlinecard .ic-close{background:#0a0a0a; color:#ededed; border:1px solid #3a3a3a; padding:5px 10px; cursor:pointer; font-size:13px;}
+.inlinecard .task{margin:0;}
+a.pchip.cur{background:#ffffff !important; color:#0a0a0a !important; border-color:#ffffff !important;}
 @media (max-width:640px){ .navbar{left:10px; right:10px; justify-content:space-between;} .navbar input{flex:1;} }
 """
 
@@ -117,6 +122,47 @@ JS = r"""
     paint();
   });
   paint();
+
+  // Top-15 tab: a problem chip opens that problem's full card right below the chips, on the same tab.
+  // Capture phase + stopImmediatePropagation so the older "jump to the solutions tab" handler never runs.
+  document.addEventListener('click', function(e){
+    var close = e.target.closest && e.target.closest('.inlinecard .ic-close');
+    if (close) {
+      var box0 = close.closest('.inlinecard');
+      var row0 = box0.previousElementSibling;
+      if (row0) row0.querySelectorAll('a.pchip.cur').forEach(function(x){ x.classList.remove('cur'); });
+      box0.remove();
+      return;
+    }
+    var a = e.target.closest && e.target.closest('a.pchip');
+    if (!a) return;
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    var n = a.dataset.p;
+    var row = a.closest('.chips') || a.parentElement;
+    var next = row.nextElementSibling;
+    if (next && next.classList.contains('inlinecard')) {
+      var same = next.dataset.n === n;
+      next.remove();
+      row.querySelectorAll('a.pchip.cur').forEach(function(x){ x.classList.remove('cur'); });
+      if (same) return;
+    }
+    var src = document.getElementById('p' + n);
+    if (!src) return;
+    var card = src.cloneNode(true);
+    card.removeAttribute('id');
+    card.dataset.n = n;
+    var box = document.createElement('div');
+    box.className = 'inlinecard';
+    box.dataset.n = n;
+    box.innerHTML = '<div class="ic-head"><span class="mono">P' + n + '</span><button type="button" class="ic-close">Закрыть ✕</button></div>';
+    box.appendChild(card);
+    row.insertAdjacentElement('afterend', box);
+    a.classList.add('cur');
+    paint();
+    if (typeof renderMath === 'function') renderMath();
+    box.scrollIntoView({block: 'nearest', behavior: 'smooth'});
+  }, true);
 
   // 3. Navigation.
   function activePanel(){ return document.querySelector('.tab-panel.active'); }
