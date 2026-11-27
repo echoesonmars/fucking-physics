@@ -273,6 +273,11 @@ HOWTO = {
 изотерма (T не меняется): W = nRT·ln(V₂/V₁).</p></div>""",
 }
 
+_howto_file = DATA_DIR / "howto.json"
+if _howto_file.exists():
+    for _id, _html in json.loads(_howto_file.read_text(encoding="utf-8")).items():
+        HOWTO.setdefault(_id, '<div class="trick"><div class="lbl">🧭 Как понять, какую формулу брать</div>' + _html + '</div>')
+
 for t in topics:
     nums_in = [n for n in t["nums"] if n in by_n]
     data_items.append({
