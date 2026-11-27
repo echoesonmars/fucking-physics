@@ -202,6 +202,12 @@ cheat_story = r"""
   <div class="fbox"><div class="eqwrap">\[\Delta U=Q-W,\quad W=p\Delta V,\quad W_{T}=nRT\ln\dfrac{V_2}{V_1},\quad \Delta U=nC_V\Delta T\]</div><div class="flegend">Энергия, работа при p = const, при T = const, внутренняя энергия.</div></div>
   <h3>Второй закон</h3>
   <div class="fbox"><div class="eqwrap">\[e=\dfrac{W}{Q_h}=1-\dfrac{Q_c}{Q_h},\quad e_{\text{Carnot}}=1-\dfrac{T_c}{T_h},\quad \Delta S=\dfrac{Q}{T}\]</div><div class="flegend">КПД двигателя, КПД Карно, энтропия.</div></div>
+  <h3>Вспомогательные формулы (механика, геометрия, моли)</h3>
+  <div class="kid">Они не про тепло, но встречаются внутри задач. Их тоже надо знать.</div>
+  <div class="fbox"><div class="eqwrap">\[A=\pi r^2=\dfrac{\pi d^2}{4},\quad V_{\text{шар}}=\tfrac43\pi r^3,\quad V_{\text{куб}}=a^3,\quad V_{\text{цилиндр}}=A\cdot h\]</div><div class="flegend">Площадь круга (r — радиус, d — диаметр), объём шара, куба, цилиндра. Размеры в метрах.</div></div>
+  <div class="fbox"><div class="eqwrap">\[F_g=mg,\quad p=\dfrac{F}{A}\ \ (\text{поршень: } pA=mg),\quad p=p_0+\rho g h\]</div><div class="flegend">Вес; давление = сила ÷ площадь (поршень держит груз, когда сила газа pA равна весу mg); давление на глубине h под водой.</div></div>
+  <div class="fbox"><div class="eqwrap">\[\rho=\dfrac{m}{V},\quad E_{\text{пот}}=mgh,\quad E_{\text{кин}}=\dfrac{mv^2}{2},\quad E=P\cdot t\]</div><div class="flegend">Плотность; энергия падения и движения; энергия = мощность × время (Вт × с = Дж).</div></div>
+  <div class="fbox"><div class="eqwrap">\[n=\dfrac{m}{M},\quad N=n\cdot N_A,\quad m_0=\dfrac{M}{N_A}\]</div><div class="flegend">Моли из массы (M — молярная масса), число молекул, масса одной молекулы.</div></div>
   <div id="allformulas"></div>
 """
 
