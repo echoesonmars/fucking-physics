@@ -86,6 +86,11 @@ details.reveal:not([open]) > summary .hide{display:none;}
 .ansline{margin-top:14px; font-size:17px;}
 .kidbox{font-size:17px; line-height:1.65; background:var(--story-bg); border-left:2px solid #ffffff; padding:12px 14px;}
 .trick{font-size:16px; line-height:1.6; padding:12px 14px; border:1px solid #ffffff; margin-top:10px;}
+.derive{margin-top:8px; padding:8px 10px; border-left:2px solid #8c8c8c; background:#0f0f0f;}
+.derive .dl{font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-muted); margin-bottom:4px;}
+.derive .dline{display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 12px; padding:3px 0;}
+.derive .dline .f{overflow-x:auto; max-width:100%;}
+.derive .dn{font-size:14px; color:#bdbdbd;}
 .trick .lbl{font-weight:700; font-size:13px; letter-spacing:.06em; text-transform:uppercase; margin-bottom:6px;}
 .kidbox .lbl{font-weight:700; font-size:13px; letter-spacing:.06em; text-transform:uppercase; margin-bottom:6px;}
 .checkline{margin-top:12px; font-size:16px; line-height:1.55; color:#d0d0d0;}
@@ -127,6 +132,14 @@ PROGRESS_JS = r"""
 """
 
 
+def derive_html(lines):
+    """'Откуда взялась': the base formula this one comes from and what was done to it."""
+    if not lines:
+        return ""
+    rows = "".join(f'<div class="dline"><span class="f">\\({t}\\)</span><span class="dn">{note}</span></div>' for t, note in lines)
+    return f'<div class="derive"><div class="dl">Откуда взялась</div>{rows}</div>'
+
+
 def statement(n):
     """Full problem text from the exam, without the official answer in parentheses at the end."""
     t = RAW[n]["text"].strip()
@@ -159,7 +172,9 @@ def prob_details(p):
     )
     given = "".join(f'<li><div class="f">\\({s}={v}\\)</div><div class="why">{why}</div></li>' for s, v, why in plan["given"])
     find = "".join(f'<li><div class="f">\\({s}\\)</div><div class="why">{why}</div></li>' for s, why in plan["find"])
-    forms = "".join(f'<li><div class="stepno">Шаг {i}</div><div class="f">\\(\\displaystyle {f}\\)</div><div class="why">{why}</div></li>'
+    derive = SHORT.get(n, {}).get("derive", {})
+    forms = "".join(f'<li><div class="stepno">Шаг {i}</div><div class="f">\\(\\displaystyle {f}\\)</div><div class="why">{why}</div>'
+                    f'{derive_html(derive.get(str(i - 1)))}</li>'
                     for i, (f, why) in enumerate(plan["formulas"], 1))
     fig = f'<img class="fig" loading="lazy" src="{FIGS[n]}" alt="Рисунок к P{n}"/>' if n in FIGS else ""
     return (
@@ -228,17 +243,18 @@ def topic_story(nums):
     seen = {}
     for n in nums:
         src = SHORT.get(n) or PLANS[n]
-        for tex, note in src["formulas"]:
+        der = src.get("derive", {})
+        for i, (tex, note) in enumerate(src["formulas"]):
             key = tex.replace(" ", "")
             if key not in seen:
-                seen[key] = {"tex": tex, "note": note, "nums": []}
+                seen[key] = {"tex": tex, "note": note, "nums": [], "der": der.get(str(i))}
             if n not in seen[key]["nums"]:
                 seen[key]["nums"].append(n)
     items = sorted(seen.values(), key=lambda x: -len(x["nums"]))
     boxes = "".join(
         f'<div class="fbox"><div class="eqwrap">\\[{x["tex"]}\\]</div>'
         f'<div class="flegend">{x["note"]} <span class="mono" style="opacity:.7">· задачи: '
-        + ", ".join(f"P{n}" for n in x["nums"]) + '</span></div></div>'
+        + ", ".join(f"P{n}" for n in x["nums"]) + '</span></div>' + derive_html(x["der"]) + '</div>'
         for x in items
     )
     return ('<p><b>Все формулы, которые нужны в задачах этой темы</b> — ровно те, что стоят в «Формулах по порядку». '
