@@ -216,6 +216,7 @@ cheat_story = r"""
   <h3>Первый закон</h3>
   <div class="fbox"><div class="eqwrap">\[\Delta U=Q-W,\quad W=p\Delta V,\quad W_{T}=nRT\ln\dfrac{V_2}{V_1},\quad \Delta U=nC_V\Delta T\]</div><div class="flegend">Энергия, работа при p = const, при T = const, внутренняя энергия.</div></div>
   <div class="fbox"><div class="eqwrap">\[C_V=\tfrac32R,\quad C_p=\tfrac52R,\quad \Delta U=\tfrac32\,nR\,\Delta T,\quad Q_V=\tfrac32\,nR\,\Delta T,\quad Q_p=\tfrac52\,nR\,\Delta T\]</div><div class="flegend"><b>Одноатомный газ</b> (гелий, неон, аргон). Двухатомный (O₂, N₂, воздух): C<sub>V</sub> = 5/2·R, C<sub>p</sub> = 7/2·R.</div></div>
+  <div class="fbox"><div class="eqwrap">\[p=\text{const},\ \text{одноатомный}:\quad \Delta U\ (=\Delta E_{\text{int}})=\tfrac32\,W,\qquad Q=\tfrac52\,W\]</div><div class="flegend">Потому что W = pΔV = nRΔT, а ΔU = 3/2·nRΔT. Работа 200 Дж → ΔU = 300 Дж, Q = 500 Дж (P105, P107).</div></div>
   <div class="fbox"><div class="eqwrap">\[V=\text{const}:\ W=0,\ Q=\Delta U\qquad T=\text{const}:\ \Delta U=0,\ Q=W\qquad \text{адиабата}:\ Q=0,\ \Delta U=-W\qquad \text{цикл}:\ \Delta U=0\]</div><div class="flegend">Какой процесс — то и обнуляется. Закрытый сосуд = объём не меняется = работы нет, всё тепло идёт на нагрев.</div></div>
   <div class="fbox"><div class="eqwrap">\[pV^{\gamma}=\text{const},\quad TV^{\gamma-1}=\text{const},\quad \gamma=\tfrac53\ (\text{одноатомный}),\ \gamma=1.4\ (\text{двухатомный})\]</div><div class="flegend">Адиабата (тепло не входит и не выходит). Выучи как правило.</div></div>
   <h3>Второй закон</h3>
