@@ -223,10 +223,33 @@ data_items = [
     {"id": "solutions", "title": "Все задачи", "range": f"{len(problems)} задач · P1–P150", "isSolutionsTab": True,
      "formulas": [], "problems": [], "story": "".join(sol)},
 ]
+def topic_story(nums):
+    """The formulas the problems of this topic actually use (from their 'Формулы по порядку'), most used first."""
+    seen = {}
+    for n in nums:
+        src = SHORT.get(n) or PLANS[n]
+        for tex, note in src["formulas"]:
+            key = tex.replace(" ", "")
+            if key not in seen:
+                seen[key] = {"tex": tex, "note": note, "nums": []}
+            if n not in seen[key]["nums"]:
+                seen[key]["nums"].append(n)
+    items = sorted(seen.values(), key=lambda x: -len(x["nums"]))
+    boxes = "".join(
+        f'<div class="fbox"><div class="eqwrap">\\[{x["tex"]}\\]</div>'
+        f'<div class="flegend">{x["note"]} <span class="mono" style="opacity:.7">· задачи: '
+        + ", ".join(f"P{n}" for n in x["nums"]) + '</span></div></div>'
+        for x in items
+    )
+    return ('<p><b>Все формулы, которые нужны в задачах этой темы</b> — ровно те, что стоят в «Формулах по порядку». '
+            'Сверху самые частые. Больше ничего не нужно.</p>' + boxes)
+
+
 for t in topics:
+    nums_in = [n for n in t["nums"] if n in by_n]
     data_items.append({
         "id": t["id"], "title": t["title"], "range": t["range"],
-        "formulas": t["formulas"], "story": t["story"],
+        "formulas": [], "story": topic_story(nums_in),
         # Full problem cards are copied into the tab by ex4_nav.JS, so no short answer list here.
         "problems": [],
     })
