@@ -261,11 +261,23 @@ def topic_story(nums):
             'Сверху самые частые. Больше ничего не нужно.</p>' + boxes)
 
 
+HOWTO = {
+    "firstlaw_cycle": """
+<div class="trick"><div class="lbl">🧭 Как понять, какую формулу брать</div>
+<p><b>Работа = сколько газ толкал поршень.</b> Объём растёт — работа плюс, объём уменьшается — минус, объём не меняется — работа 0.</p>
+<p><b>1. Есть график с числами на осях p и V → считай площадь фигуры</b> (P90, P91, P92). Треугольник: ½ × основание × высота.
+Прямоугольник: ширина × высота. Основание = изменение V, высота = изменение p. По часовой стрелке — плюс, против — минус.
+атм·л × 101,3 = Дж.</p>
+<p><b>2. Вместо графика — температуры и названия участков → считай каждый участок и сложи</b> (P93):
+изобара (p не меняется): W = nRΔT · изохора (V не меняется): W = 0 · адиабата (Q = 0): W = −nC<sub>V</sub>ΔT ·
+изотерма (T не меняется): W = nRT·ln(V₂/V₁).</p></div>""",
+}
+
 for t in topics:
     nums_in = [n for n in t["nums"] if n in by_n]
     data_items.append({
         "id": t["id"], "title": t["title"], "range": t["range"],
-        "formulas": [], "story": topic_story(nums_in),
+        "formulas": [], "story": HOWTO.get(t["id"], "") + topic_story(nums_in),
         # Full problem cards are copied into the tab by ex4_nav.JS, so no short answer list here.
         "problems": [],
     })
