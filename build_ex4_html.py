@@ -200,6 +200,9 @@ cheat_story = r"""
   <div class="fbox"><div class="eqwrap">\[pV=nRT=NkT,\quad \overline{K}=\tfrac32 k_B T,\quad v_{\text{rms}}=\sqrt{\dfrac{3RT}{M}}\]</div><div class="flegend">Уравнение газа, средняя кинетическая энергия молекулы, среднеквадратичная скорость (M в кг/моль).</div></div>
   <h3>Первый закон</h3>
   <div class="fbox"><div class="eqwrap">\[\Delta U=Q-W,\quad W=p\Delta V,\quad W_{T}=nRT\ln\dfrac{V_2}{V_1},\quad \Delta U=nC_V\Delta T\]</div><div class="flegend">Энергия, работа при p = const, при T = const, внутренняя энергия.</div></div>
+  <div class="fbox"><div class="eqwrap">\[C_V=\tfrac32R,\quad C_p=\tfrac52R,\quad \Delta U=\tfrac32\,nR\,\Delta T,\quad Q_V=\tfrac32\,nR\,\Delta T,\quad Q_p=\tfrac52\,nR\,\Delta T\]</div><div class="flegend"><b>Одноатомный газ</b> (гелий, неон, аргон). Двухатомный (O₂, N₂, воздух): C<sub>V</sub> = 5/2·R, C<sub>p</sub> = 7/2·R.</div></div>
+  <div class="fbox"><div class="eqwrap">\[V=\text{const}:\ W=0,\ Q=\Delta U\qquad T=\text{const}:\ \Delta U=0,\ Q=W\qquad \text{адиабата}:\ Q=0,\ \Delta U=-W\qquad \text{цикл}:\ \Delta U=0\]</div><div class="flegend">Какой процесс — то и обнуляется. Закрытый сосуд = объём не меняется = работы нет, всё тепло идёт на нагрев.</div></div>
+  <div class="fbox"><div class="eqwrap">\[pV^{\gamma}=\text{const},\quad TV^{\gamma-1}=\text{const},\quad \gamma=\tfrac53\ (\text{одноатомный}),\ \gamma=1.4\ (\text{двухатомный})\]</div><div class="flegend">Адиабата (тепло не входит и не выходит). Выучи как правило.</div></div>
   <h3>Второй закон</h3>
   <div class="fbox"><div class="eqwrap">\[e=\dfrac{W}{Q_h}=1-\dfrac{Q_c}{Q_h},\quad e_{\text{Carnot}}=1-\dfrac{T_c}{T_h},\quad \Delta S=\dfrac{Q}{T}\]</div><div class="flegend">КПД двигателя, КПД Карно, энтропия.</div></div>
   <h3>Вспомогательные формулы (механика, геометрия, моли)</h3>
